@@ -2,7 +2,7 @@
 source server/pyrelight-config/sql/peq/drop_tables_content.sql
 
 -- Source Content Tables
-source server/pyrelight-config/sql/peq/create_tables_content.sql
+source server/pyrelight-config/sql/peq/peq-dump/create_tables_content.sql
 
 -- Drop & Rebuild Reference Tables
 CREATE OR REPLACE TABLE ref_items LIKE items;
