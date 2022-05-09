@@ -1,0 +1,260 @@
+# This script should be attached to an NPC who will accept a class-specific armor and return the matching item from the other class
+#kunark:thurg:kael:skyshrine:hate:fear:growth:ornate:elemental:qvic:oowt1:oowt2:
+
+my %armor = (
+				#Warrior
+				1 =>     {
+							#Head
+							4 =>      [ 4515,31084,25433,31182,4911,-1,25535,9628,9629,67719,70741,70853 ],
+							#Arms
+							128 =>    [ 4517,31086,25435,31184,4913,-1,25537,11428,11429,68851,70742,70854 ],
+							#Bracer
+							1536 =>   [ 4518,31087,25436,31185,4914,-1,25538,11136,11138,68854,70743,70855 ],
+							#Hands
+							4096 =>   [ 4519,31088,25437,31186,4915,-1,25539,12594,12595,68852,70744,70856 ],
+							#Feet
+							524288 => [ 4521,31090,25439,31188,4917,-1,25541,19439,19440,68853,70745,70857 ],
+							#Legs
+							262144 => [ 4520,31089,25438,31187,4916,-1,25540,16691,16693,68961,70747,70859 ],
+							#Chest
+							131072 => [ 4516,31085,25434,31183,4912,-1,25536,15119,47642,68960,70746,70858 ]
+				},
+				#Cleric
+				2 =>     {
+				},
+				#Paladin
+				4 =>     {
+				},
+				#Ranger
+				8 =>     {
+				},
+				#Shadow Knight
+				16 =>    {
+				},
+				#Druid
+				32 =>    {
+				},
+				#Monk
+				64 =>    {
+				},
+				#Bard
+				128 =>   {
+				},
+				#Rogue
+				256 =>   {
+				},
+				#Shaman
+				512 =>   {
+				},
+				#Necromancer
+				1024 =>  {
+				},
+				#Wizard
+				2048 =>  {
+							#Head
+							4 =>      [ -1,31056,25405,31154,-1,1225,25507,9949,9950,68910,70818,70930 ],
+							#Arms
+							128 =>    [ -1,31058,25407,31156,-1,1227,25509,11620,11876,68911,70819,70931 ],
+							#Bracer
+							1536 =>   [ -1,31059,25408,31157,-1,1228,25510,11308,11309,68914,70820,70932 ],
+							#Hands
+							4096 =>   [ -1,31060,25409,31158,-1,1229,25511,13626,13627,68912,70821,70933 ],
+							#Feet
+							524288 => [ -1,31062,25411,31160,-1,1231,25513,20433,20434,68913,70822,70934 ],
+							#Legs
+							262144 => [ -1,31061,25410,31159,-1,1230,25512,19026,19027,68985,70824,70936 ],
+							#Chest
+							131072 => [ -1,31057,25406,31155,-1,1226,25508,15788,47654,68984,70823,70935 ]
+				},
+				#Magician
+				4096 =>  {
+				},
+				#Enchanter
+				8192 =>  {							
+				},
+				#Beastlord
+				16384 => {
+				},
+				#Berserker
+				32768 => {
+				}
+			);
+
+sub EVENT_SAY {	
+	my $charKey = $client->CharacterID() . "-ArmorSwap";
+	if ($text=~/hail/i) {
+		$client->plugin::NPCTell($npc, "Hail yourself, $class. I'm the head armorsmith in the Reach, and I'm far too busy to deal with every trifling concern. Unless you have [".quest::saylink("class armor",1)."] for my collection, go talk to one of my underlings instead of bothering me.");
+	} elsif ($text=~/class armor/i) {
+		$client->plugin::NPCTell($npc, "Indeed. I collect and trade class-specific armors from all over Norrath and associated realms. I know that adventurers such as yourself often collect such treasures and have little use for those designed for a class other than their own or their companion's. If you bring me such equipment, either to [".quest::saylink("sell",1)."] or to [".quest::saylink("trade",1)."], then we have something to talk about.");
+	} elsif ($text=~/trade/i) {
+		$client->plugin::NPCTell($npc, "Simply tell me which class you'd like to trade your armor for, and then hand me the equipment, and we can make the exchange. Remember, I only accept class-specific set armor, and will only exchange for gear of similar power, and it will also [".quest::saylink("cost you some platinum",1)."] for the trouble.");
+	} elsif ($text=~/cost you some platinum/i) {
+		$client->plugin::NPCTell($npc, "I charge 2,000pp to exchange items from Sebilis, Karnor's Keep, Kael, the Temple of Veeshan, or the planes of Hate, Fear, and Growth. 6,000pp for armors from all other planes except the Elementals, which will cost you 10,000pp. Muramite armor from Taelosia will cost you 20,000pp, and the high-quality armors from Discord will cost you 40,000pp to exchange");
+	}  elsif ($text=~/sell/i) { 
+		$client->plugin::NPCTell($npc, "You are here to sell, I understand. The prices I offer vary, and I won't know for sure until you hand me the item, but you'll get a fair deal. Just hand it over and I'll appraise it");
+		quest::set_data($charKey, -1, 1800);
+	}  elsif ($text=~/warrior/i) {
+		$client->plugin::NPCTell($npc, "You are here for Warrior equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 1, 1800);
+	}  elsif ($text=~/cleric/i) {
+		$client->plugin::NPCTell($npc, "You are here for Cleric equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 2, 1800);
+	}  elsif ($text=~/paladin/i) {
+		$client->plugin::NPCTell($npc, "You are here for Paladin equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 4, 1800);
+	}  elsif ($text=~/shadow knight/i) {
+		$client->plugin::NPCTell($npc, "You are here for Shadow Knight equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 16, 1800);
+	}  elsif ($text=~/bard/i) {
+		$client->plugin::NPCTell($npc, "You are here for Bard equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 128, 1800);
+	}  elsif ($text=~/ranger/i) {
+		$client->plugin::NPCTell($npc, "You are here for Ranger equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 8, 1800);
+	}  elsif ($text=~/shaman/i) {
+		$client->plugin::NPCTell($npc, "You are here for Shaman equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 512, 1800);
+	}  elsif ($text=~/rogue/i) {
+		$client->plugin::NPCTell($npc, "You are here for Rogue equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 256, 1800);
+	}  elsif ($text=~/berserker/i) {
+		$client->plugin::NPCTell($npc, "You are here for Berserker equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 32768, 1800);
+	}  elsif ($text=~/druid/i) {
+		$client->plugin::NPCTell($npc, "You are here for Druid equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 32, 1800);
+	}  elsif ($text=~/monk/i) {
+		$client->plugin::NPCTell($npc, "You are here for Monk equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 64, 1800);
+	}  elsif ($text=~/beastlord/i) {
+		$client->plugin::NPCTell($npc, "You are here for Beastlord equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 16384, 1800);
+	}  elsif ($text=~/wizard/i) {
+		$client->plugin::NPCTell($npc, "You are here for Wizard equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 2048, 1800);
+	}  elsif ($text=~/enchanter/i) {
+		$client->plugin::NPCTell($npc, "You are here for Enchanter equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 8192, 1800);
+	}  elsif ($text=~/magician/i) {
+		$client->plugin::NPCTell($npc, "You are here for Magician equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 4096, 1800);
+	}  elsif ($text=~/necromancer/i) {
+		$client->plugin::NPCTell($npc, "You are here for Necromancer equipment, I understand. Hand over what you have, and I'll see what I can scrounge up for you.");
+		quest::set_data($charKey, 1024, 1800);
+	}
+}
+
+sub EVENT_ITEM {
+	my $charKey = $client->CharacterID() . "-ArmorSwap";
+	my $tarClass = quest::get_data($charKey);
+	
+	if ($tarClass == undef) {
+			$client->plugin::NPCTell($npc,"You didn't let me know what you were looking for, so I can only assume you wanted to sell these.");
+	}
+		
+	if ($tarClass > 0) {
+		if ($item1 > 0) {
+			CheckItemUpgrade($item1,$tarClass);	
+		}
+		if ($item2 > 0) {
+			CheckItemUpgrade($item2,$tarClass);		
+		}
+		if ($item3 > 0) {
+			CheckItemUpgrade($item3,$tarClass);	
+		}
+		if ($item4 > 0) {
+			CheckItemUpgrade($item4,$tarClass);		
+		}		
+	} else {
+		if ($item1 > 0) {
+			CheckItemSale($item1);		
+		}
+		if ($item2 > 0) {
+			CheckItemSale($item2);		
+		}
+		if ($item3 > 0) {
+			CheckItemSale($item3);		
+		}
+		if ($item4 > 0) {
+			CheckItemSale($item4);	
+		}
+	}	
+	plugin::return_items();
+}
+
+sub CheckItemUpgrade {
+	my $item = shift;
+	my $tarClass = shift;
+	
+	my $tarID = DoItemUpgrade($item, $tarClass);
+	if ($tarID > 0) {
+		my $value = GetItemSaleMulti($item);
+		if ($client->TakeMoneyFromPP($value*1000*1000*2, 1)) {
+			$client->Message(2, "You paid ". plugin::commify($value*1000*2) ."pp to " . $npc->GetCleanName() . " to exchange [" . quest::varlink($item) . "] for [" . quest::varlink($tarID) . "].");
+			plugin::takeItems($item => 1);
+			$client->SummonItem($tarID, -1, true);
+		} else {
+			$client->plugin::NPCTell($npc,"Sorry boss, you don't have enough money to pay for the exchange. How about you [".quest::saylink("sell",1)."] this to me instead?");
+		}			
+	}	
+}
+
+sub CheckItemSale {
+	my $item = shift;
+	my $value = GetItemSaleMulti($item);
+	if ($value > 0) {
+		plugin::takeItems($item => 1);
+		$client->Message(2, "You recieved ". plugin::commify($value*1000) ."pp from " . $npc->GetCleanName() . " for selling [" . quest::varlink($item) . "].");
+		$client->AddMoneyToPP(0,0,0,$value*1000,1);
+	}
+}
+
+sub DoItemUpgrade {
+	my $item = shift;
+	my $tarClass = shift;
+	use List::MoreUtils qw(first_index);
+	
+	my $sourceClass = quest::getitemstat($item,"classes");
+	my $slot        = quest::getitemstat($item,"slots");	
+	my @sourceRow   = @{$armor{$sourceClass}{$slot}};
+	
+	my $count = 0;
+	foreach $i (@sourceRow) {
+		if ($i == $item) {
+			return $armor{$tarClass}{$slot}[$count];
+		}
+		$count = $count + 1;
+	}	
+	return -1;
+}
+
+sub GetItemSaleMulti {
+	my $item = shift;
+	use List::MoreUtils qw(first_index);
+	
+	my $sourceClass = quest::getitemstat($item,"classes");
+	my $slot        = quest::getitemstat($item,"slots");	
+	my @sourceRow   = @{$armor{$sourceClass}{$slot}};
+	
+	my $count = 0;
+	my $value = 0;
+	foreach $i (@sourceRow) {
+		if ($i == $item) {
+			if ($count < 7) {
+				$value = 1;
+			} elsif ($count < 8) {
+				$value = 3;
+			} elsif ($count < 9) {
+				$value = 5;
+			} elsif ($count < 10) {
+				$value = 10;
+			} elsif ($count < 11) {
+				$value = 5;
+			} elsif ($count < 12) {
+				$value = 20;
+			}
+		}
+		$count = $count + 1;
+	}	
+	return $value;
+}

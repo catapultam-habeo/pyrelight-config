@@ -1,0 +1,6 @@
+--- Remove Wizard Familiars
+DELETE FROM bot_spells_entries
+WHERE spellid = 2553
+  AND spellid = 2555
+  AND spellid = 2557
+  AND spellid = 2560;

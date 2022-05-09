@@ -1,0 +1,14 @@
+--- Dump Merchantlist from Merchant Asamu
+DELETE FROM merchantist WHERE merchantid = 394177;
+
+INSERT INTO merchantlist (merchantid, slot, item, level_required)
+VALUES (394177, 1, 30200, 0),
+	   (394177, 1, 30201, 0),
+	   (394177, 1, 30202, 0),
+	   (394177, 1, 30203, 0),
+	   (394177, 1, 30204, 0),
+	   (394177, 1, 30205, 0),
+	   (394177, 1, 30206, 0),
+	   (394177, 1, 30207, 0),
+	   (394177, 1, 30208, 0),
+	   (394177, 1, 30209, 0);

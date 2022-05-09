@@ -1,0 +1,1 @@
+UPDATE spawn2 SET respawntime = 5400, variance = 1800 WHERE zone LIKE 'ssratemple' AND respawntime = 90;
