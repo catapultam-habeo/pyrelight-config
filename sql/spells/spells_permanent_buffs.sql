@@ -29,10 +29,3 @@ UPDATE spells_new
    SET buffdurationformula = 50
  WHERE id = 3701;
  
---- Nerf Puma Line (Proc rate, group effect, limited duration)
-UPDATE spells_new
-   SET effect_limit_value5 = 50,
-       targettype = 41,
-	   buffdurationformula = 3,
-	   buffduration = 10
- WHERE id = 6906 OR id = 6735 OR id = 6667;
