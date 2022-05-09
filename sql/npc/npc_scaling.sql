@@ -10,5 +10,5 @@ UPDATE npc_types, ref_npcs
 -- Decrease Aggro Range
 UPDATE npc_types, ref_npcs
    SET npc_types.aggroradius = Floor(ref_npcs.aggroradius * 0.75),
-	   npc_types.assistradius = Floor(ref_npc.assistradius * 0.75)
+	   npc_types.assistradius = Floor(ref_npcs.assistradius * 0.75)
  WHERE npc_types.id = ref_npcs.id;
