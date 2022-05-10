@@ -68,3 +68,12 @@ UPDATE items, spells_new, ref_items
    AND items.clickeffect = spells_new.id
    AND ref_items.maxcharges > 0
    AND spells_new.buffduration > 0;
+
+-- Stackable items go back to being charged
+UPDATE items, ref_items
+   SET items.maxcharges = ref_items.maxcharges
+ WHERE ref_items.maxcharges > 0 AND items.maxcharges < 1
+   AND items.stacksize > 1;
+
+---- Ivandyr's Hoop -> Aug
+UPDATE items SET itemtype = 54, classes = 65535, clicktype = 4, casttime = 0, recastdelay = 30 WHERE id = 10082;
