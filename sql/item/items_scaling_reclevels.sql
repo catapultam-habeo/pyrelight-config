@@ -370,8 +370,8 @@ UPDATE items, npc_types, loottable_entries, lootdrop_entries, ref_items
 	OR  npc_types.name LIKE '%Venril_Sathir%'
 	OR  npc_types.name LIKE '%Drusella_Sathir%'
 	OR  npc_types.name LIKE '%Trakanon%'
-	OR (npc_types.name LIKE '%Innoruuk%' AND npc_types.id = 6625)
-	OR (npc_types.name LIKE '%Cazic_Thule%' AND npc_types.id = 291)
+	OR (npc_types.name LIKE '%Innoruuk%' AND npc_types.id = 186107)
+	OR (npc_types.name LIKE '%Cazic_Thule%' OR npc_types.id = 72003)
 	OR  npc_types.name LIKE '%Faydedar%'
 	OR  npc_types.name LIKE '%Severilous%'
 	OR  npc_types.name LIKE '%Talendor%' 
