@@ -13,7 +13,7 @@ UPDATE items SET itemtype = 54, classes = 0 WHERE id = 11625;
 ---- Hammer of the Scourge
 UPDATE items SET name = "Orb of the Scourge", icon = 2087, itemtype = 54, classes = 65535 WHERE id = 11628;
 ---- Hierophant's Crook
-UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes = 65535 WHERE id = 11628;
+UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes = 65535 WHERE id = 11629;
 ---- Prayer's of Life
 UPDATE items SET itemtype = 54, classes = 65535, slots = 16384,  clicktype = 4 WHERE id = 11628;
 ---- Bladestopper
