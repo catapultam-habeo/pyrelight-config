@@ -37,18 +37,18 @@ source server/pyrelight-config/sql/aa/aa_general.sql
 source server/pyrelight-config/sql/item/items_scaling_reclevels.sql
 source server/pyrelight-config/sql/item/items_scaling_main.sql
 source server/pyrelight-config/sql/item/items_scaling_augments.sql
+source server/pyrelight-config/sql/item/items_augment_oow.sql
+source server/pyrelight-config/sql/item/items_augment_schema.sql
 source server/pyrelight-config/sql/npc/npc_scaling.sql
 
 ---- Execute Post-Scaling Actions
 source server/pyrelight-config/sql/item/items_postscale.sql
+source server/pyrelight-config/sql/item/items_epics_postscale.sql
 
 --- Final Actions
+source server/pyrelight-config/sql/item/items_custom_noscale.sql
 source server/pyrelight-config/sql/npc/npc_ssratemple.sql
 source server/pyrelight-config/sql/npc/npc_karnors.sql
-source server/pyrelight-config/sql/item/items_custom_noscale.sql
-source server/pyrelight-config/sql/item/items_augment_oow.sql
-source server/pyrelight-config/sql/item/items_augment_schema.sql
-source server/pyrelight-config/sql/item/items_epics_postscale.sql
 source server/pyrelight-config/sql/spells/spells_custom_shaman.sql
 source server/pyrelight-config/sql/spells/spells_permanent_buffs.sql
 source server/pyrelight-config/sql/spells/spells_bot_modifications.sql
