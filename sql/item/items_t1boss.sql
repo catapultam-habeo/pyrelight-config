@@ -18,5 +18,5 @@ UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes 
 ---- Prayer's of Life
 UPDATE items SET itemtype = 54, classes = 65535, slots = 16384,  clicktype = 4 WHERE id = 11628;
 ---- Bladestopper
-UPDATE items SET itemtype = 54, classes = 65535, slots = 16384, clickeffect = 8015, recasttime = 1800, clicktype = 4 WHERE id = 11632;
+UPDATE items SET itemtype = 54, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 1800, clicktype = 4 WHERE id = 11632;
 
