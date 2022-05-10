@@ -15,12 +15,12 @@ UPDATE items SET name = "Orb of the Scourge", icon = 2087, itemtype = 54, classe
 ---- Hierophant's Crook
 UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes = 65535 WHERE id = 11629;
 ---- Prayer's of Life
-UPDATE items SET itemtype = 54, classes = 65535, slots = 16384,  clicktype = 4 WHERE id = 11628;
+UPDATE items SET itemtype = 54, classes = 65535, slots = 16384,  clicktype = 4 WHERE id = 11631;
 ---- Bladestopper
 UPDATE items SET reclevel = 52, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 7200, clicktype = 4 WHERE id = 11632;
 ---- White Dragon Hide
 UPDATE items SET itemtype = 54, classes = 65535, slots = 131072, clicktype = 4, clickeffect = 6377, recastdelay = 7200 WHERE id = 11602;
 ---- Scimitar of the Mistwalker
-UPDATE items SET name = "Charm of the Mistwalker", icon = 1895, itemtype = 54, classes = 65535 WHERE id = 11628;
+UPDATE items SET name = "Charm of the Mistwalker", icon = 1895, itemtype = 54, classes = 65535 WHERE id = 11604;
 ---- Wand of Malisement
 UPDATE items SET name = "Charm of Malisement", icon = 1884, itemtype = 54, classes = 65535, slots = 98354 WHERE id = 10374;
