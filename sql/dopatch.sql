@@ -30,6 +30,8 @@ source server/pyrelight-config/sql/spawn/spawn_crescent.sql
 source server/pyrelight-config/sql/loot/starting_items.sql
 source server/pyrelight-config/sql/rules/char_create_combos.sql
 source server/pyrelight-config/sql/item/items_t1boss.sql
+source server/pyrelight-config/sql/aa/aa_pets.sql
+source server/pyrelight-config/sql/aa/aa_general.sql
 
 ---- Execute Scaling
 source server/pyrelight-config/sql/item/items_scaling_reclevels.sql
