@@ -328,3 +328,67 @@ UPDATE npc_spells_entries, spells_new
    AND classes14 = 255 
    AND classes15 = 255 
    AND classes16 = 255;
+
+-- Replace Silence with Stun when not used by players and is on a npc spell list
+UPDATE npc_spells_entries, spells_new
+   SET effectid1 = 21, effect_base_value1 = 1000, effect_limit_value1 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid1 =  96
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid2 = 21, effect_base_value2 = 1000, effect_limit_value2 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid2 =  96
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid3 = 21, effect_base_value3 = 1000, effect_limit_value3 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid3 =  96
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
