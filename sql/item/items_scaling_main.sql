@@ -19,13 +19,13 @@ WHERE  ref_items.classes & ( 2|32|512 ) != 0 AND ref_items.classes & ( 1|4|8|16|
 
 -- Adjust primary stats. Absolute Values
 UPDATE items, ref_items
-SET	   items.astr = Abs(Floor(ref_items.astr * 2.75)),
-	   items.asta = Abs(Floor(Greatest(ref_items.asta,(ref_items.regen * 5)) * 2.75)),
-	   items.adex = Abs(Floor(ref_items.adex * 2.75)),
-	   items.aagi = Abs(Floor(ref_items.aagi * 2.75)),
-	   items.aint = Abs(Floor(Greatest(ref_items.aint,(ref_items.manaregen * 3)) * 2.75)),
-	   items.awis = Abs(Floor(Greatest(ref_items.awis,(ref_items.manaregen * 3)) * 2.75)),
-	   items.acha = Abs(Floor(ref_items.acha * 2.75))
+SET	items.astr = Abs(Floor(ref_items.astr * 1.5)),
+	   items.asta = Abs(Floor(Greatest(ref_items.asta,(ref_items.regen * 5)) * 1.5)),
+	   items.adex = Abs(Floor(ref_items.adex * 1.5)),
+	   items.aagi = Abs(Floor(ref_items.aagi * 1.5)),
+	   items.aint = Abs(Floor(Greatest(ref_items.aint,(ref_items.manaregen * 3)) * 1.5)),
+	   items.awis = Abs(Floor(Greatest(ref_items.awis,(ref_items.manaregen * 3)) * 1.5)),
+	   items.acha = Abs(Floor(ref_items.acha * 1.5))
 WHERE  ref_items.id=items.id AND  items.itemtype != 54;
   
 -- Spell Damage & Heal Amount
@@ -239,17 +239,18 @@ UPDATE items
    AND items.itemtype != 54;
 ---- Heroics
 UPDATE items
-   SET items.heroic_str = Least(50,items.heroic_str),
-	   items.heroic_sta = Least(50,items.heroic_sta),
-	   items.heroic_dex = Least(50,items.heroic_dex),
-	   items.heroic_agi = Least(50,items.heroic_agi/2),
-	   items.heroic_int = Least(50,items.heroic_int),
-	   items.heroic_wis = Least(50,items.heroic_wis),
-	   items.heroic_mr  = Least(50,items.heroic_mr),
-	   items.heroic_fr  = Least(50,items.heroic_fr),
-	   items.heroic_cr  = Least(50,items.heroic_cr),
-	   items.heroic_dr  = Least(50,items.heroic_dr),
-	   items.heroic_pr  = Least(50,items.heroic_pr)
+   SET items.heroic_str = Least(25,items.heroic_str),
+	    items.heroic_sta = Least(25,items.heroic_sta),
+	    items.heroic_dex = Least(25,items.heroic_dex),
+	    items.heroic_agi = Least(15,items.heroic_agi/2),
+	    items.heroic_int = Least(25,items.heroic_int),
+	    items.heroic_wis = Least(25,items.heroic_wis),
+       items.heroic_cha = Least(25,items.heroic_cha),
+	    items.heroic_mr  = Least(25,items.heroic_mr),
+	    items.heroic_fr  = Least(25,items.heroic_fr),
+	    items.heroic_cr  = Least(25,items.heroic_cr),
+	    items.heroic_dr  = Least(25,items.heroic_dr),
+	    items.heroic_pr  = Least(25,items.heroic_pr)
  WHERE Greatest(items.reclevel,items.reqlevel) <= 70
    AND items.itemtype != 54;   
 
@@ -328,17 +329,18 @@ UPDATE items
    AND items.itemtype != 54;
 ---- Heroics
 UPDATE items
-   SET items.heroic_str = Least(35,items.heroic_str),
-	   items.heroic_sta = Least(35,items.heroic_sta),
-	   items.heroic_dex = Least(35,items.heroic_dex),
-	   items.heroic_agi = Least(35,items.heroic_agi/2),
-	   items.heroic_int = Least(35,items.heroic_int),
-	   items.heroic_wis = Least(35,items.heroic_wis),
-	   items.heroic_mr  = Least(35,items.heroic_mr),
-	   items.heroic_fr  = Least(35,items.heroic_fr),
-	   items.heroic_cr  = Least(35,items.heroic_cr),
-	   items.heroic_dr  = Least(35,items.heroic_dr),
-	   items.heroic_pr  = Least(35,items.heroic_pr)
+   SET items.heroic_str = Least(20,items.heroic_str),
+	    items.heroic_sta = Least(20,items.heroic_sta),
+	    items.heroic_dex = Least(20,items.heroic_dex),
+	    items.heroic_agi = Least(10,items.heroic_agi/2),
+	    items.heroic_int = Least(20,items.heroic_int),
+	    items.heroic_wis = Least(20,items.heroic_wis),
+       items.heroic_cha = Least(20,items.heroic_cha),
+	    items.heroic_mr  = Least(20,items.heroic_mr),
+	    items.heroic_fr  = Least(20,items.heroic_fr),
+	    items.heroic_cr  = Least(20,items.heroic_cr),
+	    items.heroic_dr  = Least(20,items.heroic_dr),
+	    items.heroic_pr  = Least(20,items.heroic_pr)
  WHERE Greatest(items.reclevel,items.reqlevel) <= 67
    AND items.itemtype != 54;    
 
@@ -417,17 +419,18 @@ UPDATE items
    AND items.itemtype != 54;
 ---- Heroics
 UPDATE items
-   SET items.heroic_str = Least(30,items.heroic_str),
-	   items.heroic_sta = Least(30,items.heroic_sta),
-	   items.heroic_dex = Least(30,items.heroic_dex),
-	   items.heroic_agi = Least(30,items.heroic_agi/2),
-	   items.heroic_int = Least(30,items.heroic_int),
-	   items.heroic_wis = Least(30,items.heroic_wis),
-	   items.heroic_mr  = Least(30,items.heroic_mr),
-	   items.heroic_fr  = Least(30,items.heroic_fr),
-	   items.heroic_cr  = Least(30,items.heroic_cr),
-	   items.heroic_dr  = Least(30,items.heroic_dr),
-	   items.heroic_pr  = Least(30,items.heroic_pr)
+   SET items.heroic_str = Least(15,items.heroic_str),
+	    items.heroic_sta = Least(15,items.heroic_sta),
+	    items.heroic_dex = Least(15,items.heroic_dex),
+	    items.heroic_agi = Least(7,items.heroic_agi/2),
+	    items.heroic_int = Least(15,items.heroic_int),
+	    items.heroic_wis = Least(15,items.heroic_wis),
+       items.heroic_cha = Least(15,items.heroic_cha),
+  	    items.heroic_mr  = Least(15,items.heroic_mr),
+ 	    items.heroic_fr  = Least(15,items.heroic_fr),
+	    items.heroic_cr  = Least(15,items.heroic_cr),
+	    items.heroic_dr  = Least(15,items.heroic_dr),
+	    items.heroic_pr  = Least(15,items.heroic_pr)
  WHERE Greatest(items.reclevel,items.reqlevel) <= 65
    AND items.itemtype != 54;     
    
@@ -506,17 +509,18 @@ UPDATE items
    AND items.itemtype != 54;
 ---- Heroics
 UPDATE items
-   SET items.heroic_str = Least(20,items.heroic_str),
-	   items.heroic_sta = Least(20,items.heroic_sta),
-	   items.heroic_dex = Least(20,items.heroic_dex),
-	   items.heroic_agi = Least(20,items.heroic_agi/2),
-	   items.heroic_int = Least(20,items.heroic_int),
-	   items.heroic_wis = Least(20,items.heroic_wis),
-	   items.heroic_mr  = Least(20,items.heroic_mr),
-	   items.heroic_fr  = Least(20,items.heroic_fr),
-	   items.heroic_cr  = Least(20,items.heroic_cr),
-	   items.heroic_dr  = Least(20,items.heroic_dr),
-	   items.heroic_pr  = Least(20,items.heroic_pr)
+   SET items.heroic_str = Least(10,items.heroic_str),
+	    items.heroic_sta = Least(10,items.heroic_sta),
+	    items.heroic_dex = Least(10,items.heroic_dex),
+	    items.heroic_agi = Least(5,items.heroic_agi/2),
+	    items.heroic_int = Least(10,items.heroic_int),
+	    items.heroic_wis = Least(10,items.heroic_wis),
+       items.heroic_cha = Least(10,items.heroic_cha),
+	    items.heroic_mr  = Least(10,items.heroic_mr),
+	    items.heroic_fr  = Least(10,items.heroic_fr),
+	    items.heroic_cr  = Least(10,items.heroic_cr),
+	    items.heroic_dr  = Least(10,items.heroic_dr),
+	    items.heroic_pr  = Least(10,items.heroic_pr)
  WHERE Greatest(items.reclevel,items.reqlevel) <= 60
    AND items.itemtype != 54;     
    
@@ -595,17 +599,18 @@ UPDATE items
    AND items.itemtype != 54;
 ---- Heroics
 UPDATE items
-   SET items.heroic_str = Least(10,items.heroic_str),
-	   items.heroic_sta = Least(10,items.heroic_sta),
-	   items.heroic_dex = Least(10,items.heroic_dex),
-	   items.heroic_agi = Least(10,items.heroic_agi/2),
-	   items.heroic_int = Least(10,items.heroic_int),
-	   items.heroic_wis = Least(10,items.heroic_wis),
-	   items.heroic_mr  = Least(10,items.heroic_mr),
-	   items.heroic_fr  = Least(10,items.heroic_fr),
-	   items.heroic_cr  = Least(10,items.heroic_cr),
-	   items.heroic_dr  = Least(10,items.heroic_dr),
-	   items.heroic_pr  = Least(10,items.heroic_pr)
+   SET items.heroic_str = Least(5,items.heroic_str),
+	    items.heroic_sta = Least(5,items.heroic_sta),
+	    items.heroic_dex = Least(5,items.heroic_dex),
+	    items.heroic_agi = Least(3,items.heroic_agi/2),
+	    items.heroic_int = Least(5,items.heroic_int),
+	    items.heroic_wis = Least(5,items.heroic_wis),
+       items.heroic_cha = Least(5,items.heroic_cha),
+	    items.heroic_mr  = Least(5,items.heroic_mr),
+	    items.heroic_fr  = Least(5,items.heroic_fr),
+	    items.heroic_cr  = Least(5,items.heroic_cr),
+	    items.heroic_dr  = Least(5,items.heroic_dr),
+	    items.heroic_pr  = Least(5,items.heroic_pr)
  WHERE Greatest(items.reclevel,items.reqlevel) <= 55
    AND items.itemtype != 54;     
 
@@ -684,17 +689,18 @@ UPDATE items
    AND items.itemtype != 54;
 ---- Heroics
 UPDATE items
-   SET items.heroic_str = Least(5,items.heroic_str),
-	   items.heroic_sta = Least(5,items.heroic_sta),
-	   items.heroic_dex = Least(5,items.heroic_dex),
-	   items.heroic_agi = Least(5,items.heroic_agi/2),
-	   items.heroic_int = Least(5,items.heroic_int),
-	   items.heroic_wis = Least(5,items.heroic_wis),
-	   items.heroic_mr  = Least(5,items.heroic_mr),
-	   items.heroic_fr  = Least(5,items.heroic_fr),
-	   items.heroic_cr  = Least(5,items.heroic_cr),
-	   items.heroic_dr  = Least(5,items.heroic_dr),
-	   items.heroic_pr  = Least(5,items.heroic_pr)
+   SET items.heroic_str = Least(3,items.heroic_str),
+	    items.heroic_sta = Least(3,items.heroic_sta),
+	    items.heroic_dex = Least(3,items.heroic_dex),
+	    items.heroic_agi = Least(1,items.heroic_agi/2),
+	    items.heroic_int = Least(3,items.heroic_int),
+	    items.heroic_wis = Least(3,items.heroic_wis),
+       items.heroic_cha = Least(3,items.heroic_cha),
+	    items.heroic_mr  = Least(3,items.heroic_mr),
+	    items.heroic_fr  = Least(3,items.heroic_fr),
+	    items.heroic_cr  = Least(3,items.heroic_cr),
+	    items.heroic_dr  = Least(3,items.heroic_dr),
+	    items.heroic_pr  = Least(3,items.heroic_pr)
  WHERE Greatest(items.reclevel,items.reqlevel) <= 50
    AND items.itemtype != 54;
    

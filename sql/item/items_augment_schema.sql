@@ -1,13 +1,13 @@
 -- Set Augment Type Name Strings
-UPDATE db_str SET value = "1 (General)" 			  WHERE id = 1  AND type = 16;
-UPDATE db_str SET value = "2 (Activated Effect)" 	  WHERE id = 2  AND type = 16;
-UPDATE db_str SET value = "3 (Worn Effect)" 		  WHERE id = 3  AND type = 16;
-UPDATE db_str SET value = "4 (Combat Effect)"		  WHERE id = 4  AND type = 16;
+UPDATE db_str SET value = "1 (General)" 			      WHERE id = 1  AND type = 16;
+UPDATE db_str SET value = "2 (Activated Effect)" 	   WHERE id = 2  AND type = 16;
+UPDATE db_str SET value = "3 (Worn Effect)" 		      WHERE id = 3  AND type = 16;
+UPDATE db_str SET value = "4 (Combat Effect)"		   WHERE id = 4  AND type = 16;
 UPDATE db_str SET value = "20 (Weapon Ornamentation)" WHERE id = 20 AND type = 16;
 UPDATE db_str SET value = "21 (Armor Ornamentation)"  WHERE id = 21 AND type = 16;
 
 -- Remove Models from non-ornaments
-UPDATE items SET idfile = IT63 WHERE itemtype = 54;
+UPDATE items SET idfile = "IT63" WHERE itemtype = 54;
 
 -- Configure Item Slots
 ---- Remove All Aug Slots
