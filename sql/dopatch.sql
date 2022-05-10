@@ -26,10 +26,10 @@ source server/pyrelight-config/sql/npc/npc_crescent.sql
 source server/pyrelight-config/sql/rules/fix-zones.sql
 source server/pyrelight-config/sql/spells/tl-locations.sql
 source server/pyrelight-config/sql/item/items_custom.sql
+source server/pyrelight-config/sql/item/items_t1boss.sql
 source server/pyrelight-config/sql/spawn/spawn_crescent.sql
 source server/pyrelight-config/sql/loot/starting_items.sql
 source server/pyrelight-config/sql/rules/char_create_combos.sql
-source server/pyrelight-config/sql/item/items_t1boss.sql
 source server/pyrelight-config/sql/aa/aa_pets.sql
 source server/pyrelight-config/sql/aa/aa_general.sql
 
