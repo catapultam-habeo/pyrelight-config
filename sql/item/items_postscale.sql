@@ -72,7 +72,8 @@ UPDATE items, spells_new, ref_items
 -- Stackable items go back to being charged
 UPDATE items, ref_items
    SET items.maxcharges = ref_items.maxcharges
- WHERE ref_items.maxcharges > 0 AND items.maxcharges < 1
+ WHERE items.id = ref_items.id
+   AND ref_items.maxcharges > 0 AND items.maxcharges < 1
    AND items.stacksize > 1;
 
 ---- Ivandyr's Hoop -> Aug
