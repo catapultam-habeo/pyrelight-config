@@ -12,9 +12,9 @@ UPDATE items, ref_items
    SET items.clicktype = 4
  WHERE items.id = ref_items.id
    AND ref_items.maxcharges > 4
-   AND classes > 0
-   AND races > 0
-   AND slots > 0;
+   AND items.classes > 0
+   AND items.races > 0
+   AND items.slots > 0;
 
 -- Single target heal clickies on are a 30 sec unique reuse
 UPDATE items, spells_new, ref_items
