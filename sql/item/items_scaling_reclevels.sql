@@ -355,7 +355,7 @@ UPDATE items, npc_types, loottable_entries, lootdrop_entries, ref_items
 	
 -- By Individual Mobs	
 UPDATE items, npc_types, loottable_entries, lootdrop_entries, ref_items
-   SET items.reclevel = Least(52, ref_items.reclevel, ref_items.reqlevel)
+   SET items.reclevel = 52
  WHERE lootdrop_entries.item_id = items.id
    AND loottable_entries.lootdrop_id = lootdrop_entries.lootdrop_id
    AND npc_types.loottable_id = loottable_entries.loottable_id      

@@ -829,6 +829,7 @@ UPDATE items, ref_items
  WHERE items.id IN (28034, 55273, 10910, 10909, 20490, 10650, 20488, 20487, 20542, 11057, 10652, 10651, 14341, 5532, 14383, 20544, 11050, 10908, 8495, 8496);
  
 -- Remove Charges from Clickies, Give previously charged items a minimum of 1s cast time, and give anything that heals or damages a 30s recast timer.
+-- This is a catch-all. Further specific scaling is done in items_postscale.sql
 UPDATE items, ref_items
    SET items.maxcharges = -1
  WHERE items.id = ref_items.id

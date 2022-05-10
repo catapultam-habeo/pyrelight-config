@@ -6,3 +6,65 @@ UPDATE items
 -- Remove req-levels
 UPDATE items
    SET reqlevel = 0;
+
+-- Clickies with charges must-equip to click if you can
+UPDATE items, ref_items
+   SET clicktype = 4
+ WHERE items.id = ref_items.id
+   AND ref_items.maxcharges > 4
+   AND classes > 0
+   AND races > 0
+   AND slots > 0;
+
+-- Single target heal clickies on are a 30 sec unique reuse
+UPDATE items, spells_new, ref_items
+   SET items.recasttype = 50,
+       items.recastdelay = Greatest(30, ref_items.recastdelay, items.recastdelay)
+ WHERE items.id = ref_items.id
+   AND items.clickeffect = spells_new.id
+   AND ref_items.maxcharges > 0
+   AND spells_new.effectid1 = 0
+   AND spells_new.buffduration = 0
+   AND spells_new.targettype = 5
+   AND spells_new.effect_base_value1 > 0;
+
+--  rune clickies on are a 1 minute unique reuse
+UPDATE items, spells_new, ref_items
+   SET items.recasttype = 51,
+       items.recastdelay = Greatest(60, ref_items.recastdelay, items.recastdelay)
+ WHERE items.id = ref_items.id
+   AND items.clickeffect = spells_new.id
+   AND ref_items.maxcharges > 0
+   AND spells_new.effectid1 = 55;
+
+-- CH clickies are 10 minutes on unique reuse, but are instant
+UPDATE items, spells_new, ref_items
+   SET recasttype = 52,
+       recastdelay = Greatest(1800, ref_items.recastdelay, items.recastdelay),
+       casttime = 0
+ WHERE items.id = ref_items.id
+   AND items.clickeffect = spells_new.id
+   AND ref_items.maxcharges > 0
+   AND ( clickeffect = 13 OR clickeffect = 1292 ); 
+
+-- Group heal clickies on are a 1 minute unique reuse, but are instant
+UPDATE items, spells_new, ref_items
+   SET recasttype = 53,
+       recastdelay = Greatest(60, ref_items.recastdelay, items.recastdelay),
+       casttime = 0
+ WHERE items.id = ref_items.id
+   AND items.clickeffect = spells_new.id
+   AND ref_items.maxcharges > 0
+   AND spells_new.effectid1 = 0
+   AND spells_new.buffduration = 0
+   AND (spells_new.targettype = 3 OR spells_new.targettype = 41)
+   AND spells_new.effect_base_value1 > 0;
+
+-- Anything with a duration can be spammed
+UPDATE items, spells_new, ref_items
+   SET recasttype = -1,
+       recastdelay = 0
+ WHERE items.id = ref_items.id
+   AND items.clickeffect = spells_new.id
+   AND ref_items.maxcharges > 0
+   AND spells_new.buffduration > 0;

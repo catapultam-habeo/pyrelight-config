@@ -1,4 +1,4 @@
--- Manastone
+-- Manastoner
 UPDATE items 
 SET itemtype = 54, 
     augtype = 2,
