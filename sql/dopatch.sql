@@ -64,3 +64,4 @@ source server/pyrelight-config/sql/loot/loot_global_augs.sql
 source server/pyrelight-config/sql/loot/loot_crescent.sql
 source server/pyrelight-config/sql/loot/loot_t1boss.sql
 source server/pyrelight-config/sql/npc/npc_crescent.sql
+source server/pyrelight-config/sql/npc/npc_cosmetics.sql
