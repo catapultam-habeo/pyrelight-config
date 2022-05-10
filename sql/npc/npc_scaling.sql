@@ -13,10 +13,8 @@ UPDATE npc_types, ref_npcs
 	   npc_types.assistradius = Floor(ref_npcs.assistradius * 0.75)
  WHERE npc_types.id = ref_npcs.id;
 
--- Remove Deadly Lifetap
-UPDATE npc_spells
-   SET attack_proc = -1
- WHERE attack_proc = 993;
+-- Adjust Deadly Lifetap
+UPDATE spells_new SET effect_base_value1 = -500 WHERE id = 993;
 
 -- Remove Summoning From Mobs which are not permarooted
 ---- Special Ability
@@ -69,3 +67,264 @@ UPDATE npc_spells
 	OR attack_proc = 24660
 	OR attack_proc = 39080
 	OR attack_proc = 39180;
+
+-- Remove Fear or Charm spells from NPCs that are also cast by players
+
+DELETE npc_spells_entries FROM spells_new, npc_spells_entries WHERE npc_spells_entries.spellid = spells_new.id AND (( effectid1 =  23 OR effectid2 =  23 OR effectid3 =  23 OR effectid4 =  23 OR effectid5 =  23 OR effectid6 =  23 OR effectid7 =  23 OR effectid8 =  23 OR effectid9 =  23 OR effectid10 = 23 OR effectid11 = 23 OR effectid12 = 23 ) OR ( effectid1 =  22 OR effectid2 =  22 OR effectid3 =  22 OR effectid4 =  22 OR effectid5 =  22 OR effectid6 =  22 OR effectid7 =  22 OR effectid8 =  22 OR effectid9 =  22 OR effectid10 = 22 OR effectid11 = 22 OR effectid12 = 22 )) AND ( classes1  < 255 OR classes2  < 255 OR classes3  < 255 OR classes4  < 255 OR classes5  < 255 OR classes6  < 255 OR classes7  < 255 OR classes8  < 255 OR classes9  < 255 OR classes10 < 255 OR classes11 < 255 OR classes12 < 255 OR classes13 < 255 OR classes14 < 255 OR classes15 < 255 OR classes16 < 255 );
+
+
+-- Replace Fear with Stun when not used by players and is on a npc spell list
+UPDATE npc_spells_entries, spells_new
+   SET effectid1 = 21, effect_base_value1 = 1000, effect_limit_value1 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid1 =  23
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid2 = 21, effect_base_value2 = 1000, effect_limit_value2 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid2 =  23
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid3 = 21, effect_base_value3 = 1000, effect_limit_value3 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid3 =  23
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+-- Replace Charm with Stun when not used by players and is on a npc spell list
+UPDATE npc_spells_entries, spells_new
+   SET effectid1 = 21, effect_base_value1 = 1000, effect_limit_value1 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid1 =  22
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid2 = 21, effect_base_value2 = 1000, effect_limit_value2 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid2 =  22
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid3 = 21, effect_base_value3 = 1000, effect_limit_value3 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid3 =  22
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+-- Replace Spinstun with Stun when not used by players and is on a npc spell list
+UPDATE npc_spells_entries, spells_new
+   SET effectid1 = 21, effect_base_value1 = 1000, effect_limit_value1 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid1 =  64
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid2 = 21, effect_base_value2 = 1000, effect_limit_value2 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid2 =  64
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid3 = 21, effect_base_value3 = 1000, effect_limit_value3 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid3 =  64
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+-- Replace Knockback with Stun when not used by players and is on a npc spell list
+UPDATE npc_spells_entries, spells_new
+   SET effectid1 = 21, effect_base_value1 = 1000, effect_limit_value1 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid1 =  380
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid2 = 21, effect_base_value2 = 1000, effect_limit_value2 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid2 =  380
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;
+
+UPDATE npc_spells_entries, spells_new
+   SET effectid3 = 21, effect_base_value3 = 1000, effect_limit_value3 = 100
+ WHERE spells_new.id = npc_spells_entries.spellid
+   AND effectid3 =  380
+   AND classes1  = 255 
+   AND classes2  = 255 
+   AND classes3  = 255 
+   AND classes4  = 255 
+   AND classes5  = 255 
+   AND classes6  = 255 
+   AND classes7  = 255 
+   AND classes8  = 255 
+   AND classes9  = 255 
+   AND classes10 = 255 
+   AND classes11 = 255 
+   AND classes12 = 255 
+   AND classes13 = 255 
+   AND classes14 = 255 
+   AND classes15 = 255 
+   AND classes16 = 255;

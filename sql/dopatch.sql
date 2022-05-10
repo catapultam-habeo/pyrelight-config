@@ -49,6 +49,7 @@ source server/pyrelight-config/sql/npc/npc_scaling.sql
 source server/pyrelight-config/sql/item/items_postscale.sql
 source server/pyrelight-config/sql/item/items_epics_postscale.sql
 source server/pyrelight-config/sql/item/items_t1boss.sql
+source server/pyrelight-config/sql/npc/npc_t1boss.sql
 
 --- Final Actions
 source server/pyrelight-config/sql/item/items_custom_noscale.sql
