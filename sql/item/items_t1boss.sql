@@ -68,3 +68,8 @@ UPDATE items SET reclevel = 52, healamt = 10, spelldmg = 10, hp = 120, mana = 12
 -- Innoruuk
 
 -- Eye of Veeshan
+
+
+---- Misc
+---- Ivandyr's Hoop -> Aug
+UPDATE items SET itemtype = 54, classes = 65535, clicktype = 4, casttime = 0, recastdelay = 30, recasttype = -1 WHERE id = 10082;
