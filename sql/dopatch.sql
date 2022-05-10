@@ -49,9 +49,9 @@ source server/pyrelight-config/sql/item/items_epics_postscale.sql
 source server/pyrelight-config/sql/item/items_custom_noscale.sql
 source server/pyrelight-config/sql/npc/npc_ssratemple.sql
 source server/pyrelight-config/sql/npc/npc_karnors.sql
-source server/pyrelight-config/sql/spells/spells_custom_shaman.sql
 source server/pyrelight-config/sql/spells/spells_permanent_buffs.sql
 source server/pyrelight-config/sql/spells/spells_bot_modifications.sql
+source server/pyrelight-config/sql/spells/spells_custom_shaman.sql
 source server/pyrelight-config/sql/loot/loot_trash.sql
 source server/pyrelight-config/sql/loot/loot_global_augs.sql
 source server/pyrelight-config/sql/loot/loot_crescent.sql
