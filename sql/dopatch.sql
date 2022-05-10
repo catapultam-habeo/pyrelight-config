@@ -27,12 +27,11 @@ INSERT INTO ref_lootdrop_entries SELECT * FROM lootdrop_entries;
 source server/pyrelight-config/sql/rules/rules.sql
 source server/pyrelight-config/sql/rules/rules2.sql
 source server/pyrelight-config/sql/npc/npc_spawn_rules.sql
-source server/pyrelight-config/sql/npc/npc_crescent.sql
+source server/pyrelight-config/sql/spawn/spawn_crescent.sql
 source server/pyrelight-config/sql/rules/fix-zones.sql
 source server/pyrelight-config/sql/spells/tl-locations.sql
 source server/pyrelight-config/sql/item/items_custom.sql
-source server/pyrelight-config/sql/item/items_t1boss.sql
-source server/pyrelight-config/sql/spawn/spawn_crescent.sql
+source server/pyrelight-config/sql/item/items_t1boss.sql -- This is called twice on purpose
 source server/pyrelight-config/sql/loot/starting_items.sql
 source server/pyrelight-config/sql/rules/char_create_combos.sql
 source server/pyrelight-config/sql/aa/aa_pets.sql
@@ -49,6 +48,7 @@ source server/pyrelight-config/sql/npc/npc_scaling.sql
 ---- Execute Post-Scaling Actions
 source server/pyrelight-config/sql/item/items_postscale.sql
 source server/pyrelight-config/sql/item/items_epics_postscale.sql
+source server/pyrelight-config/sql/item/items_t1boss.sql -- This is called twice on purpose
 
 --- Final Actions
 source server/pyrelight-config/sql/item/items_custom_noscale.sql
@@ -62,3 +62,4 @@ source server/pyrelight-config/sql/loot/loot_trash.sql
 source server/pyrelight-config/sql/loot/loot_global_augs.sql
 source server/pyrelight-config/sql/loot/loot_crescent.sql
 source server/pyrelight-config/sql/loot/loot_t1boss.sql
+source server/pyrelight-config/sql/npc/npc_crescent.sql

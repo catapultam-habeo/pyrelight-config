@@ -1,26 +1,65 @@
 -- Lord Nagafen
----- Cloak of Flames
-UPDATE items
-   SET clickeffect = 412,
-       casttime = 3000,
-       clicktype = 4
- WHERE id = 11621;
-
+--- Convert to Augs
 ---- Red Dragon Scales
-UPDATE `items` SET `id` = 11622,`minstatus` = 0,`Name` = 'Red Dragon Scales',`aagi` = 0,`ac` = 0,`accuracy` = 0,`acha` = 0,`adex` = 0,`aint` = 0,`artifactflag` = 0,`asta` = 0,`astr` = 0,`attack` = 0,`augrestrict` = 1,`augslot1type` = 0,`augslot1visible` = 0,`augslot2type` = 0,`augslot2visible` = 0,`augslot3type` = 0,`augslot3visible` = 0,`augslot4type` = 0,`augslot4visible` = 0,`augslot5type` = 0,`augslot5visible` = 0,`augslot6type` = 0,`augslot6visible` = 0,`augtype` = 2,`avoidance` = 0,`awis` = 0,`bagsize` = 0,`bagslots` = 0,`bagtype` = 0,`bagwr` = 0,`banedmgamt` = 0,`banedmgraceamt` = 0,`banedmgbody` = 0,`banedmgrace` = 0,`bardtype` = 0,`bardvalue` = 0,`book` = 0,`casttime` = 0,`casttime_` = 0,`charmfile` = '',`charmfileid` = '0',`classes` = 65535,`color` = 4278190080,`combateffects` = '0',`extradmgskill` = 0,`extradmgamt` = 0,`price` = 25000,`cr` = 0,`damage` = 0,`damageshield` = 0,`deity` = 0,`delay` = 0,`augdistiller` = 0,`dotshielding` = 0,`dr` = 0,`clicktype` = 4,`clicklevel2` = 0,`elemdmgtype` = 0,`elemdmgamt` = 0,`endur` = 0,`factionamt1` = 0,`factionamt2` = 0,`factionamt3` = 0,`factionamt4` = 0,`factionmod1` = 0,`factionmod2` = 0,`factionmod3` = 0,`factionmod4` = 0,`filename` = '',`focuseffect` = -1,`fr` = 0,`fvnodrop` = 0,`haste` = 0,`clicklevel` = 0,`hp` = 0,`regen` = 0,`icon` = 1232,`idfile` = 'IT63',`itemclass` = 0,`itemtype` = 54,`ldonprice` = 0,`ldontheme` = 0,`ldonsold` = 0,`light` = 0,`lore` = 'Red Dragon Scales',`loregroup` = 0,`magic` = 1,`mana` = 0,`manaregen` = 0,`enduranceregen` = 0,`material` = 0,`herosforgemodel` = 0,`maxcharges` = -1,`mr` = 0,`nodrop` = 1,`norent` = 1,`pendingloreflag` = 0,`pr` = 0,`procrate` = 0,`races` = 65535,`range` = 0,`reclevel` = 0,`recskill` = 0,`reqlevel` = 0,`sellrate` = 50,`shielding` = 0,`size` = 0,`skillmodtype` = -1,`skillmodvalue` = 0,`slots` = 131072,`clickeffect` = 5492,`spellshield` = 0,`strikethrough` = 0,`stunresist` = 0,`summonedflag` = 0,`tradeskills` = 0,`favor` = 25,`weight` = 1,`UNK012` = 0,`UNK013` = 1,`benefitflag` = 0,`UNK054` = 0,`UNK059` = 0,`booktype` = 0,`recastdelay` = 600,`recasttype` = 70,`guildfavor` = 25,`UNK123` = 0,`UNK124` = 0,`attuneable` = 1,`nopet` = 0,`updated` = '2015-12-05 09:40:08',`comment` = '',`UNK127` = 0,`pointtype` = 0,`potionbelt` = 0,`potionbeltslots` = 0,`stacksize` = 1,`notransfer` = 0,`stackable` = 0,`UNK134` = '',`UNK137` = 0,`proceffect` = -1,`proctype` = 0,`proclevel2` = 0,`proclevel` = 0,`UNK142` = 0,`worneffect` = -1,`worntype` = 0,`wornlevel2` = 0,`wornlevel` = 0,`UNK147` = 0,`focustype` = 0,`focuslevel2` = 0,`focuslevel` = 0,`UNK152` = 0,`scrolleffect` = -1,`scrolltype` = 0,`scrolllevel2` = 0,`scrolllevel` = 0,`UNK157` = 0,`serialized` = NULL,`verified` = '2016-01-06 05:39:37',`serialization` = NULL,`source` = '13THFLOOR',`UNK033` = 0,`lorefile` = '',`UNK014` = 1,`svcorruption` = 0,`skillmodmax` = 0,`UNK060` = 0,`augslot1unk2` = 0,`augslot2unk2` = 0,`augslot3unk2` = 0,`augslot4unk2` = 0,`augslot5unk2` = 0,`augslot6unk2` = 0,`UNK120` = -1,`UNK121` = 0,`questitemflag` = 0,`UNK132` = '00000000000000000000',`clickunk5` = 0,`clickunk6` = '',`clickunk7` = -1,`procunk1` = 0,`procunk2` = 0,`procunk3` = 0,`procunk4` = 0,`procunk6` = '',`procunk7` = -1,`wornunk1` = 0,`wornunk2` = 0,`wornunk3` = 0,`wornunk4` = 0,`wornunk5` = 0,`wornunk6` = '',`wornunk7` = -1,`focusunk1` = 0,`focusunk2` = 0,`focusunk3` = 0,`focusunk4` = 0,`focusunk5` = 0,`focusunk6` = '',`focusunk7` = -1,`scrollunk1` = 0,`scrollunk2` = 0,`scrollunk3` = 0,`scrollunk4` = 0,`scrollunk5` = 0,`scrollunk6` = '',`scrollunk7` = -1,`UNK193` = 0,`purity` = 0,`evoitem` = 0,`evoid` = 0,`evolvinglevel` = 0,`evomax` = 0,`clickname` = '',`procname` = '',`wornname` = '',`focusname` = '',`scrollname` = '',`dsmitigation` = 0,`heroic_str` = 0,`heroic_int` = 0,`heroic_wis` = 0,`heroic_agi` = 0,`heroic_dex` = 0,`heroic_sta` = 0,`heroic_cha` = 0,`heroic_pr` = 0,`heroic_dr` = 0,`heroic_fr` = 0,`heroic_cr` = 0,`heroic_mr` = 0,`heroic_svcorrup` = 0,`healamt` = 0,`spelldmg` = 0,`clairvoyance` = 0,`backstabdmg` = 0,`created` = '2015-11-29 16:11:58',`elitematerial` = 0,`ldonsellbackrate` = 70,`scriptfileid` = 0,`expendablearrow` = 0,`powersourcecapacity` = 0,`bardeffect` = -1,`bardeffecttype` = 0,`bardlevel2` = 0,`bardlevel` = 0,`bardunk1` = 0,`bardunk2` = 0,`bardunk3` = 0,`bardunk4` = 0,`bardunk5` = 0,`bardname` = '',`bardunk7` = -1,`UNK214` = 0,`subtype` = 0,`UNK220` = 0,`UNK221` = 0,`heirloom` = 0,`UNK223` = 0,`UNK224` = 0,`UNK225` = 0,`UNK226` = 0,`UNK227` = 0,`UNK228` = 0,`UNK229` = 0,`UNK230` = 0,`UNK231` = -1,`UNK232` = 0,`UNK233` = -256,`UNK234` = 255,`placeable` = 0,`UNK236` = 0,`UNK237` = 0,`UNK238` = 0,`UNK239` = 0,`UNK240` = 0,`UNK241` = 0,`epicitem` = 0 WHERE `items`.`id` = 11622;
+UPDATE items SET itemtype = 54, classes = 65535, slots = 131072, clicktype = 4, clickeffect = 5492, recastdelay = 600 WHERE id = 11622;
+---- Hierophant's Crook
+UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes = 65535, augrestrict = 4 WHERE id = 11629;
 ---- Orb of Tishan
 UPDATE items SET itemtype = 54, classes = 65535 WHERE id = 11625;
 ---- Hammer of the Scourge
 UPDATE items SET name = "Orb of the Scourge", icon = 2087, itemtype = 54, classes = 65535 WHERE id = 11628;
----- Hierophant's Crook
-UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes = 65535, augrestrict = 4 WHERE id = 11629;
 ---- Prayer's of Life
 UPDATE items SET itemtype = 54, classes = 65535, slots = 16384,  clicktype = 4 WHERE id = 11631;
+---- Selo's Drums of the March
+UPDATE items SET itemtype = 54 WHERE id = 11626;
+--- Equipment
 ---- Bladestopper
-UPDATE items SET reclevel = 52, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 600, clicktype = 4 WHERE id = 11632;
----- White Dragon Hide
+UPDATE items SET reclevel = 52, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 600, clicktype = 0 WHERE id = 11632;
+UPDATE items SET hp = 200, mana = 200, healamt = 30 WHERE id = 11632;
+---- Cloak of Flames
+UPDATE items SET clickeffect = 1668, casttime = 3000, clicktype = 0 WHERE id = 11621;
+---- Gold Plated Koshigatana
+UPDATE items SET proceffect = 445 WHERE id = 11630;
+---- Gauntlets of Fiery Might
+UPDATE items SET reclevel = 52, hp = 200, mana = 200, spelldmg = 30  WHERE id = 11632;
+
+-- Lady Vox
+--- Convert to Augs
+---- Tobrin's Mystical Eyepatch
+UPDATE items SET itemtype = 54, worneffect = 3660 WHERE id = 11052;
+---- McVaxius' Horn of War
+UPDATE items SET itemtype = 54 WHERE id = 11607;
+---- Warhammer of Divine Grace
+UPDATE items SET itemtype = 54, name = "Charm of Divine Grace", icon = 1897, worneffect = 41843, proceffect = -1, classes = 32318 WHERE id = 11611;
+INSERT INTO `spells_new` (`id`, `name`, `player_1`, `teleport_zone`, `you_cast`, `other_casts`, `cast_on_you`, `cast_on_other`, `spell_fades`, `range`, `aoerange`, `pushback`, `pushup`, `cast_time`, `recovery_time`, `recast_time`, `buffdurationformula`, `buffduration`, `AEDuration`, `mana`, `effect_base_value1`, `effect_base_value2`, `effect_base_value3`, `effect_base_value4`, `effect_base_value5`, `effect_base_value6`, `effect_base_value7`, `effect_base_value8`, `effect_base_value9`, `effect_base_value10`, `effect_base_value11`, `effect_base_value12`, `effect_limit_value1`, `effect_limit_value2`, `effect_limit_value3`, `effect_limit_value4`, `effect_limit_value5`, `effect_limit_value6`, `effect_limit_value7`, `effect_limit_value8`, `effect_limit_value9`, `effect_limit_value10`, `effect_limit_value11`, `effect_limit_value12`, `max1`, `max2`, `max3`, `max4`, `max5`, `max6`, `max7`, `max8`, `max9`, `max10`, `max11`, `max12`, `icon`, `memicon`, `components1`, `components2`, `components3`, `components4`, `component_counts1`, `component_counts2`, `component_counts3`, `component_counts4`, `NoexpendReagent1`, `NoexpendReagent2`, `NoexpendReagent3`, `NoexpendReagent4`, `formula1`, `formula2`, `formula3`, `formula4`, `formula5`, `formula6`, `formula7`, `formula8`, `formula9`, `formula10`, `formula11`, `formula12`, `LightType`, `goodEffect`, `Activated`, `resisttype`, `effectid1`, `effectid2`, `effectid3`, `effectid4`, `effectid5`, `effectid6`, `effectid7`, `effectid8`, `effectid9`, `effectid10`, `effectid11`, `effectid12`, `targettype`, `basediff`, `skill`, `zonetype`, `EnvironmentType`, `TimeOfDay`, `classes1`, `classes2`, `classes3`, `classes4`, `classes5`, `classes6`, `classes7`, `classes8`, `classes9`, `classes10`, `classes11`, `classes12`, `classes13`, `classes14`, `classes15`, `classes16`, `CastingAnim`, `TargetAnim`, `TravelType`, `SpellAffectIndex`, `disallow_sit`, `deities0`, `deities1`, `deities2`, `deities3`, `deities4`, `deities5`, `deities6`, `deities7`, `deities8`, `deities9`, `deities10`, `deities11`, `deities12`, `deities13`, `deities14`, `deities15`, `deities16`, `field142`, `field143`, `new_icon`, `spellanim`, `uninterruptable`, `ResistDiff`, `dot_stacking_exempt`, `deleteable`, `RecourseLink`, `no_partial_resist`, `field152`, `field153`, `short_buff_box`, `descnum`, `typedescnum`, `effectdescnum`, `effectdescnum2`, `npc_no_los`, `field160`, `reflectable`, `bonushate`, `field163`, `field164`, `ldon_trap`, `EndurCost`, `EndurTimerIndex`, `IsDiscipline`, `field169`, `field170`, `field171`, `field172`, `HateAdded`, `EndurUpkeep`, `numhitstype`, `numhits`, `pvpresistbase`, `pvpresistcalc`, `pvpresistcap`, `spell_category`, `pvp_duration`, `pvp_duration_cap`, `pcnpc_only_flag`, `cast_not_standing`, `can_mgb`, `nodispell`, `npc_category`, `npc_usefulness`, `MinResist`, `MaxResist`, `viral_targets`, `viral_timer`, `nimbuseffect`, `ConeStartAngle`, `ConeStopAngle`, `sneaking`, `not_extendable`, `field198`, `field199`, `suspendable`, `viral_range`, `songcap`, `field203`, `field204`, `no_block`, `field206`, `spellgroup`, `rank`, `field209`, `field210`, `CastRestriction`, `allowrest`, `InCombat`, `OutofCombat`, `field215`, `field216`, `field217`, `aemaxtargets`, `maxtargets`, `field220`, `field221`, `field222`, `field223`, `persistdeath`, `field225`, `field226`, `min_dist`, `min_dist_mod`, `max_dist`, `max_dist_mod`, `min_range`, `field232`, `field233`, `field234`, `field235`, `field236`) VALUES
+(41843, 'Aura of Divine Grace', 'BLUE_TRAIL', '', '', '', '', '', '', 100, 0, 0, 0, 0, 0, 0, 3, 1950, 0, 0, 100, 0, 10, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, -1, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 0, 1, 0, 0, 383, 254, 348, 142, 311, 254, 254, 254, 254, 254, 254, 254, 6, 0, 52, -1, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 161, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1050882, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 3, 1950, 0, 0, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, -1, 0, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0);
+INSERT INTO `db_str` (`id`, `type`, `value`) VALUES
+(1050882, 6, 'Has a chance to heal your party over time when you cast spells.');
+
+---- White Dragon Scales
 UPDATE items SET itemtype = 54, classes = 65535, slots = 131072, clicktype = 4, clickeffect = 6377, recastdelay = 600 WHERE id = 11602;
 ---- Scimitar of the Mistwalker
 UPDATE items SET name = "Charm of the Mistwalker", icon = 1895, itemtype = 54, classes = 65535 WHERE id = 11604;
+
+--- Equipment
+---- White Dragonscale Cloak
+---- Runed Bolster Belt
+UPDATE items SET reclevel = 52, spelldmg = 20, healamt = 20, heroic_str = 20, hp = 200, mana = 200 WHERE id = 11601;
+----- Dragon Bone Bracelet
+UPDATE items SET reclevel = 52, clickeffect = 4418, hp = 100, mana = 200, spelldmg = 30 WHERE id = 11606;
+----- Crystalline Spear
+UPDATE items SET reclevel = 52, proceffect = 3569, proclevel = 52, hp = 100, mana = 100, str = 5, dex = 20, agi = 10, spelldmg = 20, healamt = 20, heroic_str = 5, heroic_agi = 5 WHERE id = 11610;
+-- Phinigel Autropos
+--- Convert to Augs
 ---- Wand of Malisement
 UPDATE items SET name = "Charm of Malisement", icon = 1884, itemtype = 54, classes = 65535, slots = 98354, casttime = 0 WHERE id = 10374;
+
+-- Venril Sathir
+
+-- Trakanon
+
+-- Cazic-Thule
+
+-- Innoruuk
+
+-- Eye of Veeshan
