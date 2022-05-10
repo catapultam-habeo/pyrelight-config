@@ -60,10 +60,10 @@ UPDATE items, spells_new, ref_items
    AND (spells_new.targettype = 3 OR spells_new.targettype = 41)
    AND spells_new.effect_base_value1 > 0;
 
--- Anything with a duration can be spammed
+-- Anything with a duration that heals or hurts can be spammed
 UPDATE items, spells_new, ref_items
    SET items.recasttype = -1,
-       items.recastdelay = 0
+       items.recastdelay = Greatest(0, ref_items.recastdelay)
  WHERE items.id = ref_items.id
    AND items.clickeffect = spells_new.id
    AND ref_items.maxcharges > 0
