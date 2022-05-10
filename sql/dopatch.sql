@@ -3,6 +3,11 @@ source server/pyrelight-config/sql/peq/drop_tables_content.sql
 
 -- Source Content Tables
 source server/pyrelight-config/sql/peq/peq-dump/create_tables_content.sql
+source server/pyrelight-config/sql/peq/2022_03_07_saylink_collation.sql
+source server/pyrelight-config/sql/peq/2022_04_30_hp_regen_per_second.sql
+source server/pyrelight-config/sql/peq/2022_05_02_npc_types_int64.sql
+source server/pyrelight-config/sql/peq/2022_05_03_task_activity_goal_match_list.sql
+source server/pyrelight-config/sql/peq/2022_05_07_merchant_data_buckets.sql
 
 -- Drop & Rebuild Reference Tables
 CREATE OR REPLACE TABLE ref_items LIKE items;
