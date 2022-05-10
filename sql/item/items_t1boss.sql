@@ -21,7 +21,7 @@ UPDATE items SET itemtype = 54 WHERE id = 11626;
 UPDATE items SET reclevel = 52, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 600, clicktype = 0 WHERE id = 11632;
 UPDATE items SET hp = 200, mana = 200, healamt = 30 WHERE id = 11632;
 ---- Cloak of Flames
-UPDATE items SET clickeffect = 1668, casttime = 3000, clicktype = 0 WHERE id = 11621;
+UPDATE items SET clickeffect = 1668, casttime = 10000, clicktype = 0, maxcharges = -1 WHERE id = 11621;
 ---- Gold Plated Koshigatana
 UPDATE items SET proceffect = 445 WHERE id = 11630;
 ---- Gauntlets of Fiery Might
@@ -61,6 +61,9 @@ UPDATE items SET name = "Charm of Malisement", icon = 1884, itemtype = 54, class
 -- Trakanon
 
 -- Cazic-Thule
+--- Equipment
+---- Brain of Cazic Thule
+UPDATE items SET reclevel = 52, healamt = 10, spelldmg = 10, hp = 120, mana = 120 WHERE id = 1554;
 
 -- Innoruuk
 
