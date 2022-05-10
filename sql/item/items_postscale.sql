@@ -7,15 +7,6 @@ UPDATE items
 UPDATE items
    SET reqlevel = 0;
 
--- Clickies with charges must-equip to click if you can
-UPDATE items, ref_items
-   SET items.clicktype = 4
- WHERE items.id = ref_items.id
-   AND ref_items.maxcharges > 4
-   AND items.classes > 0
-   AND items.races > 0
-   AND items.slots > 0;
-
 -- Single target heal clickies on are a 30 sec unique reuse
 UPDATE items, spells_new, ref_items
    SET items.recasttype = 50,
