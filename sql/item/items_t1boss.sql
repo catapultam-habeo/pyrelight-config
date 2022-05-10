@@ -23,4 +23,4 @@ UPDATE items SET itemtype = 54, classes = 65535, slots = 131072, clicktype = 4, 
 ---- Scimitar of the Mistwalker
 UPDATE items SET name = "Charm of the Mistwalker", icon = 1895, itemtype = 54, classes = 65535 WHERE id = 11604;
 ---- Wand of Malisement
-UPDATE items SET name = "Charm of Malisement", icon = 1884, itemtype = 54, classes = 65535, slots = 98354 WHERE id = 10374;
+UPDATE items SET name = "Charm of Malisement", icon = 1884, itemtype = 54, classes = 65535, slots = 98354, casttime = 0 WHERE id = 10374;
