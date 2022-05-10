@@ -39,9 +39,9 @@ UPDATE items, spells_new, ref_items
 
 -- CH clickies are 10 minutes on unique reuse, but are instant
 UPDATE items, spells_new, ref_items
-   SET recasttype = 52,
-       recastdelay = Greatest(1800, ref_items.recastdelay, items.recastdelay),
-       casttime = 0
+   SET items.recasttype = 52,
+       items.recastdelay = Greatest(1800, ref_items.recastdelay, items.recastdelay),
+       items.casttime = 0
  WHERE items.id = ref_items.id
    AND items.clickeffect = spells_new.id
    AND ref_items.maxcharges > 0
@@ -49,9 +49,9 @@ UPDATE items, spells_new, ref_items
 
 -- Group heal clickies on are a 1 minute unique reuse, but are instant
 UPDATE items, spells_new, ref_items
-   SET recasttype = 53,
-       recastdelay = Greatest(60, ref_items.recastdelay, items.recastdelay),
-       casttime = 0
+   SET items.recasttype = 53,
+       items.recastdelay = Greatest(60, ref_items.recastdelay, items.recastdelay),
+       items.casttime = 0
  WHERE items.id = ref_items.id
    AND items.clickeffect = spells_new.id
    AND ref_items.maxcharges > 0
@@ -62,8 +62,8 @@ UPDATE items, spells_new, ref_items
 
 -- Anything with a duration can be spammed
 UPDATE items, spells_new, ref_items
-   SET recasttype = -1,
-       recastdelay = 0
+   SET items.recasttype = -1,
+       items.recastdelay = 0
  WHERE items.id = ref_items.id
    AND items.clickeffect = spells_new.id
    AND ref_items.maxcharges > 0

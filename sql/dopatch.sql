@@ -54,4 +54,4 @@ source server/pyrelight-config/sql/loot/loot_trash.sql
 source server/pyrelight-config/sql/loot/loot_global_augs.sql
 source server/pyrelight-config/sql/loot/loot_crescent.sql
 source server/pyrelight-config/sql/loot/merchants_crescent.sql
-source server/pyrelight-config/sql/loot/loot_t1bosses.sql
+source server/pyrelight-config/sql/loot/loot_t1boss.sql

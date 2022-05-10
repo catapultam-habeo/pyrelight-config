@@ -11,7 +11,7 @@ UPDATE spells_new
     SET spells_new.ResistDiff = -50
   WHERE spells_new.id = ref_spells.id
     AND ref_spells.ResistDiff = -300
-    ABD ref_spells.name LIKE "%maw";
+    AND ref_spells.name LIKE "%maw";
 
 DELETE FROM character_memmed_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667;
 DELETE FROM character_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667;

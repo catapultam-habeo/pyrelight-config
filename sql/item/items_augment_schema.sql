@@ -127,6 +127,6 @@ UPDATE items
 	   heroic_str = 0, heroic_sta = 0, heroic_dex = 0, heroic_agi = 0, heroic_int = 0, heroic_wis = 0, heroic_cha = 0,
 	   heroic_fr = 0, heroic_cr = 0, heroic_mr = 0, heroic_dr = 0, heroic_pr = 0,
 	   shielding = 0, spellshield = 0, dotshielding = 0, stunresist = 0, strikethrough = 0, attack = 0, accuracy = 0, avoidance = 0,
-	   damageshield = 0, dsmitigation = 0, haste = 0, clairvoyance = 0
+	   damageshield = 0, dsmitigation = 0, haste = 0, clairvoyance = 0, damage = 0
  WHERE itemtype = 54
    AND augtype & 1 = 0;
