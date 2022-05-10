@@ -45,7 +45,8 @@ UPDATE npc_types, spawn2, spawnentry
    AND npc_types.name NOT LIKE '%Fletcher_Tahira%' 
    AND npc_types.name NOT LIKE '%Potter_Subira%' 
    AND npc_types.name NOT LIKE '%Halima%' 
-   AND npc_types.name NOT LIKE '%Priestess_Aelea%' 
+   AND npc_types.name NOT LIKE '%Priestess_Aelea%'
+   AND npc_types.name NOT LIKE '%Vundar_the_Dark%' 
 ;
 		 
 UPDATE npc_types, spawn2, spawnentry

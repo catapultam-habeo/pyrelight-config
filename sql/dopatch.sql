@@ -52,8 +52,8 @@ source server/pyrelight-config/sql/npc/npc_karnors.sql
 source server/pyrelight-config/sql/spells/spells_permanent_buffs.sql
 source server/pyrelight-config/sql/spells/spells_bot_modifications.sql
 source server/pyrelight-config/sql/spells/spells_custom_shaman.sql
+source server/pyrelight-config/sql/loot/merchants_crescent.sql
 source server/pyrelight-config/sql/loot/loot_trash.sql
 source server/pyrelight-config/sql/loot/loot_global_augs.sql
 source server/pyrelight-config/sql/loot/loot_crescent.sql
-source server/pyrelight-config/sql/loot/merchants_crescent.sql
 source server/pyrelight-config/sql/loot/loot_t1boss.sql
