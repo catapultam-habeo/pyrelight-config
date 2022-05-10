@@ -72,6 +72,12 @@ UPDATE npc_spells
 
 DELETE npc_spells_entries FROM spells_new, npc_spells_entries WHERE npc_spells_entries.spellid = spells_new.id AND (( effectid1 =  23 OR effectid2 =  23 OR effectid3 =  23 OR effectid4 =  23 OR effectid5 =  23 OR effectid6 =  23 OR effectid7 =  23 OR effectid8 =  23 OR effectid9 =  23 OR effectid10 = 23 OR effectid11 = 23 OR effectid12 = 23 ) OR ( effectid1 =  22 OR effectid2 =  22 OR effectid3 =  22 OR effectid4 =  22 OR effectid5 =  22 OR effectid6 =  22 OR effectid7 =  22 OR effectid8 =  22 OR effectid9 =  22 OR effectid10 = 22 OR effectid11 = 22 OR effectid12 = 22 )) AND ( classes1  < 255 OR classes2  < 255 OR classes3  < 255 OR classes4  < 255 OR classes5  < 255 OR classes6  < 255 OR classes7  < 255 OR classes8  < 255 OR classes9  < 255 OR classes10 < 255 OR classes11 < 255 OR classes12 < 255 OR classes13 < 255 OR classes14 < 255 OR classes15 < 255 OR classes16 < 255 );
 
+-- Remove KB from spells
+
+UPDATE spells_new
+   SET pushback = 0,
+       pushup = 0;
+
 
 -- Replace Fear with Stun when not used by players and is on a npc spell list
 UPDATE npc_spells_entries, spells_new
