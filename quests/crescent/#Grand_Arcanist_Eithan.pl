@@ -12,12 +12,12 @@ my @ZoneArray =
     );
 
 sub EVENT_SAY {
+     $client->plugin::NPCTell($npc,$items[0]);
     if ($text=~/hail/i && $client->GetGM()) {
         if ($client->IsSitting()) {
             if (CheckForEssenceAnchor(@items)) {
-                $client->plugin::NPCTell($npc,"Hello, adventurer. I see you've spoken to Nostos about our experiments with resonance translocation. That essence anchor that she provided you is quite primitive, though. I'd like your assistance in gathering the materials needed to [". quest::saylink("improve the device") ."]."); 
-            }
-            else {
+                $client->plugin::NPCTell($npc,"Hello, adventurer. I see that you've spoken to Nostos about our experiments with resonance translocation. That essence anchor that she provided you is quite primitive, though. I'd like your assistance in gathering the materials needed to [". quest::saylink("improve the device") ."]."); 
+            } else {
                 $client->plugin::NPCTell($npc,"Hello, adventurer. Go speak to my [". quest::saylink("apprentice") ."], Nostos. After you've begun to help her, I will have a task for you.");
             }
         } else {
@@ -30,7 +30,6 @@ sub CheckForEssenceAnchor {
 	my @items = shift;
 	
 	foreach (@items) {
-        quest::shout($_);
 		if (plugin::check_hasitem($client,$_)) {
 			return 1;
 		}		
