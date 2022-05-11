@@ -18,10 +18,10 @@ UPDATE items SET itemtype = 54, classes = 65535, slots = 16384,  clicktype = 4 W
 UPDATE items SET itemtype = 54 WHERE id = 11626;
 --- Equipment
 ---- Bladestopper
-UPDATE items SET reclevel = 52, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 600, clicktype = 0 WHERE id = 11632;
+UPDATE items SET reclevel = 52, classes = 65535, slots = 16384, clickeffect = 8015, recastdelay = 600, clicktype = 1, casttime = 0 WHERE id = 11632;
 UPDATE items SET hp = 200, mana = 200, healamt = 30 WHERE id = 11632;
 ---- Cloak of Flames
-UPDATE items SET clickeffect = 1668, casttime = 10000, clicktype = 0, maxcharges = -1 WHERE id = 11621;
+UPDATE items SET clickeffect = 1668, casttime = 10000, clicktype = 1, maxcharges = -1 WHERE id = 11621;
 ---- Gold Plated Koshigatana
 UPDATE items SET proceffect = 445 WHERE id = 11630;
 ---- Gauntlets of Fiery Might
@@ -48,7 +48,7 @@ UPDATE items SET name = "Charm of the Mistwalker", icon = 1895, itemtype = 54, c
 ---- Runed Bolster Belt
 UPDATE items SET reclevel = 52, spelldmg = 20, healamt = 20, heroic_str = 20, hp = 200, mana = 200 WHERE id = 11601;
 ----- Dragon Bone Bracelet
-UPDATE items SET reclevel = 52, clickeffect = 4418, hp = 100, mana = 200, spelldmg = 30 WHERE id = 11606;
+UPDATE items SET reclevel = 52, clickeffect = 4418, hp = 100, mana = 200, spelldmg = 30, maxcharges = -1, casttime = 1000, recastdelay = 0, recasttype = -1 WHERE id = 11606;
 ----- Crystalline Spear
 UPDATE items SET reclevel = 52, proceffect = 3569, proclevel = 52, hp = 100, mana = 100, astr = 5, adex = 20, aagi = 10, spelldmg = 20, healamt = 20, heroic_str = 5, heroic_agi = 5 WHERE id = 11610;
 -- Phinigel Autropos
@@ -73,3 +73,21 @@ UPDATE items SET reclevel = 52, healamt = 10, spelldmg = 10, hp = 120, mana = 12
 ---- Misc
 ---- Ivandyr's Hoop -> Aug
 UPDATE items SET itemtype = 54, classes = 65535, clicktype = 4, casttime = 0, recastdelay = 30, recasttype = -1 WHERE id = 10082;
+
+
+UPDATE items SET itemtype = 54, clicktype= 4, maxcharges = -1 WHERE id = 13401;
+
+-- Evil Eye
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (18855, 13401, 1);
+--Nagafen
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (7725,  13401, 10);
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175041,  13401, 5);
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175042,  13401, 2.5);
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (178170,  13401, 2.5);	
+--Vox
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (5988,  13401, 10);
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175044,  13401, 5);
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175045,  13401, 2.5);
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (178169,  13401, 2.5);			
+--Phinny
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (17734, 13401, 10);	
