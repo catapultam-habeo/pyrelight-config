@@ -34,3 +34,27 @@ REPLACE INTO `lootdrop_entries` (`lootdrop_id`, `item_id`, `item_charges`, `equi
 (764, 500002, 1, 0, 3, 0, 0, 0, 1, 0, 0),
 (764, 500003, 1, 0, 3, 0, 0, 0, 1, 0, 0),
 (764, 500005, 1, 0, 3, 0, 0, 0, 1, 0, 0);
+
+-- Nagafen
+--- Manastone
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (7725, 13401, 1);
+
+-- Vox
+--- Manastone
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (5988,  13401, 1);	
+
+-- Phinny
+---- Manastone
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (17734, 13401, 1);
+
+-- Venril Sathir
+
+-- Trakanon
+
+-- Cazic-Thule
+
+-- Innoruuk
+
+-- Evil Eye
+--- Manastone
+REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (18855, 13401, 1);

@@ -73,21 +73,5 @@ UPDATE items SET reclevel = 52, healamt = 10, spelldmg = 10, hp = 120, mana = 12
 ---- Misc
 ---- Ivandyr's Hoop -> Aug
 UPDATE items SET itemtype = 54, classes = 65535, clicktype = 4, casttime = 0, recastdelay = 30, recasttype = -1 WHERE id = 10082;
-
-
+---- Manastone
 UPDATE items SET itemtype = 54, clicktype= 4, maxcharges = -1 WHERE id = 13401;
-
--- Evil Eye
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (18855, 13401, 1);
---Nagafen
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (7725,  13401, 10);
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175041,  13401, 5);
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175042,  13401, 2.5);
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (178170,  13401, 2.5);	
---Vox
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (5988,  13401, 10);
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175044,  13401, 5);
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (175045,  13401, 2.5);
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (178169,  13401, 2.5);			
---Phinny
-REPLACE INTO lootdrop_entries(lootdrop_id, item_id, chance) VALUES (17734, 13401, 10);	
