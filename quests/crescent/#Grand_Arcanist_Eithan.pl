@@ -12,7 +12,7 @@ my @ZoneArray =
     );
 
 sub EVENT_SAY {
-     $client->plugin::NPCTell($npc,$items[0]);
+     $client->plugin::NPCTell($npc,quest::get_data("TLItems"));
     if ($text=~/hail/i && $client->GetGM()) {
         if ($client->IsSitting()) {
             if (CheckForEssenceAnchor(@items)) {
