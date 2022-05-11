@@ -28,6 +28,7 @@ UPDATE npc_types, spawn2, spawnentry
    AND npc_types.lastname NOT LIKE '%_Guildmaster'
    AND npc_types.lastname NOT LIKE '%_Spells'
    AND npc_types.lastname NOT LIKE '%_Tomes'
+   AND npc_types.name NOT LIKE "#Grand_Arcanist_Eithan"
    AND npc_types.name NOT LIKE '%Nostos%' 
    AND npc_types.name NOT LIKE '%Emissary_Tinnvin%'
    AND npc_types.name NOT LIKE '%Smithy_%'   

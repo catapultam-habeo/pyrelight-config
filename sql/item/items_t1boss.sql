@@ -1,7 +1,7 @@
 -- Lord Nagafen
 --- Convert to Augs
 ---- Red Dragon Scales
-UPDATE items SET itemtype = 54, classes = 65535, slots = 131072, clicktype = 4, clickeffect = 5492, recastdelay = 600, maxcharges=-1 WHERE id = 11622;
+UPDATE items SET itemtype = 54, classes = 65535, slots = 131072, clicktype = 4, clickeffect = 5492, recastdelay = 60, maxcharges=-1 WHERE id = 11622;
 ---- Hierophant's Crook
 UPDATE items SET name = "Hierophant Charm", icon = 1881, itemtype = 54, classes = 65535, augrestrict = 4 WHERE id = 11629;
 ---- Orb of Tishan
