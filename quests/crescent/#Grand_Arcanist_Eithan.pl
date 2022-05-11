@@ -14,7 +14,7 @@ my @ZoneArray =
 sub EVENT_SAY {
     if ($text=~/hail/i && $client->GetGM()) {
         if ($client->IsSitting()) {
-            if (1) {
+            if (CheckForEssenceAnchor(@items)) {
                 $client->plugin::NPCTell($npc,"Hello, adventurer. I see you've spoken to Nostos about our experiments with resonance translocation. That essence anchor that she provided you is quite primitive, though. I'd like your assistance in gathering the materials needed to [". quest::saylink("improve the device") ."]."); 
             }
             else {
