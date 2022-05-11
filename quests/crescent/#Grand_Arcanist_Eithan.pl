@@ -17,10 +17,12 @@ sub EVENT_SAY {
             } elsif ($text=~/improve the device/i) {
             } elsif ($text=~/soldungb/i) {
                 @Data = ("soldungb", 32, -263, 424, -108); 
+                $client->plugin::NPCTell($npc,"I heard you!");
                 if (!quest::get_data($instKey)) {
                     quest::set_data($instKey, "$Data[0]", 86400);
                     $InstanceID = quest::CreateInstance("$Data[0]", 0, 86400);
                     quest::set_data($instIDKey, $InstanceID, 86400);
+                    $client->plugin::NPCTell($npc,$instIDKey);
                 }
             }  elsif ($text=~/go/i) {
                 if (quest::get_data($instKey) eq "$Data[0]") {
