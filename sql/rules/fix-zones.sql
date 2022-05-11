@@ -17,7 +17,9 @@ UPDATE zone_points
    SET client_version_mask = 4294967232 
    WHERE id = 1478
       OR id = 1585
-	  OR id = 14153;
+	   OR id = 14153
+      OR id = 2336
+      OR id = 2344;
 
 -- Misty and Tox
 UPDATE zone SET expansion = 1 WHERE short_name LIKE 'mistythicket' OR short_name LIKE 'toxxulia';
