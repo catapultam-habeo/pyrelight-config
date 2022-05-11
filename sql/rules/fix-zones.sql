@@ -2,8 +2,7 @@
 DELETE
   FROM doors
  WHERE dest_zone LIKE 'poknowledge'
-   AND zone  NOT LIKE 'potranquility'
-   AND zone  NOT LIKE 'nexus';
+   AND zone  NOT LIKE 'potranquility';
    
 -- Remove Books from POK
 DELETE
@@ -11,7 +10,6 @@ DELETE
  WHERE zone LIKE 'poknowledge'
    AND dest_zone NOT LIKE 'NONE'
    AND dest_zone NOT LIKE 'potranquility'
-   AND dest_zone NOT LIKE 'nexus'
     OR name          LIKE 'PORTBASE';
 
 -- Fix Zone Points that use bad bitmask values
@@ -20,6 +18,10 @@ UPDATE zone_points
    WHERE id = 1478
       OR id = 1585
 	  OR id = 14153;
+
+-- Misty and Tox
+UPDATE zone SET expansion = 1 WHERE short_name LIKE 'mistythicket' OR short_name LIKE 'toxxulia';
+UPDATE zone SET expansion = 100 WHERE short_name LIKE 'misty' OR short_name LIKE 'tox';
    
 -- Delete all zone points to zones we don't USE
 DELETE
