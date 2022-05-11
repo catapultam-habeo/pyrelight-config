@@ -16,3 +16,5 @@ UPDATE spells_new
 
 DELETE FROM character_memmed_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667;
 DELETE FROM character_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667;
+
+
