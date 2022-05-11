@@ -5,7 +5,7 @@ REPLACE INTO spawnentry (spawngroupID, npcID, chance) VALUES (55098,394027,100);
 
 -- Councilmember Ithakis -> Grand Arcanist Eithan
 UPDATE spawn2 SET x = -1620, y = -1264, z = -86, heading = 171, animation = 1 WHERE id = 77088;
-UPDATE npc_types SET name = "#Grand_Arcanist_Eithan", lastname = "Instances" WHERE id = 394192;
+UPDATE npc_types SET name = "#Grand_Arcanist_Eithan", lastname = "Progression Instances" WHERE id = 394192;
 
 -- Make Modifications to Repurpose Vanilla NPCs
 UPDATE npc_types SET name="#Emissary_Tinnvin", lastname="Server Greeter"  WHERE id="394012";
