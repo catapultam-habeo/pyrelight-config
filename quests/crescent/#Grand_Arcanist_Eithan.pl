@@ -14,11 +14,13 @@ sub EVENT_SAY {
   if (~$client->GetGM()) {
       $client->plugin::NPCTell($npc,"Hello, adventurer. I'm not ready yet. Blame Sshantrel for continuing to bother Catapultam.");
 
-    if ($text=~/hail/i && $client->GetGM()) {
+    if ($text=~/hail/i && $client->GetGM()) 
+    {
             $client->plugin::NPCTell($npc,"Hey Boss.");
             if ($client->IsSitting())
             {
-                if (CheckForEssenceAnchor(@items)) {
+                if (CheckForEssenceAnchor(@items)) 
+                {
                     $client->plugin::NPCTell($npc,"Hello, adventurer. I see you've spoken to Nostos about our experiments with resonance translocation. That essence anchor that she provided you is quite primitive, though. I'd like your assistance in gathering the materials needed to [". quest::saylink("improve the device") ."]."); 
                 }
                 else {
