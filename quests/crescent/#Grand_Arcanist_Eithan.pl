@@ -33,7 +33,7 @@ sub CheckForEssenceAnchor {
 	my @items = shift;
 	
 	foreach (@items) {
-        quest::shout("Test");
+        quest::shout($_);
 		if (plugin::check_hasitem($client,$_)) {
 			return 1;
 		}		
