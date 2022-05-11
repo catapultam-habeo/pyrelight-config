@@ -15,7 +15,7 @@ sub EVAL_PET
                 my $owner = $entity_list->GetClientByID($pet->GetOwnerID());
 
                 my $owner_level = $owner->GetLevel();
-                my $owner_spelldmg = 1 + ($owner->GetSpellDmg()/100);
+                my $owner_spelldmg = ($owner->GetSpellDmg()/200) + 1;
                 my $ostr = $owner->GetSTR();
                 my $osta = $owner->GetSTA();
                 my $odex = $owner->GetDEX();
@@ -28,13 +28,12 @@ sub EVAL_PET
 
                 $pet->ModifyNPCStat("max_hp", $owner_level * 100 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("ac", $owner_level * 10 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("atk", $owner_level * 2 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("accuracy", $owner_level * 2 * ($owner_spelldmg));
+                $pet->ModifyNPCStat("atk", $owner_level * 1 * ($owner_spelldmg));
+                $pet->ModifyNPCStat("accuracy", $owner_level * 1 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("avoidance", $owner_level * 1 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("max_hit", $owner_level * 3 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("min_hit", $owner_level * 1 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("hp_regen", $owner_level * 0.5 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("attack_delay", 2.8);
+                $pet->ModifyNPCStat("max_hit", $owner_level * 2 * ($owner_spelldmg));
+                $pet->ModifyNPCStat("min_hit", $owner_level * 0.5 * ($owner_spelldmg));
+                $pet->ModifyNPCStat("hp_regen_rate", $owner_level * 0.5 * ($owner_spelldmg));
 
                 $pet->ModifyNPCStat("str", $ostr/2 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("sta", $osta/2 * ($owner_spelldmg));
@@ -50,8 +49,8 @@ sub EVAL_PET
                 $pet->ModifyNPCStat("pr", $owner->GetPR()/2 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("mr", $owner->GetMR()/2 * ($owner_spelldmg));
 
-                $pet->ModifyNPCStat("spellscale",$owner_spelldmg * 100);
-                $pet->ModifyNPCStat("healscale",$owner_spelldmg * 100);
+                $pet->ModifyNPCStat("spellscale",$owner->GetSpellDmg());
+                $pet->ModifyNPCStat("healscale",$owner->GetHealAmt());
                 $pet->ModifyNPCStat("runspeed", 2.5);
 
                 $pet->ChangeSize(5 * ($owner_spelldmg/2));
