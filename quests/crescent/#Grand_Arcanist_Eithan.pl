@@ -15,8 +15,7 @@ sub EVENT_SAY {
                     $client->plugin::NPCTell($npc,"Hello, adventurer. I see that you've spoken to Nostos about our experiments with resonance translocation. That essence anchor that she provided you is quite primitive, though. I'd like your assistance in gathering the materials needed to [". quest::saylink("improve the device") ."]."); 
                 }
             } elsif ($text=~/improve the device/i) {
-            } elsif ($text=~/soldungb/i) {
-                @Data = ("soldungb", 32, -263, 424, -108); 
+            } elsif ($text=~/soldungb/i) {                 
                 $client->plugin::NPCTell($npc,"I heard you!");
                 if (!quest::get_data($instKey)) {
                     quest::set_data($instKey, "$Data[0]", 86400);
@@ -26,7 +25,8 @@ sub EVENT_SAY {
                 }
             }  elsif ($text=~/go/i) {
                 if (quest::get_data($instKey) eq "$Data[0]") {
-                    DoTeleport();
+                    quest::AssignToInstance($InstanceID);
+                    $client->MovePCInstance($Data[1], $InstanceID, $Data[2], $Data[3], $Data[4], 0);
                 }
             }
         } else {
