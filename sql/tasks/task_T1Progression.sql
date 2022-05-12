@@ -1,0 +1,2 @@
+REPLACE INTO tasks ('id','title','description','reward','rewardid','rewardmethod') VALUES
+(500000,'A Song of Dragons and Fish','Grand Arcanist Eithan needs exotic, phase-shifted materials to improve your Essence Anchor. Seek them out in the rifts his apprentices open for you.','Your level cap increased to 60.',);
