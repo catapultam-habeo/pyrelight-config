@@ -7,7 +7,7 @@ sub EVENT_SAY {
             if ($level_cap > 1) {
                 $client->plugin::NPCTell($npc,"true");
             }
-            if ($level_cap > 52) {
+            if ($level_cap > 51) {
                 $client->plugin::NPCTell($npc,"false");
             }
         }
