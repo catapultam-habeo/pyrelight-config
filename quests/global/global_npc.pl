@@ -1,7 +1,6 @@
 sub EVENT_SPAWN
 {
         EVAL_PET($npc);
-        $npc->Shout("Hi");
 }
 
 sub EVENT_SPAWN_ZONE
