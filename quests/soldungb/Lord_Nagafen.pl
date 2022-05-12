@@ -11,17 +11,13 @@ sub EVENT_AGGRO {
                 }
             }
         }
-    }
-}
 
-sub EVENT_AGGRO {
-    if ($instanceid > 0) {
-       my @clients = $entity_list->GetClientList();
-       foreach my $client (@clients) {
-           if ($client->IsTaskActive(9001)) {
-               quest::addloot(450010);
-           }
-       }
+        my @clients = $entity_list->GetClientList();
+        foreach my $client (@clients) {
+            if ($client->IsTaskActive(9001)) {
+                quest::addloot(450010);
+            }
+        }
     }
 }
 # EOF zone: soldungb ID: 32040 NPC: Lord_Nagafen
