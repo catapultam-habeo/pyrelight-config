@@ -51,12 +51,10 @@ sub EVENT_SAY {
             $client->plugin::NPCTell($npc,"Phinigel Autropos - the last of the Kedge. He cultivates a particular type of seaweed which happens to be my favorite garnish for seafood. Collect some for me.");
         } elsif ($text=~/collapse/i && quest::get_data($instance_zone)) {
             $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue, which will allow you to visit another of my apprentices and them open a new rift.");
-            if (quest::get_data($instance_zone)) {
                 quest::delete_data($instance_zone);
-            }
-            if (quest::get_data($instance_id)) {
                 quest::delete_data($instance_id);
-            }          
+                quest::delete_data($instance_id . '-deathCount');
+                quest::DestroyInstance($instance_id);
         }
     }    
 }

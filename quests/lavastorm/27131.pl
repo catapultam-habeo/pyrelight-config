@@ -34,6 +34,7 @@ sub EVENT_SAY {
             quest::delete_data($client->CharacterID() . "-active-instance-zone");           
             quest::delete_data($client->CharacterID() . "-active-instance-id");
             quest::DestroyInstance($instance_id);
+            quest::delete_data($instance_id . '-deathCount');
         } elsif ($text=~/gaeLN1/i) {
             my $InstanceID = quest::CreateInstance($Data[0], 1, 259200);            
             quest::set_data($client->CharacterID() . "-" . $Data[0] . "-cooldown", 1, 259200);
