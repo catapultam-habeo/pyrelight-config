@@ -4,8 +4,8 @@ sub EVENT_AGGRO {
         if ($death_count <= 10) {
             quest::shout("You know the rules!");
             my $npcs = $entity_list->GetNPCList();
-            foreach my $n (@npcs) {
-                quest::shout("TRAIN!");
+            foreach $n (@npcs) {
+                $n->Shout("TRAIN!");
                 if ($n->CastToMob()->GetLevel() < 255 && $n->GetOwnerID() == 0) {
                     $n->MoveTo($n->CastToMob()->GetX(), $n->CastToMob()->GetY(), $n->CastToMob()->GetZ());
                     $n->AddToHateList($client, 100000);
