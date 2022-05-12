@@ -11,7 +11,7 @@ sub EVENT_SAY {
     if ($client->GetGM()) {
         if ($text=~/hail/i) {
             if ($instance_zone) {
-                if ($instance_zone) eq $Data[1]) {
+                if ($instance_zone eq $Data[1]) {
                     # Return?
                 } else {
                     # Collapse?
