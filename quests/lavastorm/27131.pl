@@ -29,7 +29,7 @@ sub EVENT_SAY {
                 $client->plugin::NPCTell($npc,"Be careful! I'm waiting for someone, and can't afford you to attract the attention of creatures here. There could be Orcs... or Dragons... or Bunnies!");
             }
         } elsif ($text=~/collapse/i and $instance_zone) {
-            $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue, which will allow you to visit another of my apprentices and them open a new rift.");
+            $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue.");
             if ($instance_zone) {
                 quest::delete_data($client->CharacterID() . "-active-instance-zone");
             }
