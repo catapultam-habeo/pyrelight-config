@@ -5,7 +5,7 @@ sub EVENT_AGGRO {
             quest::shout("You know the rules!");
             my $npcs = $entity_list->GetNPCList();
             foreach my $n (@npcs) {
-                if ($n->CastToMob()->GetLevel() < 255 && $n->GetOwnerID() == 0) {
+                if (true) {
                     $n->MoveTo($n->CastToMob()->GetX(), $n->CastToMob()->GetY(), $n->CastToMob()->GetZ());
                     $n->AddToHateList($client, 100000);
                 }
