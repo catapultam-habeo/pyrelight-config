@@ -26,21 +26,26 @@ REPLACE INTO `npc_types` (`id`, `name`, `lastname`, `level`, `race`, `class`, `b
 (27131, '#Apprentice_Sulentia', 'Nagafen\`s Lair Rift', 55, 5, 12, 1, 3825, 0, 1, 13, 0, 0, 5, 0, 0, 0, 500001, 0, 0, 0, 0, 0, 0, 0, 39, 130, -1, '', '25,1^35,1', 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'IT10', 28, 28, 7, 1.25, 17, 17, 17, 17, 17, 17, 48, 0, 0, 0, 254, 0, 0, 0, 27, 1, 193, 193, 193, 193, 193, 193, 193, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 1, 0, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 100),
 (30106, '#Apprentice_Balalalalalalamon', 'Everfrost Keep Rift', 55, 12, 13, 1, 3825, 0, 0, 13, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 130, -1, '', '24,1^35,1', 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'IT10', 28, 28, 7, 1.25, 17, 17, 17, 17, 17, 17, 48, 0, 0, 0, 254, 0, 0, 0, 27, 1, 193, 193, 193, 193, 193, 193, 193, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, -1, 0, 100),
 (70036, '#Apprentice_Kethia', 'Kedge Keep Rift', 55, 130, 15, 1, 3825, 0, 1, 1, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 130, -1, '', '25,1^35,1', 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'IT10', 28, 28, 7, 1.25, 17, 17, 17, 17, 17, 17, 48, 0, 0, 0, 254, 0, 0, 0, 27, 1, 193, 193, 193, 193, 193, 193, 193, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 1, 0, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 100),
+(86006, '#Apprentice_Lariks', 'Karnor\`s Castle Rift', 55, 1, 11, 1, 3825, 0, 0, 13, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 130, -1, '', '24,1^35,1', 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'IT10', 28, 28, 7, 1.25, 17, 17, 17, 17, 17, 17, 48, 0, 0, 0, 254, 0, 0, 0, 27, 1, 193, 193, 193, 193, 193, 193, 193, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 1, 0, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 100),
 
 REPLACE INTO `spawn2` (`id`, `spawngroupID`, `zone`, `version`, `x`, `y`, `z`, `heading`, `respawntime`, `variance`, `pathgrid`, `path_when_zone_idle`, `_condition`, `cond_value`, `enabled`, `animation`, `min_expansion`, `max_expansion`, `content_flags`, `content_flags_disabled`) VALUES
 (264357, 287837, 'lavastorm', 0, 368.000000, 2202.000000, 71.000000, 208.000000, 1200, 0, 0, 0, 0, 1, 1, 0, -1, -1, NULL, NULL),
 (270078, 287838, 'everfrost', 0, -6965.000000, 1943.000000, -57.000000, 236.000000, 1200, 0, 0, 0, 0, 1, 1, 1, -1, -1, NULL, NULL),
 (270079, 287839, 'cauldron', 0, -1154.000000, -623.000000, 0.000000, 269.000000, 1200, 0, 0, 0, 0, 1, 1, 0, -1, -1, NULL, NULL),
+(270080, 287840, 'dreadlands', 0, -1875.000000, 733.000000, 26.000000, 468.000000, 1200, 0, 0, 0, 0, 1, 1, 0, -1, -1, NULL, NULL),
+
 
 REPLACE INTO `spawnentry` (`spawngroupID`, `npcID`, `chance`, `condition_value_filter`, `min_expansion`, `max_expansion`, `content_flags`, `content_flags_disabled`) VALUES
 (287837, 27131, 100, 1, -1, -1, NULL, NULL),
 (287838, 30106, 100, 1, -1, -1, NULL, NULL),
 (287839, 70036, 100, 1, -1, -1, NULL, NULL),
+(287840, 86006, 100, 1, -1, -1, NULL, NULL),
 
 REPLACE INTO `spawngroup` (`id`, `name`, `spawn_limit`, `dist`, `max_x`, `min_x`, `max_y`, `min_y`, `delay`, `mindelay`, `despawn`, `despawn_timer`, `wp_spawns`) VALUES
 (287837, 'lavastorm_287837', 1, 0, 0, 0, 0, 0, 45000, 15000, 0, 100, 0),
 (287838, 'everfrost_287838', 0, 0, 0, 0, 0, 0, 45000, 15000, 0, 100, 0),
 (287839, 'cauldron_287839', 0, 0, 0, 0, 0, 0, 45000, 15000, 0, 100, 0),
+(287840, 'dreadlands_287840', 0, 0, 0, 0, 0, 0, 45000, 15000, 0, 100, 0),
 
 INSERT INTO spawn2 (spawngroupID, zone, version, x, y, z, heading, respawntime, variance, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation)
 SELECT spawngroupID, zone, 1, x, y, z, heading, 99999999, 0, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation
