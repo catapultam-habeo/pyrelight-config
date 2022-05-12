@@ -8,7 +8,7 @@ sub EVENT_SPAWN_ZONE
         EVAL_PET($npc);
 }
 
-sub EVENT_DEATH_COMPLETE {    
+sub EVENT_DEATH {    
     quest::shout("I died!");
 }
 
