@@ -9,7 +9,7 @@ sub EVENT_SPAWN_ZONE
 }
 
 sub EVENT_DEATH_COMPLETE {
-    if ($instanceid > 0) {
+    if ($instanceid > 0 and $instanceversion = 1) {
         my $death_count = quest::get_data($instanceid . '-deathCount');
 
         $death_count = $death_count + 1;
