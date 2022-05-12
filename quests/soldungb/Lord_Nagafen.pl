@@ -3,7 +3,7 @@ sub EVENT_AGGRO {
         my $death_count = quest::get_data($instanceid . '-deathCount');
         if ($death_count <= 10) {
             quest::shout("You know the rules!");
-            my $npcs = $entity_list->GetNPCList();
+            my @npcs = $entity_list->GetNPCList();
             foreach $n (@npcs) {
                 $n->Shout("TRAIN!");
                 if ($n->CastToMob()->GetLevel() < 255 && $n->GetOwnerID() == 0) {
