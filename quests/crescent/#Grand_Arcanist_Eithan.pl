@@ -1,6 +1,5 @@
 sub EVENT_SAY {
     if ($client->GetGM()) {
-
         my $instance_zone = $client->CharacterID() . "-active-instance-zone";
         my $instance_id = $client->CharacterID() . "-active-instance-id";
 
