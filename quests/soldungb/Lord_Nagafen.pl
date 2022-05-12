@@ -14,7 +14,7 @@ sub EVENT_AGGRO {
     }
 }
 
-sub EVENT_SPAWN {
+sub EVENT_AGGRO {
     if ($instanceid > 0) {
        my @clients = $entity_list->GetClientList();
        foreach my $client (@clients) {
