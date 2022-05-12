@@ -6,6 +6,7 @@ sub EVENT_AGGRO {
             my $npcs = $entity_list->GetNPCList();
             foreach my $npc (@npcs) {
                 if ($npc->CastToMob()->GetLevel() < 255 && $npc->GetOwnerID() == 0) {
+                    $npc->MoveTo($npc->CastToMob()->GetX(), $npc->CastToMob()->GetY(), $npc->CastToMob()->GetZ());
                     $npc->AddToHateList($client, 100000);
                 }
             }
