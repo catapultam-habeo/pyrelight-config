@@ -1,5 +1,8 @@
 #Apprentice Sulentia
 
+use Time::Piece;
+use Time::Seconds;
+
 sub EVENT_SAY {
     
     my @Data = ("soldungb", 32, -217, -437, -108, 257);
@@ -21,7 +24,7 @@ sub EVENT_SAY {
             } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
                 if ($instance_cooldown) {
                     $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day");
-                    $client->Message(15,"Cooldown:" . quest::get_data_remaining($client->CharacterID() . "-" . $Data[0] . "-cooldown"));
+                    $client->Message(15,"Cooldown:" . quest::get_data_remaining($client->CharacterID() . "-" . $Data[0] . "-cooldown")->pretty);
                 } else {
                     $client->plugin::NPCTell($npc,"You must be Master Eithan's new test subject - He told me to expect someone to explore this phase rift. You may find the Dragon who lairs here to be more powerful than you might otherwise expect, be prepared. Would you like for me to [". quest::saylink("gaeLN1",1,"open the rift") ."] for you?");
                 }
