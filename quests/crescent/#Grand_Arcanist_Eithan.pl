@@ -9,7 +9,7 @@ sub EVENT_SAY {
                 # Check to see if you are sitting, because I'm a dick
                 if ($client->IsSitting() ) {
 
-                } else () {
+                } else {
 
                 }
             } else {
