@@ -4,9 +4,10 @@ sub EVENT_ENTERZONE {
     my @npc_list = $entity_list->GetNPCList();
 
     foreach $entity (@npc_list) {
-      quest::disable_spawn2($entity->GetSpawnPointID());
-      quest::updatespawntimer($entity->GetSpawnPointID(),1);
-      quest::enable_spawn2($entity->GetSpawnPointID());
+      my $spawnpoint = $entity->GetSpawnPointID();
+      quest::disable_spawn2($spawnpoint);
+      quest::updatespawntimer($spawnpoint,1);
+      quest::enable_spawn2($spawnpoint);
     }
   }
 }
