@@ -26,7 +26,8 @@ sub EVENT_ENTERZONE {
             $npc->ModifyNPCStat("pr", $npc->GetNPCStat("pr") * $levelScalar);
             $npc->ModifyNPCStat("mr", $npc->GetNPCStat("mr") * $levelScalar);
 
-            $npc->SetLevel(55);           
+            $npc->SetLevel(55);
+            $npc->SetMaxHP();           
         }
     }
 }
