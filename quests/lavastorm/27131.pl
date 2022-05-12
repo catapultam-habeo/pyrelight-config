@@ -39,7 +39,7 @@ sub EVENT_SAY {
             }
         } elsif ($text=~/gaeLN1/i) {
             my $InstanceID = quest::CreateInstance("$Data[0]", 1, 86400);
-            quest::set_data($client->CharacterID() . "-active-instance-zone", "soldungb", 86400);
+            quest::set_data($client->CharacterID() . "-active-instance-zone", "$Data[0]", 86400);
             quest::set_data($client->CharacterID() . "-active-instance-id", "$InstanceID", 86400);
             $client->plugin::NPCTell($npc,"I've opened the rift, $name. Tell me when you are ready to [". quest::saylink("enter",1) ."]");
         } elsif ($text=~/enter/i and $instance_id) {
