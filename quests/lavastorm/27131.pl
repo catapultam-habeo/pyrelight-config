@@ -16,7 +16,7 @@ sub EVENT_SAY {
                 if ($instance_zone eq $Data[1]) {
                     $client->plugin::NPCTell($npc,"Hail, $n. Would you like me to [". quest::saylink("enter",1,"transport") ."] you back through the phase rift, or would you like me to [". quest::saylink("collapse",1) ."] it?");
                 } else {
-                    $client->plugin::NPCTell($npc,"Hail, $n. I sense the residue of a phase rift on you. Before I can transport you though this one, I must ". quest::saylink("collapse",1,"dispel") ."] that residue from your aura. Would you like me to proceed?");
+                    $client->plugin::NPCTell($npc,"Hail, $n. I sense the residue of a phase rift on you. Before I can transport you though this one, I must [". quest::saylink("collapse",1,"dispel") ."] that residue from your aura. Would you like me to proceed?");
                 }
             } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
                 if ($instance_cooldown) {
