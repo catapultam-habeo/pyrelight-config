@@ -31,10 +31,10 @@ sub EVENT_SAY {
         } elsif ($text=~/collapse/i and $instance_zone) {
             $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue, which will allow you to visit another of my apprentices and them open a new rift.");
             if ($instance_zone) {
-                quest::delete_data($instance_zone);
+                quest::delete_data($client->CharacterID() . "-active-instance-zone");
             }
             if ($instance_id) {
-                quest::delete_data($instance_id);
+                quest::delete_data($client->CharacterID() . "-active-instance-id");
                 quest::DestroyInstance($instance_id)
             }
         } elsif ($text=~/gaeLN1/i) {
