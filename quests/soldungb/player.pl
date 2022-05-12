@@ -3,7 +3,7 @@ sub EVENT_ENTERZONE {
   foreach my $npc_entity (@npc_list) {
       if $client->GetInstanceID() {
           if ($npc_entity->GetLevel() < 255) {
-              $npc_entity->quest::shout("Hello!");
+              $npc_entity->Shout("Hello!");
           }
       }
   }
