@@ -5,5 +5,5 @@ sub EVENT_DEATH {
 
     quest::set_data($instanceid . '-deathCount', $death_count, 259200);
 
-    quest::Shout("Death Count: $death_count"); 
+    quest::shout("Death Count: $death_count"); 
 }
