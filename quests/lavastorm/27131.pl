@@ -21,7 +21,7 @@ sub EVENT_SAY {
             } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
                 if ($instance_cooldown) {
                     $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day");
-                    $client->Message(15,quest::get_data_remaining($client->CharacterID() . "-" . $Data[0] . "-cooldown"))l
+                    $client->Message(15,quest::get_data_remaining($client->CharacterID() . "-" . $Data[0] . "-cooldown"));
                 } else {
                     $client->plugin::NPCTell($npc,"You must be Master Eithan's new test subject - He told me to expect someone to explore this phase rift. You may find the Dragon who lairs here to be more powerful than you might otherwise expect, be prepared. Would you like for me to [". quest::saylink("gaeLN1",1,"open the rift") ."] for you?");
                 }
@@ -32,7 +32,7 @@ sub EVENT_SAY {
             $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue.");            
             quest::delete_data($client->CharacterID() . "-active-instance-zone");           
             quest::delete_data($client->CharacterID() . "-active-instance-id");
-            quest::DestroyInstance($instance_id)
+            quest::DestroyInstance($instance_id);
         } elsif ($text=~/gaeLN1/i) {
             my $InstanceID = quest::CreateInstance($Data[0], 1, 86400);
             quest::set_data($client->CharacterID() . "-" . $Data[0] . "-cooldown", 259200);
