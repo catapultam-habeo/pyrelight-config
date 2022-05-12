@@ -1,7 +1,10 @@
-my $tier_one_taskID = "450000";
+
 
 sub EVENT_SAY {
     if ($client->GetGM()) {
+
+        my $tier_one_taskID = "450000";
+        
         my $level_cap = quest::get_data($client->CharacterID() . "-CharMaxLevel");
         my $nostos_init = length(quest::get_data($client->CharacterID() . "-TL"));
         
