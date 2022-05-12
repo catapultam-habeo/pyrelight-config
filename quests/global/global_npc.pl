@@ -8,6 +8,10 @@ sub EVENT_SPAWN_ZONE
         EVAL_PET($npc);
 }
 
+sub EVENT_DEATH_COMPLETE {    
+    quest::shout("I died!");
+}
+
 sub EVAL_PET
 {
         my $pet = shift;
@@ -59,7 +63,4 @@ sub EVAL_PET
         }
 }
 
-sub EVENT_DEATH {
-    
-    quest::shout("I died!");
-}
+
