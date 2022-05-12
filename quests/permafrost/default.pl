@@ -1,3 +1,3 @@
 sub EVENT_DEATH {
-    quest::shout("I am here");
+    quest::worldwidemessage(315, “I am here.”);
 }
