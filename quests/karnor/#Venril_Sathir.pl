@@ -11,6 +11,7 @@ sub EVENT_AGGRO {
               }
           }
       }
+  }
 }
 
 sub EVENT_KILLED_MERIT {
