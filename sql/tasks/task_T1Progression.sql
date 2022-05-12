@@ -32,4 +32,9 @@ REPLACE INTO `spawnentry` (`spawngroupID`, `npcID`, `chance`, `condition_value_f
 (287837, 27131, 100, 1, -1, -1, NULL, NULL);
 
 REPLACE INTO `spawngroup` (`id`, `name`, `spawn_limit`, `dist`, `max_x`, `min_x`, `max_y`, `min_y`, `delay`, `mindelay`, `despawn`, `despawn_timer`, `wp_spawns`) VALUES
-(287837, 'lavastorm_287837', 1, 0, 0, 0, 0, 0, 45000, 15000, 0, 100, 0);
+(287837, 'lavastorm_287837', 1, 0, 0, 0, 0, 0, 45000, 15000, 0, 1
+
+
+INSERT INTO spawn2 (spawngroupID, zone, version, x, y, z, heading, respawntime, variance, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation)
+SELECT spawngroupID, zone, 1, x, y, z, heading, 1, 0, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation
+FROM spawn2 WHERE zone LIKE 'soldungb' AND version = 0;
