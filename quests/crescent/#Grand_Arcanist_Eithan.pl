@@ -1,4 +1,4 @@
-my $tier_one_taskID = 450000;
+my $tier_one_taskID = "450000";
 
 sub EVENT_SAY {
     if ($client->GetGM()) {
@@ -14,7 +14,7 @@ sub EVENT_SAY {
                         if (quest::istaskactive($tier_one_taskID)) {
 
                         } else {
-                            $client->plugin::NPCTell($npc,"Let's get down to buisness. Nostos gave you a [". quest::varlink(450001) ."], but it has some serious limitations, and I need your help to improve it. I need you to gather some [". quest::saylink("exotic materials",1,"gaeT1A") ."] for me in order to proceed.");
+                            $client->plugin::NPCTell($npc,"Let's get down to buisness. Nostos gave you a [". quest::varlink("450001") ."], but it has some serious limitations, and I need your help to improve it. I need you to gather some [". quest::saylink("exotic materials",1,"gaeT1A") ."] for me in order to proceed.");
                         }
                     } elsif ($level_cap <= 60) {
                         $client->plugin::NPCTell($npc,"My favorite research assistant! The next experiment isn't ready yet, but I'll have something for you soon.");
