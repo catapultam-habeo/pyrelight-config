@@ -31,6 +31,7 @@ UPDATE npc_types, spawn2, spawnentry
    AND npc_types.name NOT LIKE "#Grand_Arcanist_Eithan"
    AND npc_types.name NOT LIKE '%Nostos%' 
    AND npc_types.name NOT LIKE '%Emissary_Tinnvin%'
+   AND npc_types.name NOT LIKE "%Priest_of_Discord%"
    AND npc_types.name NOT LIKE '%Smithy_%'   
    AND npc_types.name NOT LIKE '%Warden_%' 
    AND npc_types.name NOT LIKE '%Banker_%' 
@@ -43,7 +44,7 @@ UPDATE npc_types, spawn2, spawnentry
    AND npc_types.name NOT LIKE '%Smith_Yahya%' 
    AND npc_types.name NOT LIKE '%Smith_Nkosi%' 
    AND npc_types.name NOT LIKE '%Smith_Fenyang%' 
-   AND npc_types.name NOT LIKE '%Vladneig_Glavern%' 
+   AND npc_types.name NOT LIKE '%Vladnelg_Galvern%' 
    AND npc_types.name NOT LIKE '%Mbisi%' 
    AND npc_types.name NOT LIKE '%Gemcrafter_Lentos%' 
    AND npc_types.name NOT LIKE '%Jeweler_Nailah%' 
