@@ -39,7 +39,6 @@ sub EVENT_SAY {
             quest::set_data($client->CharacterID() . "-" . $Data[0] . "-cooldown", 1, 259200);
             quest::set_data($client->CharacterID() . "-active-instance-zone", $Data[0], 259200);
             quest::set_data($client->CharacterID() . "-active-instance-id", $InstanceID, 259200);
-            quest::delete_data($InstanceID . "-deathCount");
             $client->plugin::NPCTell($npc,"I've opened the rift, $name. Tell me when you are ready to [". quest::saylink("enter",1) ."]");
         } elsif ($text=~/enter/i and $instance_id) {
             quest::AssignToInstance($instance_id);
