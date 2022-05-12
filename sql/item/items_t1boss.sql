@@ -71,7 +71,7 @@ UPDATE items SET reclevel = 52, healamt = 15, spelldmg = 15, hp = 120, mana = 12
 -- Innoruuk
 
 -- Eye of Veeshan
-
+---- Maybe?
 
 ---- Misc
 ---- Ivandyr's Hoop -> Aug
