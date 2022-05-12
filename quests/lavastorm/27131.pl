@@ -7,14 +7,13 @@ sub EVENT_SAY {
     my $instance_zone = quest::get_data($client->CharacterID() . "-active-instance-zone");
     my $instance_id = quest::get_data($client->CharacterID() . "-active-instance-id");
 
-    my $instance_cooldown = quest::get_data($client->CharacterID() . "-" . $Data[1] . "-cooldown");
+    my $instance_cooldown = quest::get_data($client->CharacterID() . "-" . $Data[0] . "-cooldown");
     
 
     if ($client->GetGM()) {
         if ($text=~/hail/i) {
             if ($instance_zone) {
-                $client->plugin::NPCTell($npc,"$instance_zone : $Data[1]");
-                if ($instance_zone eq $Data[1]) {
+                if ($instance_zone eq $Data[0]) {
                     $client->plugin::NPCTell($npc,"Hail, $name. Would you like me to [". quest::saylink("enter",1,"transport") ."] you back through the phase rift, or would you like me to [". quest::saylink("collapse",1) ."] it?");
                 } else {
                     $client->plugin::NPCTell($npc,"Hail, $name. I sense the residue of a phase rift on you. Before I can transport you though this one, I must [". quest::saylink("collapse",1,"dispel") ."] that residue from your aura. Would you like me to proceed?");
