@@ -2,7 +2,7 @@ sub EVENT_SAY {
     if ($client->GetGM()) {
 
         my $tier_one_taskID = "450000";
-
+        
         my $level_cap = quest::get_data($client->CharacterID() . "-CharMaxLevel");
         my $nostos_init = length(quest::get_data($client->CharacterID() . "-TL"));
         
@@ -11,10 +11,12 @@ sub EVENT_SAY {
             if ($nostos_init >= 2) {        
                 # Check to see if you are sitting, because I'm a dick
                 if ($client->IsSitting()) {
-                    if ($level_cap <= 52  {
-                        
+                    if ($level_cap <= 52)  {
+                        if (quest::istaskactive($tier_one_taskID)) {
+
+                        } else {
                             $client->plugin::NPCTell($npc,"Let's get down to buisness. Nostos gave you a [". quest::varlink("450001") ."], but it has some serious limitations, and I need your help to improve it. I need you to gather some [". quest::saylink("exotic materials",1,"gaeT1A") ."] for me in order to proceed.");
-                        
+                        }
                     } elsif ($level_cap <= 60) {
                         $client->plugin::NPCTell($npc,"My favorite research assistant! The next experiment isn't ready yet, but I'll have something for you soon.");
                     } elsif ($level_cap <= 65) {
@@ -31,7 +33,7 @@ sub EVENT_SAY {
         } elsif ($text=~/gaeRA1/i) {
              $client->plugin::NPCTell($npc,"Yes. A research assistant. There is absolutely no danger involved at all. Please go speak to my Apprentice, Nostos, if you are interested.");
         } elsif ($text=~/gaeT1A/i) {
-             $client->plugin::NPCTell($npc,"Test");
+             $client->plugin::NPCTell($npc,"");
         }
     }    
 }
