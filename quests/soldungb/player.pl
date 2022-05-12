@@ -4,7 +4,7 @@ sub EVENT_ENTERZONE {
     my @npc_list = $entity_list->GetNPCList();
 
     foreach $entity (@npc_list) {
-      $entity->Shout("Hello!");
+      quest::updatespawntimer($entity->GetSpawnPointID(), 1);
     }
   }
 }
