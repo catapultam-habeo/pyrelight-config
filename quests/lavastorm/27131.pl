@@ -1,3 +1,5 @@
+#Apprentice Sulentia
+
 sub EVENT_SAY {
     
     my @Data = ("soldungb", 32, -217, -437, -108, 257);
@@ -12,9 +14,9 @@ sub EVENT_SAY {
         if ($text=~/hail/i) {
             if ($instance_zone) {
                 if ($instance_zone eq $Data[1]) {
-                    # Return?
+                    $client->plugin::NPCTell($npc,"Hail, $n. Would you like me to [". quest::saylink("enter",1,"transport") ."] you back through the phase rift, or would you like me to [". quest::saylink("collapse",1) ."] it?");
                 } else {
-                    # Collapse?
+                    $client->plugin::NPCTell($npc,"Hail, $n. I sense the residue of a phase rift on you. Before I can transport you though this one, I must ". quest::saylink("collapse",1,"dispel") ."] that residue from your aura. Would you like me to proceed?");
                 }
             } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
                 if ($instance_cooldown) {
