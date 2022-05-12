@@ -13,7 +13,7 @@ sub EVENT_SAY {
     if ($client->GetGM()) {
         if ($text=~/hail/i) {
             if ($instance_zone) {
-                $client->plugin::NPCtell($npc,$instance_zone . ":" . $Data[1]);
+                
                 if ($instance_zone eq $Data[1]) {
                     $client->plugin::NPCTell($npc,"Hail, $n. Would you like me to [". quest::saylink("enter",1,"transport") ."] you back through the phase rift, or would you like me to [". quest::saylink("collapse",1) ."] it?");
                 } else {
