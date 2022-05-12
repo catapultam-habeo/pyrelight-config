@@ -1,7 +1,7 @@
 #Apprentice Sulentia
 
 use Time::Piece;
-use Time::Seconds;
+use Time::Seconds qw/ ONE_DAY /;
 
 sub EVENT_SAY {
     
