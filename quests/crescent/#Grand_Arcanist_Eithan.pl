@@ -4,7 +4,7 @@ sub EVENT_SAY {
         my $instance_zone = $client->CharacterID() . "-active-instance-zone";
         my $instance_id = $client->CharacterID() . "-active-instance-id";
 
-        my $tier_one_taskID = "450000";
+        my $tier_one_taskID = 9001;
         
         my $level_cap = quest::get_data($client->CharacterID() . "-CharMaxLevel");
         my $nostos_init = length(quest::get_data($client->CharacterID() . "-TL"));
@@ -42,7 +42,7 @@ sub EVENT_SAY {
         } elsif ($text=~/gaeT1B/i) {
             $client->plugin::NPCTell($npc,"Other apprentices of mine will open these rifts, transporting you to a parallel world very much like this one. The exact metaphysical differences between worlds are relatively unimportant, but there are some key facts; An essence anchor is an integral part of traversing these rifts, and only a single anchor can traverse an individual rift. You must go alone.");
         } elsif ($text=~/gaeT1C/i) {
-            #Assign Task HERE
+            quest::assigntask($tier_one_taskID);
             $client->plugin::NPCTell($npc,"In particular, I need you to confront [". quest::saylink("soldungb",1,"Lord Nagafen") ."], [". quest::saylink("permafrost",1,"Lady Vox") ."], and [". quest::saylink("kedge",1,"Phinigel Autropos") ."]. Where would you like to begin?");
         } elsif ($text=~/soldungb/i) {            
             $client->plugin::NPCTell($npc,"Lord Nagafen has a mystical orb he secreted away from the Ring of Scale when he was banished - it is necessary to infuse new energy into the essence anchor, among other experiments. He is located within his Lair, amid the Lavastorm Mountains.");
