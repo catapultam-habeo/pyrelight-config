@@ -1,3 +1,3 @@
-sub EVENT_DEATH {
-    quest::worldwidemessage(315, “I am here.”);
+sub EVENT_SPAWN {
+    $npc->Shout("Hi");
 }
