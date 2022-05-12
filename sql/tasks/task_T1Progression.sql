@@ -36,5 +36,7 @@ REPLACE INTO `spawngroup` (`id`, `name`, `spawn_limit`, `dist`, `max_x`, `min_x`
 
 
 INSERT INTO spawn2 (spawngroupID, zone, version, x, y, z, heading, respawntime, variance, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation)
-SELECT spawngroupID, zone, 1, x, y, z, heading, 1, 0, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation
-FROM spawn2 WHERE zone LIKE 'soldungb' AND version = 0;
+SELECT spawngroupID, zone, 1, x, y, z, heading, 99999999, 0, pathgrid, path_when_zone_idle, _condition, cond_value, enabled, animation
+FROM spawn2 
+WHERE ( zone LIKE 'soldungb' OR zone LIKE 'permafrost' OR zone LIKE 'kedge' OR zone LIKE 'karnor' OR zone LIKE 'sebilis' OR zone LIKE 'fearplane' OR zone LIKE 'hateplaneb' )
+AND version = 0;
