@@ -69,4 +69,5 @@ sub EVENT_DEATH {
 
         quest::shout("Death Count: $death_count");
     }
+    quest::shout("I died!");
 }
