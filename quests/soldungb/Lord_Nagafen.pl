@@ -12,18 +12,20 @@ sub EVENT_AGGRO {
                 }
             }
         }
-
-        my @clients = $entity_list->GetClientList();
-        foreach my $client (@clients) {
-            if ($client->IsTaskActive(9001)) {
-                quest::addloot(450010);
-            }
-
-            quest::delete_data($instanceid . '-deathCount');
-            quest::delete_data($instanceid . '-scaled');
-            quest::delete_data($client->CharacterID() . "-active-instance-zone");           
-            quest::delete_data($client->CharacterID() . "-active-instance-id");
-        }
     }
 }
-# EOF zone: soldungb ID: 32040 NPC: Lord_Nagafen
+
+
+sub EVENT_KILLED {   
+    my @clients = $entity_list->GetClientList();
+    foreach my $client (@clients) {
+        if ($client->IsTaskActivityActive(9001,0)) {
+            quest::addloot(450010);
+        }
+
+        quest::delete_data($instanceid . '-deathCount');
+        quest::delete_data($instanceid . '-scaled');
+        quest::delete_data($client->CharacterID() . "-active-instance-zone");           
+        quest::delete_data($client->CharacterID() . "-active-instance-id");
+    }
+}
