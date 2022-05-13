@@ -62,7 +62,7 @@ sub EVENT_SAY {
 					$client->plugin::NPCTell($npc,"Welcome back, $name. You have not yet attuned your [". quest::varlink($items[$tier]) ."] to any distant regions. Until you have, I can't send you anywhere through resonance translocation.");
 				}
 			} else {
-				$client->plugin::NPCTell($npc,"I see that you've lost your [". quest::varlink($items[$tier]) ."]. I can absolutely [". quest::saylink("replace it for you",1) ."], but not for free. It will cost you ". plugin::commify($client->GetLevel() * 100) ."pp.");
+				$client->plugin::NPCTell($npc,"I see that you've lost your [". quest::varlink($items[$tier]) ."]. I can absolutely [". quest::saylink("replace it for you",1) ."], but not for free. It will cost you ". plugin::commify($client->GetLevel() * 1000 * $tier) ."pp.");
 			}		
 		} else {
 			$client->plugin::NPCTell($npc,"Greetings, adventurer. I am Grand Arcanist Eithan's apprentice and research assistant, currently in charge of his [". quest::saylink("resonance translocation",1) ."] experiment, and am always looking for new test subjects.");
@@ -78,7 +78,7 @@ sub EVENT_SAY {
 			$client->plugin::NPCTell($npc,"Here, take this [". quest::varlink($items[0]) ."]. It is device that I've designed to simulate personal attunement, and has two main functions. First, you can activate it yourself to return here at any time. Second, if you visit a region with particularly strong unique essential resonance, it will store enough information about that attunement to allow me to send you back there.'");
 		}			
 	} elsif ($text=~/replace it for you/i) {
-		if (CheckForEssenceAnchor(@items) == 0 && $client->TakeMoneyFromPP($client->GetLevel() * 1000 * 100, 1)) {
+		if (CheckForEssenceAnchor(@items) == 0 && $client->TakeMoneyFromPP($client->GetLevel() * 1000 * 1000 & $tier, 1)) {
 			$client->Message(2, "You paid ". plugin::commify($cost * 1000 * 10) ."pp for [". quest::varlink($items[$tier]) ."].");
 			$client->SummonItem($items[$tier]);
 			$client->plugin::NPCTell($npc,"Here. You are lucky that I like you.");
