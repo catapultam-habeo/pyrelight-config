@@ -11,7 +11,7 @@ sub EVENT_ENTERZONE {
   }
 }
 
-ub EVENT_TASK_STAGE_COMPLETE {
+sub EVENT_TASK_STAGE_COMPLETE {
 	# Player-EVENT_TASK_STAGE_COMPLETE
 	# Exported event variables
 	quest::debug("task_id " . $task_id);
