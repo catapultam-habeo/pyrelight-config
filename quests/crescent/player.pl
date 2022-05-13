@@ -30,7 +30,5 @@ sub EVENT_TASK_STAGE_COMPLETE {
     $npc->CastToMob()->Emote(" tosses the damp seaweed down the passageway.");
   }
 
-  if $($client->IsTaskActivityActive(9001,6)) {
-    $client->plugin::NPCTell($npc,"You've collected everything we need for the next step. While I continue to work on the framework for the new anchor, I need you to take your existing equipment and harvest several dimension-phased undead essences. My apprentices await you outside of Karnor's Keep and Old Sebilis.");
-  }
+  
 } 
