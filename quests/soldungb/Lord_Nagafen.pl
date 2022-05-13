@@ -16,16 +16,8 @@ sub EVENT_AGGRO {
 }
 
 
-sub EVENT_KILLED {   
-    my @clients = $entity_list->GetClientList();
-    foreach my $client (@clients) {
-        if ($client->IsTaskActivityActive(9001,0)) {
-            quest::addloot(450010);
-        }
-
-        quest::delete_data($instanceid . '-deathCount');
-        quest::delete_data($instanceid . '-scaled');
-        quest::delete_data($client->CharacterID() . "-active-instance-zone");           
-        quest::delete_data($client->CharacterID() . "-active-instance-id");
+sub EVENT_SPAWN {   
+    if ($instanceid > 0 and $instanceversion == 1) {
+        quest::addloot(450010);
     }
 }
