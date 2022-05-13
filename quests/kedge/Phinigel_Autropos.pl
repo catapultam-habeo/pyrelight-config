@@ -5,7 +5,7 @@ sub EVENT_AGGRO {
         $n->AddToHateList($client, 100000);
     }
 
-    if ($instanceid > 0 and $instanceversion = 1) {
+    if ($instanceid > 0 and $instanceversion == 1) {
         my $death_count = quest::get_data($instanceid . '-deathCount');
         if ($death_count <= 10) {
             quest::shout("You know the rules!");
@@ -24,7 +24,7 @@ sub EVENT_AGGRO {
             if ($client->IsTaskActive(9001)) {
                 quest::addloot(450012);
             }
-            
+
             quest::delete_data($instanceid . '-deathCount');
             quest::delete_data($instanceid . '-scaled');
             quest::delete_data($client->CharacterID() . "-active-instance-zone");           
