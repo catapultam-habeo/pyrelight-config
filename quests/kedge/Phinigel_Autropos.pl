@@ -1,9 +1,22 @@
 sub EVENT_AGGRO {
     $npc->Shout("Guardians! Defend me!");
-    my @seahorses = $entity_list->GetMobByNpcTypeID(64051);
+    my @seahorses = $entity_list->GetNPCByNpcTypeID(64051);
     foreach my $n (@seahorses) {
         $n->AddToHateList($client, 100000);
     }
+    @seahorses = $entity_list->GetNPCByNpcTypeID(64049);
+    foreach my $n (@seahorses) {
+        $n->AddToHateList($client, 100000);
+    }
+    @seahorses = $entity_list->GetNPCByNpcTypeID(64024);
+    foreach my $n (@seahorses) {
+        $n->AddToHateList($client, 100000);
+    }
+    @seahorses = $entity_list->GetNPCByNpcTypeID(64051);
+    foreach my $n (@seahorses) {
+        $n->AddToHateList($client, 100000);
+    }
+
 
     if ($instanceid > 0 and $instanceversion == 1) {
         my $death_count = quest::get_data($instanceid . '-deathCount');
