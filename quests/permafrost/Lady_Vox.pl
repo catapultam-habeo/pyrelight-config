@@ -8,6 +8,7 @@ sub EVENT_AGGRO {
               $n->Shout("TRAIN!");
               if ($n->CastToMob()->GetLevel() < 255 && $n->GetOwnerID() == 0) {
                   $n->AddToHateList($client, 100000);
+                  $n->CastToMob()->SetInvul(true);
               }
           }
       }

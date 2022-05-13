@@ -35,12 +35,14 @@ sub EVENT_SAY {
             quest::delete_data($client->CharacterID() . "-active-instance-id");
             quest::DestroyInstance($instance_id);
             quest::delete_data($instance_id . '-deathCount');
+            quest::delete_data($instance_id . '-scaled');
         } elsif ($text=~/gaeLN1/i) {
             my $InstanceID = quest::CreateInstance($Data[0], 1, 259200);            
             quest::set_data($client->CharacterID() . "-" . $Data[0] . "-cooldown", 1, 259200);
             quest::set_data($client->CharacterID() . "-active-instance-zone", $Data[0], 259200);
-            quest::set_data($client->CharacterID() . "-active-instance-id", $InstanceID, 259200);
-            quest::delete_data($InstanceID . '-deathCount');
+            quest::set_data($client->CharacterID() . "-active-instance-id", $instance_id, 259200);
+            quest::delete_data($instance_id . '-deathCount');
+            quest::delete_data($instance_id . '-scaled');  
             $client->plugin::NPCTell($npc,"I've opened the rift, $name. Tell me when you are ready to [". quest::saylink("enter",1) ."]");
         } elsif ($text=~/enter/i and $instance_id) {
             quest::AssignToInstance($instance_id);
