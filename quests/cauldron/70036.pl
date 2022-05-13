@@ -23,7 +23,7 @@ sub EVENT_SAY {
             } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
                 if ($instance_cooldown) {
                     $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
-                    $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown)));
+                    $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
                 } else {
                     $client->plugin::NPCTell($npc,"You must be Master Eithan's new test subject - He told me to expect someone to explore this phase rift. I don't feel like swimming, so fortunately I can project the rift from here. Would you like for me to [". quest::saylink("gaeLN1",1,"open the rift") ."] for you?");
                 }
