@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-    if ($client->GetGM()) {
+    if ($client->GetGM() || $client->GetName() eq 'Sihtric') {
 
         my $instance_duration = 72000;
 
