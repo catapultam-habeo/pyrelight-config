@@ -60,23 +60,32 @@ sub EVENT_SAY {
     }    
 }
 
-sub EVENT_TASK_STAGE_COMPLETE {
+sub EVENT_ITEM {
+    CheckItems($item1);
+    CheckItems($item2);
+    CheckItems($item3);
+    CheckItems($item4);
 
-    $client->Shout("$task_id:$activity_id");
-
-    if ($task_id = 9001 and $activity_id = 3) {
-        $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
-    }
-
-    if ($task_id = 9001 and $activity_id = 4) {
-        $client->plugin::NPCTell($npc,"This is exactly what I need. I'll begin working on the alchemical infusion immediately.");
-    }
-
-    if ($task_id = 9001 and $activity_id = 5) {
-        $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
-    }
-
-    $client->IsTaskActivityActive(9001, 6) {
+    if (($item1 = 450010 or $item2 = 450010 or $item3 = 450010 or $item4 = 450010 or $item1 = 450011 or $item2 = 450011 or $item3 = 450011 or $item4 = 450011 or $item1 = 450012 or $item2 = 450012 or $item3 = 450012 or $item4 = 450012) and $client->IsTaskActivityActive(9001, 6)) {
         $client->plugin::NPCTell($npc,"You've collected everything we need for the next step. While I continue to work on the framework for the new anchor, I need you to take your existing equipment and harvest several dimension-phased undead essences. My apprentices await you outside of Karnor's Keep and Old Sebilis.");
+    }
+}
+
+sub CheckItems() {
+    my $item = shift;
+
+    if ($client->IsTaskActivityActive(9001, 3) and $item = 450010) {
+        $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
+        $client->UpdateTaskActivity(9001, 3, 1);
+    }
+
+    if ($client->IsTaskActivityActive(9001, 4) and $item = 450011) {
+        $client->plugin::NPCTell($npc,"This is exactly what I need. I'll begin working on the alchemical infusion immediately.");
+        $client->UpdateTaskActivity(9001, 4, 1);
+    }
+
+    if ($client->IsTaskActivityActive(9001, 5) and $item = 450011) {
+         $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
+        $client->UpdateTaskActivity(9001, 5, 1);
     }
 }
