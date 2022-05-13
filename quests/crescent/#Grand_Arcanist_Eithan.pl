@@ -53,7 +53,8 @@ sub EVENT_SAY {
             $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue, which will allow you to visit another of my apprentices and them open a new rift.");
                 quest::delete_data($instance_zone);
                 quest::delete_data($instance_id);
-                quest::delete_data($instance_id . '-deathCount');
+                quest::delete_data($instance_id . '-deathCount');                
+                quest::delete_data($instance_id . '-scaled');
                 quest::DestroyInstance($instance_id);
         }
     }    

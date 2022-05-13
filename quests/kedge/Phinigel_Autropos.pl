@@ -1,7 +1,7 @@
 sub EVENT_AGGRO {
     $npc->Shout("Guardians! Defend me!");
     my @seahorses = $entity_list->GetMobByNpcTypeID(64051);
-    foreach my $n (@npcs) {
+    foreach my $n (@seahorses) {
         $n->AddToHateList($client, 100000);
     }
 
