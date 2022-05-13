@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-    if ($client->GetGM() || $client->GetName() eq 'Sihtric' || $client->GetName() eq 'Fore') {
+    if ($client->GetGM() || $client->GetName() eq 'Sihtric' || $client->GetName() eq 'Fore' || $client->GetName() eq 'Sshantrel') {
 
         my $instance_duration = 72000;
 

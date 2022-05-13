@@ -12,7 +12,7 @@ sub EVENT_SAY {
     
     my $instance_duration = 72000;
 
-    if ($client->GetGM() || $client->GetName() eq 'Sihtric' || $client->GetName() eq 'Fore') {
+    if ($client->GetGM() || $client->GetName() eq 'Sihtric' || $client->GetName() eq 'Fore' || $client->GetName() eq 'Sshantrel') {
         if ($text=~/hail/i) {
             if ($instance_zone) {
                 if ($instance_zone eq $Data[0]) {
