@@ -1,5 +1,5 @@
 sub EVENT_ENTERZONE {
-    if ($instanceid > 0 and $instanceversion = 1 and not quest::get_data($instanceid . "-scaled")) {
+    if ($instanceid > 0 and $instanceversion == 1 and not quest::get_data($instanceid . "-scaled")) {
         my @npcs = $entity_list->GetNPCList();
         my $hack_count = quest::get_data($client->GetIPString() . "-HackerFlag");
 

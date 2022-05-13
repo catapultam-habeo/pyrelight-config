@@ -32,5 +32,9 @@ sub EVENT_TASK_STAGE_COMPLETE {
       $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
       $npc->CastToMob()->Emote(" tosses the damp seaweed down the passageway.");
     }
+
+    if ($client->IsTaskActivityActive(9001, 6)) {
+      $client->plugin::NPCTell($npc,"You've brought me everything that I need to start building the [". quest::varlink("450002") ."]. While I work on this, I need you to use your [". quest::varlink("450001") ."] to gather the necromatic energy surrounding two powerful undead. My apprentices will meet you outside of Karnor's Castle and Old Sebilis. Good luck.");
+    }
   }
 } 
