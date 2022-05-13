@@ -40,13 +40,15 @@ sub EVENT_SAY {
                             } else {
                                 $client->plugin::NPCTell($npc,"I sense the lingering vestiges of the rift for Lord Nagafen on you. Do you have his [". quest::varlink("450010") ."]?");
                             }
-                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vox_item)) {
+                        }  
+                        if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vox_item)) {
                             if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vox)) {
                                 $client->plugin::NPCTell($npc,"I need you to confront [". quest::saylink("permafrost",1,"Lady Vox") ."] and bring me his [". quest::varlink("450011") ."].");
                             } else {
                                 $client->plugin::NPCTell($npc,"I sense the lingering vestiges of the rift leading to Permafrost on you. Do you have his [". quest::varlink("450011") ."]?");
                             }
-                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_phinny_item)) {
+                        } 
+                        if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_phinny_item)) {
                             if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_phinny)) {
                                 $client->plugin::NPCTell($npc,"I need you to confront [". quest::saylink("kedge",1,"Phinigel Autropos") ."] and bring me his [". quest::varlink("450012") ."].");
                             } else {
