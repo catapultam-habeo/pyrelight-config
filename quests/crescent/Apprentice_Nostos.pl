@@ -4,7 +4,20 @@ sub EVENT_SAY {
 	my $targetKey = "Locations-TL";
 	my %teleport_zones = ();
 	my $charTargets = quest::get_data($charKey);
-	my $tier = substr($charTargets,1,1);
+	
+	my $levelCap = quest::get_data($client->CharacterID() . "-CharMaxLevel");
+	my $tier = 0;
+
+	if ($levelCap == 52) {
+		$tier = 1;
+	} elsif ($levelCap == 60) {
+		$tier = 2;
+	} elsif ($levelCap == 65) {
+		$tier = 3;
+	} elsif ($levelCap == 70) {
+		$tier = 4;
+	}
+
 	
 	my $menuColor = 300;
 	
