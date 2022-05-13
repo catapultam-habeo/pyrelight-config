@@ -49,34 +49,6 @@ sub EVENT_SAY {
             quest::delete_data($instance_id . '-deathCount');                
             quest::delete_data($instance_id . '-scaled');
             quest::DestroyInstance($instance_id);
-        } elsif ($text=~/gaeFear/i and ($client->IsTaskActivityActive(9001,9) or $client->IsTaskCompleted(9001))) {
-
-            my @Data = ("fearplane", 72, 1329, -1201, 14, 412);
-            my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
-            my $instance_cooldown = quest::get_data($instance_cooldown_key);
-
-            elsif ($instance_cooldown) {
-                $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
-                $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown)));
-            } elsif ($instance_zone eq $Data[0]) {
-                $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
-            } else {
-                $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("gaeFearOpen",1,"open the way") ."] for you.");
-            }
-        } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,10) or $client->IsTaskCompleted(9001))) {
-
-            my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
-            my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
-            my $instance_cooldown = quest::get_data($instance_cooldown_key);
-
-            elsif ($instance_cooldown) {
-                $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
-                $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown)));
-            } elsif ($instance_zone eq $Data[0]) {
-                $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
-            } else {
-                $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("gaeHateOpen",1,"open the way") ."] for you.");
-            }
-        }
+        } 
     }    
 }
