@@ -61,6 +61,9 @@ sub EVENT_SAY {
 }
 
 sub EVENT_TASK_STAGE_COMPLETE {
+
+    $client->Shout("$task_id:$activity_id");
+
     if ($task_id = 9001 and $activity_id = 3) {
         $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
     }
