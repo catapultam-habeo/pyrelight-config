@@ -20,7 +20,9 @@ sub EVENT_SAY {
                 if ($client->IsSitting()) {
                     if (quest::get_data($instance_zone)) {
                         $client->plugin::NPCTell($npc,"I can sense the residue of an active phase rift on you. Do you need me to [". quest::saylink("collapse",1) ."] it for you?");
-                    } 
+                    } elsif (not $client->IsTaskCompleted($tier_one_taskID or not $client->istaskactive($tier_one_taskID))) {
+                        $client->plugin::NPCTell($npc,"Let's get down to buisness. Nostos gave you a [". quest::varlink("450001") ."], but it has some serious limitations, and I need your help to improve it. I need you to gather some [". quest::saylink("gaeT1A",1,"exotic materials") ."] for me in order to proceed.");
+                    }
                 } else {
                     $client->plugin::NPCTell($npc,"Have a seat, $race. We have a lot to talk about and I prefer to stay comfortable.");
                 }
