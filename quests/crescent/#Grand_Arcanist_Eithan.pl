@@ -147,7 +147,7 @@ sub EVENT_SAY {
             } else {
                 $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("1019123",1,"open the way") ."] for you.");
             }
-        } elsif ($text=~/1019123/i and ($client->IsTaskActivityActive(9001,9))) {
+        } elsif ($text=~/1019123/i and ($client->IsTaskActivityActive(9001,10))) {
             my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
             my $instance_cooldown = quest::get_data($instance_cooldown_key);
