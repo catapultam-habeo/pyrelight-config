@@ -20,15 +20,15 @@ sub EVENT_TASK_STAGE_COMPLETE {
   my $npc = $entity_list->GetNPCByNPCTypeID(394192);    
 
   if ($task_id = 9001) {
-    if ($activity_id = 3) {
+    if ($activity_id == 3) {
       $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
     }
 
-    if ($activity_id = 4) {
+    if ($activity_id == 4) {
       $client->plugin::NPCTell($npc,"This is exactly what I need. I'll begin working on the alchemical infusion immediately.");
     }
 
-    if ($activity_id = 5) {
+    if ($activity_id == 5) {
       $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
       $npc->CastToMob()->Emote(" tosses the damp seaweed down the passageway.");
     }
