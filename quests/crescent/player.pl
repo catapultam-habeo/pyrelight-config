@@ -19,7 +19,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
 
   my $npc = $entity_list->GetNPCByNPCTypeID(394192);
 
-  quest::debug("npc:" . $npc);  
+  quest::debug("npc:" . $npc->GetName());  
 
   if ($task_id = 9001) {
     if ($activity_id = 3) {
