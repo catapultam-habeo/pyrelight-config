@@ -66,7 +66,13 @@ sub EVENT_ITEM {
     CheckItems($item3);
     CheckItems($item4);
 
-    if (($item1 = 450010 or $item2 = 450010 or $item3 = 450010 or $item4 = 450010 or $item1 = 450011 or $item2 = 450011 or $item3 = 450011 or $item4 = 450011 or $item1 = 450012 or $item2 = 450012 or $item3 = 450012 or $item4 = 450012) and $client->IsTaskActivityActive(9001, 6)) {
+    if ((
+         $item1 = 450010 or $item2 = 450010 or $item3 = 450010 or $item4 = 450010 
+      or $item1 = 450011 or $item2 = 450011 or $item3 = 450011 or $item4 = 450011 
+      or $item1 = 450012 or $item2 = 450012 or $item3 = 450012 or $item4 = 450012
+       ) and $client->IsTaskActivityActive(9001, 6)) 
+       
+       {
         $client->plugin::NPCTell($npc,"You've collected everything we need for the next step. While I continue to work on the framework for the new anchor, I need you to take your existing equipment and harvest several dimension-phased undead essences. My apprentices await you outside of Karnor's Keep and Old Sebilis.");
     }
 }
@@ -84,7 +90,7 @@ sub CheckItems() {
         $client->UpdateTaskActivity(9001, 4, 1);
     }
 
-    if ($client->IsTaskActivityActive(9001, 5) and $item = 450011) {
+    if ($client->IsTaskActivityActive(9001, 5) and $item = 450012) {
          $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
         $client->UpdateTaskActivity(9001, 5, 1);
     }
