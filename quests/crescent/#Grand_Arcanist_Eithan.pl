@@ -68,7 +68,7 @@ sub EVENT_SAY {
                             $client->plugin::NPCTell($npc,"Tell me when you are ready to venture to the planes to challenge [". quest::saylink("gaeHate",1,"Innoruuk") ."] or [". quest::saylink("gaeFear",1,"Cazic-Thule") ."].");
                         } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_ct)) {
                             $client->plugin::NPCTell($npc,"You've absorbed the divine energy of the avatar of Cazic-Thule. Amazing - Now you must repeat this feat with [". quest::saylink("gaeHate",1,"Innoruuk") ."].");
-                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_trak)) {
+                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_inny)) {
                             $client->plugin::NPCTell($npc,"You've absorbed the divine energy of the avatar of Innoruuk. Amazing - Now you must repeat this feat with [". quest::saylink("gaeFear",1,"Cazic-Thule") ."].");
                         }
 
