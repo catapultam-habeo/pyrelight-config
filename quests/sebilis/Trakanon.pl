@@ -46,8 +46,6 @@ sub EVENT_KILLED_MERIT {
                 $client->Message(15, "Your [". quest::varlink(450001) ."] absorbs power from the fallen Dracolich.");
             }
 
-            quest::delete_data($instanceid . '-deathCount');
-            quest::delete_data($instanceid . '-scaled');
             quest::delete_data($client->CharacterID() . "-active-instance-zone");           
             quest::delete_data($client->CharacterID() . "-active-instance-id");
         }
