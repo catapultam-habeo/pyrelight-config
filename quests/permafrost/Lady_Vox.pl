@@ -15,9 +15,14 @@ sub EVENT_AGGRO {
 
       my @clients = $entity_list->GetClientList();
       foreach my $client (@clients) {
-          if ($client->IsTaskActive(9001)) {
-              quest::addloot(450011);
-          }
+        if ($client->IsTaskActive(9001)) {
+            quest::addloot(450011);
+        }
+
+        quest::delete_data($instanceid . '-deathCount');
+        quest::delete_data($instanceid . '-scaled');
+        quest::delete_data($client->CharacterID() . "-active-instance-zone");           
+        quest::delete_data($client->CharacterID() . "-active-instance-id");
       }
   }
 }

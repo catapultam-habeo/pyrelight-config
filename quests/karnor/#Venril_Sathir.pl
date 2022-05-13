@@ -21,8 +21,13 @@ sub EVENT_KILLED_MERIT {
         foreach my $client (@clients) {
             if ($client->IsTaskActivityActive(9001, 6)) {
                 $client->UpdateTaskActivity(9001, 6, 1);
-                $client->Message(15, "Your [". quest::varlink(450001) ."] absorbs power from the fallen necromancer.");
+                $client->Message(15, "Your [". quest::varlink(450001) ."] absorbs power from the fallen necromancer.");                
             }
+
+            quest::delete_data($instanceid . '-deathCount');
+            quest::delete_data($instanceid . '-scaled');
+            quest::delete_data($client->CharacterID() . "-active-instance-zone");           
+            quest::delete_data($client->CharacterID() . "-active-instance-id");
         }
     }
 }

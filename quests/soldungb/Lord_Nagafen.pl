@@ -18,6 +18,11 @@ sub EVENT_AGGRO {
             if ($client->IsTaskActive(9001)) {
                 quest::addloot(450010);
             }
+
+            quest::delete_data($instanceid . '-deathCount');
+            quest::delete_data($instanceid . '-scaled');
+            quest::delete_data($client->CharacterID() . "-active-instance-zone");           
+            quest::delete_data($client->CharacterID() . "-active-instance-id");
         }
     }
 }
