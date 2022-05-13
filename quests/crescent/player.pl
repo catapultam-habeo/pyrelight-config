@@ -16,4 +16,6 @@ ub EVENT_TASK_STAGE_COMPLETE {
 	# Exported event variables
 	quest::debug("task_id " . $task_id);
 	quest::debug("activity_id " . $activity_id);
+
+  $client->(15,"$activity_id");
 } 
