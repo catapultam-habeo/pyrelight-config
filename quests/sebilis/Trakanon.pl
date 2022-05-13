@@ -1,22 +1,22 @@
 sub EVENT_AGGRO {
     $npc->Shout("Guardians! Defend me!");
 
-    my @guards = $entity_list->GetMobByNpcTypeID(89184);
+    my @guards = $entity_list->GetNPCByNpcTypeID(89184);
     foreach my $n (@guards) {
         $n->AddToHateList($client, 100000);
     }
 
-    @guards = $entity_list->GetMobByNpcTypeID(89001);
+    @guards = $entity_list->GetNPCByNpcTypeID(89001);
     foreach my $n (@guards) {
         $n->AddToHateList($client, 100000);
     }
 
-    @guards = $entity_list->GetMobByNpcTypeID(89002);
+    @guards = $entity_list->GetNPCByNpcTypeID(89002);
     foreach my $n (@guards) {
         $n->AddToHateList($client, 100000);
     }
 
-    @guards = $entity_list->GetMobByNpcTypeID(89000);
+    @guards = $entity_list->GetNPCByNpcTypeID(89000);
     foreach my $n (@guards) {
         $n->AddToHateList($client, 100000);
     }
