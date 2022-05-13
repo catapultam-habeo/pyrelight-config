@@ -61,7 +61,7 @@ sub EVENT_SAY {
             } elsif ($instance_zone eq $Data[0]) {
                 $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
             } else {
-                $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("gaeFearOpen",1,"open the way") ."] for you.")
+                $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("gaeFearOpen",1,"open the way") ."] for you.");
             }
         } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,10) or $client->IsTaskCompleted(9001))) {
 
@@ -75,7 +75,7 @@ sub EVENT_SAY {
             } elsif ($instance_zone eq $Data[0]) {
                 $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
             } else {
-                $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("gaeHateOpen",1,"open the way") ."] for you.")
+                $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("gaeHateOpen",1,"open the way") ."] for you.");
             }
         }
     }    
