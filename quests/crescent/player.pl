@@ -25,7 +25,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
     $client->plugin::NPCTell($npc,"This is exactly what I need. I'll begin working on the alchemical infusion immediately.");
   }
 
-  if ($task_id = 9001 and $activity_id = 5) {
+  if ($task_id eq '9001' and $activity_id eq '5') {
     $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
     $npc->CastToMob()->Emote(" tosses the damp seaweed down the passageway.");
   }
