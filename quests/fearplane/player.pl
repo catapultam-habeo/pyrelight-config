@@ -1,12 +1,12 @@
 sub EVENT_ENTERZONE {
-    if ($instanceid > 0 and $instanceversion = 1 and not quest::get_data($instanceid . "-scaled")) {
+    if ($instanceid > 0 and $instanceversion == 1 and not quest::get_data($instanceid . "-scaled")) {
         my @npcs = $entity_list->GetNPCList();
         my $hack_count = quest::get_data($client->GetIPString() . "-HackerFlag");
 
         foreach $npc (@npcs) {
-            my $levelTarget = 53;
+            my $levelTarget = 56;
 
-            my $levelScalar = $levelTarget/$npc->GetLevel() * (1+(($hack_count-3)/10)) + .5;
+            my $levelScalar = $levelTarget/$npc->GetLevel() * (1+(($hack_count-3)/10)) + .75;
 
             $npc->ModifyNPCStat("max_hp", $npc->GetNPCStat("max_hp") * $levelScalar);
             $npc->ModifyNPCStat("ac", $npc->GetNPCStat("max_ac") * $levelScalar);
