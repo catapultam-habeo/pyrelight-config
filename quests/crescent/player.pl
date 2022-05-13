@@ -20,7 +20,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
   my $npc = $entity_list->GetNPCByNPCTypeID(394192);  
 
   if ($task_id = 9001 and $activity_id = 3) {
-    $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
+    $client->plugin::NPCTell($npc,"2Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
   }
 
   if ($task_id = 9001 and $activity_id = 4) {
