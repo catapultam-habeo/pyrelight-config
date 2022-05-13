@@ -37,7 +37,7 @@ sub EVAL_PET
                 $pet->SetLevel($owner_level*.95);
 
                 $pet->ModifyNPCStat("max_hp", $owner_level * 100 * ($owner_spelldmg));
-                $pet->ModifyNPCStat("ac", $owner_level * 10 * ($owner_spelldmg));
+                $pet->ModifyNPCStat("ac", $owner_level * 3 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("atk", $owner_level * 1 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("accuracy", $owner_level * 1 * ($owner_spelldmg));
                 $pet->ModifyNPCStat("avoidance", $owner_level * 1 * ($owner_spelldmg));
