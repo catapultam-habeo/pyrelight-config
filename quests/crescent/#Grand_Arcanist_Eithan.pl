@@ -109,7 +109,7 @@ sub EVENT_SAY {
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
             my $instance_cooldown = quest::get_data($instance_cooldown_key);
 
-            elsif ($instance_cooldown) {
+            if ($instance_cooldown) {
                 $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
                 $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown)));
             } elsif ($instance_zone eq $Data[0]) {
