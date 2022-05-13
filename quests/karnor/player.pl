@@ -4,9 +4,11 @@ sub EVENT_ENTERZONE {
         my $hack_count = quest::get_data($client->GetIPString() . "-HackerFlag");
 
         foreach $npc (@npcs) {
-            my $levelTarget = 67;
+            my $levelTarget = 57;
 
             my $levelScalar = $levelTarget/$npc->GetLevel() * (1+(($hack_count-3)/10)) + .5;
+
+            $npc->Shout($levelScalar);
 
             $npc->ModifyNPCStat("max_hp", $npc->GetNPCStat("max_hp") * $levelScalar);
             $npc->ModifyNPCStat("ac", $npc->GetNPCStat("max_ac") * $levelScalar);
