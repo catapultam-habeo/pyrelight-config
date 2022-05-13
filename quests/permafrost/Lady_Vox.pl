@@ -17,7 +17,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_SPAWN {   
     if ($instanceid > 0 and $instanceversion == 1) {
-        quest::addloot(450010);
+        quest::addloot(450011);
     }
 }
 
