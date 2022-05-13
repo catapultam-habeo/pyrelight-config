@@ -28,7 +28,7 @@ sub EVENT_ENTERZONE {
             $npc->ModifyNPCStat("pr", $npc->GetNPCStat("pr") * $levelScalar);
             $npc->ModifyNPCStat("mr", $npc->GetNPCStat("mr") * $levelScalar);
 
-            $npc->SetLevel(55);
+            $npc->SetLevel($levelTarget);
             $npc->SetMaxHP();
 
             quest::set_data($instanceid . "-scaled", 259200);           
