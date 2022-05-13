@@ -117,7 +117,7 @@ sub EVENT_SAY {
             } else {
                 $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("gaeFearOpen",1,"open the way") ."] for you.");
             }
-        } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,9))) {
+        } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,10))) {
 
             my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
@@ -132,7 +132,6 @@ sub EVENT_SAY {
                 $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("gaeHateOpen",1,"open the way") ."] for you.");
             }
         } elsif ($text=~/gaeFearOpen/i and ($client->IsTaskActivityActive(9001,9))) {
-
             my @Data = ("fearplane", 72, 1329, -1201, 14, 412);
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
             my $instance_cooldown = quest::get_data($instance_cooldown_key);
