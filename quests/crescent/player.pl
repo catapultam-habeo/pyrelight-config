@@ -10,3 +10,10 @@ sub EVENT_ENTERZONE {
         $client->Message(15, "Your level cap has been set to 52.");
   }
 }
+
+ub EVENT_TASK_STAGE_COMPLETE {
+	# Player-EVENT_TASK_STAGE_COMPLETE
+	# Exported event variables
+	quest::debug("task_id " . $task_id);
+	quest::debug("activity_id " . $activity_id);
+} 
