@@ -45,8 +45,6 @@ sub EVENT_TASK_STAGE_COMPLETE {
       $client->plugin::NPCTell($npc,"My favorite research assistant returns! Allow me moment to use the energies you've collected to empower your new essence anchor. When you are ready, check back with me to see if have more work for you.");
       $npc->CastToMob()->Emote(" carefully brings the two essence anchors together. A powerful energy arcs between them, and the Rudimentary Essence Anchor quickly falls to into dust.");
 
-      $client->SummonItem(450002);
-
       my $key = $client->CharacterID() . "-CharMaxLevel";
 
       quest::set_data($key,60);
