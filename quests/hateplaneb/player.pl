@@ -36,4 +36,11 @@ sub EVENT_ENTERZONE {
             quest::set_data($instanceid . "-scaled", 259200);           
         }
     }
+
+
+    if() {
+
+    } elsif () {
+        
+    }
 }
