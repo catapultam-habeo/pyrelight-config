@@ -80,18 +80,20 @@ sub EVENT_ITEM {
 sub CheckItems() {
     my $item = shift;
 
-    if ($client->IsTaskActivityActive(9001, 3) and $item = 450010) {
+    $client->plugin:NPCTell($npc,$item);
+
+    if ($client->IsTaskActivityActive(9001, 3) && $item = 450010) {
         $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
         $client->UpdateTaskActivity(9001, 3, 1);
     }
 
-    if ($client->IsTaskActivityActive(9001, 4) and $item = 450011) {
+    if ($client->IsTaskActivityActive(9001, 4) && $item = 450011) {
         $client->plugin::NPCTell($npc,"This is exactly what I need. I'll begin working on the alchemical infusion immediately.");
         $client->UpdateTaskActivity(9001, 4, 1);
     }
 
-    if ($client->IsTaskActivityActive(9001, 5) and $item = 450012) {
-         $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
+    if ($client->IsTaskActivityActive(9001, 5) && $item = 450012) {
+        $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
         $client->UpdateTaskActivity(9001, 5, 1);
     }
 }
