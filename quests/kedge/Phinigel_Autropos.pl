@@ -21,7 +21,7 @@ sub EVENT_AGGRO {
 
         my @clients = $entity_list->GetClientList();
         foreach my $client (@clients) {
-            if ($client->IsTaskActive(9001)) {
+            if ($client->IsTaskActivityActive(9001,2)) {
                 quest::addloot(450012);
             }
 
