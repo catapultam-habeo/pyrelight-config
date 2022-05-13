@@ -103,7 +103,7 @@ sub EVENT_SAY {
             quest::delete_data($instance_id . '-deathCount');                
             quest::delete_data($instance_id . '-scaled');
             quest::DestroyInstance($instance_id);
-        } elsif ($text=~/gaeFear/i and ($client->IsTaskActivityActive(9001,9) or $client->IsTaskCompleted(9001))) {
+        } elsif ($text=~/gaeFear/i and ($client->IsTaskActivityActive(9001,9))) {
 
             my @Data = ("fearplane", 72, 1329, -1201, 14, 412);
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
@@ -117,7 +117,7 @@ sub EVENT_SAY {
             } else {
                 $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("gaeFearOpen",1,"open the way") ."] for you.");
             }
-        } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,9) or $client->IsTaskCompleted(9001))) {
+        } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,9))) {
 
             my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
@@ -131,6 +131,20 @@ sub EVENT_SAY {
             } else {
                 $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("gaeFearOpen",1,"open the way") ."] for you.");
             }
-        }
+        } elsif ($text=~/gaeFearOpen/i and ($client->IsTaskActivityActive(9001,9))) {
+
+            my @Data = ("fearplane", 72, 1329, -1201, 14, 412);
+            my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
+            my $instance_cooldown = quest::get_data($instance_cooldown_key);
+            my $instance_id = quest::CreateInstance($Data[0], 1, $instance_duration);            
+            quest::set_data($instance_cooldown_key, 1, $instance_duration);
+            quest::set_data($instance_zone_key, $Data[0], $instance_duration);
+            quest::set_data($instance_id_key, $instance_id, $instance_duration);
+            quest::delete_data($instance_id . '-deathCount');
+            quest::delete_data($instance_id . '-scaled');
+
+            quest::AssignToInstance($instance_id);
+            $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
+        } 
     }    
 }
