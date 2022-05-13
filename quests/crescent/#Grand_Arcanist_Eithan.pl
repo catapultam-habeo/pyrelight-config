@@ -55,6 +55,23 @@ sub EVENT_SAY {
                                 $client->plugin::NPCTell($npc,"I sense the lingering vestiges of the rift destined for Kedge Keep on you. Do you have his [". quest::varlink("450012") ."]?");
                             }
                         }
+
+                        if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs) and $client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs)) {
+                            $client->plugin::NPCTell($npc,"My Apprentices await you outside of Karnor's Castle and Old Sebilis");
+                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs)) {
+                            $client->plugin::NPCTell($npc,"You've absorbed the necromantic energy of Trakanon! Excellent. Only Venril Sathir remains. Apprentice Sslish awaits you outside of Old Sebilis.");
+                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_trak)) {
+                            $client->plugin::NPCTell($npc,"You've absorbed the necromantic energy of Venril Sathir! Excellent. Only Trakanon remains. My apprentice awaits you outside of Karnor's Castle.");
+                        }
+
+                        if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_ct) and $client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_inny)) {
+                            $client->plugin::NPCTell($npc,"My Apprentices await you outside of Karnor's Castle and Old Sebilis");
+                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_ct)) {
+                            $client->plugin::NPCTell($npc,"You've absorbed the divine energy of the avatar of Cazic-Thule. Amazing - Now you must repeat this feat with [". quest::saylink("gaeHate",1,"Innoruuk") ."].");
+                        } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_trak)) {
+                            $client->plugin::NPCTell($npc,"You've absorbed the divine energy of the avatar of Innoruuk. Amazing - Now you must repeat this feat with [". quest::saylink("gaeFear",1,"Cazic-Thule") ."].");
+                        }
+
                     } elsif (not $client->IsTaskCompleted($tier_one_taskID)) {
                         $client->plugin::NPCTell($npc,"Let's get down to buisness. Nostos gave you a [". quest::varlink("450001") ."], but it has some serious limitations, and I need your help to improve it. I need you to gather some [". quest::saylink("gaeT1A",1,"exotic materials") ."] for me in order to proceed.");
                     }
