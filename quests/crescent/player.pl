@@ -36,5 +36,13 @@ sub EVENT_TASK_STAGE_COMPLETE {
     if ($client->IsTaskActivityActive(9001, 6)) {
       $client->plugin::NPCTell($npc,"You've brought me everything that I need to start building the [". quest::varlink("450002") ."]. While I work on this, I need you to use your [". quest::varlink("450001") ."] to gather the necromatic energy surrounding two powerful undead. My apprentices will meet you outside of Karnor's Castle and Old Sebilis. Good luck.");
     }
+
+    if ($activity_id == 8) {
+      $client->plugin::NPCTell($npc,"$name! You've done wonderful work. I've constructed the [". quest::varlink("450013") ."], now all that we need is to infuse it powerful essence. The Planes of [". quest::saylink("gaeFear",1,"Fear") ."] and [". quest::saylink("gaeHate",1,"Hate") ."] are closely connected to this world, I can open rifts to either, phased to realities where the divine avatars present will be within the realm of your abilities to defeat. Do not be under any illusion that the actual avatars of these Gods would not swat you like flies - but these aspects extend into realities where their power is somewhat weaker.");
+    }
+
+    if ($activity_id == 11) {
+
+    }
   }
 } 
