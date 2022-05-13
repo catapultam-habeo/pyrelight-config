@@ -20,38 +20,7 @@ sub EVENT_SAY {
                 if ($client->IsSitting()) {
                     if (quest::get_data($instance_zone)) {
                         $client->plugin::NPCTell($npc,"I can sense the residue of an active phase rift on you. Do you need me to [". quest::saylink("collapse",1) ."] it for you?");
-                    } elsif ($level_cap <= 52)  {
-                        if ($client->istaskactive($tier_one_taskID)) {
-                            my $tier_one_task_activity_naggy = 0;
-                            my $tier_one_task_activity_vox = 1;
-                            my $tier_one_task_activity_phinny = 2;
-                            my $tier_one_task_activity_naggy_item = 3;
-                            my $tier_one_task_activity_vox_item = 4;
-                            my $tier_one_task_activity_phinny_item = 5;
-                            my $tier_one_task_activity_vs = 6;
-                            my $tier_one_task_activity_trak = 7;
-                            my $tier_one_task_activity_ct = 9;
-                            my $tier_one_task_activity_inny = 10;
-
-                            if ($client->IsTaskActivityActive($tier_one_taskID, 0) or $client->IsTaskActivityActive($tier_one_taskID, 1) or $client->IsTaskActivityActive($tier_one_taskID, 2) or lient->IsTaskActivityActive($tier_one_taskID, 3) or $client->IsTaskActivityActive($tier_one_taskID, 4) or $client->IsTaskActivityActive($tier_one_taskID, 5)) {
-                                    $client->plugin::NPCTell($npc, "Good to see you again, research assistant. Remember, I still need you to gather objects of power from [". quest::saylink("soldungb",1,"Lord Nagafen") ."], [". quest::saylink("permafrost",1,"Lady Vox") ."], and [". quest::saylink("kedge",1,"Phinigel Autropos") ."].");
-                            } elsif ($client->IsTaskActivityActive($tier_one_taskID, 9) or
-                                     $client->IsTaskActivityActive($tier_one_taskID, 10)) {
-                                         $client->plugin::NPCTell($npc, "$name, are you ready to venture to The Planes of [". quest::saylink("gaeFear",1,"Fear") ."] or [". quest::saylink("gaeHate",1,"Hate") ."]?");                            
-                            } elsif ($client->IsTaskActivityActive($tier_one_taskID, 9) or
-                                     $client->IsTaskActivityActive($tier_one_taskID, 10)) {
-                                        $client->plugin::NPCTell($npc, "My apprentices are waiting for you outside Karnor's Castle and Old Sebilis.");                            
-                            } elsif (not $client->IsTaskCompleted($tier_one_taskID)) {
-                            $client->plugin::NPCTell($npc,"Let's get down to buisness. Nostos gave you a [". quest::varlink("450001") ."], but it has some serious limitations, and I need your help to improve it. I need you to gather some [". quest::saylink("gaeT1A",1,"exotic materials") ."] for me in order to proceed.");
-                            }
-                        }
-                    } elsif ($level_cap <= 60) {
-                        $client->plugin::NPCTell($npc,"My favorite research assistant! The next experiment isn't ready yet, but I'll have something for you soon.");
-                    } elsif ($level_cap <= 65) {
-                        $client->plugin::NPCTell($npc,"My favorite research assistant! The next experiment isn't ready yet, but I'll have something for you soon.");
-                    } elsif ($level_cap <= 70) {
-                        $client->plugin::NPCTell($npc,"My favorite research assistant! The next experiment isn't ready yet, but I'll have something for you soon.");
-                    }                    
+                    } 
                 } else {
                     $client->plugin::NPCTell($npc,"Have a seat, $race. We have a lot to talk about and I prefer to stay comfortable.");
                 }
