@@ -111,7 +111,7 @@ sub EVENT_SAY {
 
             if ($instance_cooldown) {
                 $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
-                $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown)));
+                $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
             } elsif ($instance_zone eq $Data[0]) {
                 $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
             } else {
