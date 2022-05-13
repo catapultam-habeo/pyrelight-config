@@ -56,7 +56,7 @@ sub EVENT_SAY {
                             }
                         }
 
-                        if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs) and $client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs)) {
+                        if ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs) and $client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_trak)) {
                             $client->plugin::NPCTell($npc,"My Apprentices await you outside of Karnor's Castle and Old Sebilis");
                         } elsif ($client->IsTaskActivityActive($tier_one_taskID, $tier_one_task_activity_vs)) {
                             $client->plugin::NPCTell($npc,"You've absorbed the necromantic energy of Trakanon! Excellent. Only Venril Sathir remains. Apprentice Sslish awaits you outside of Old Sebilis.");
