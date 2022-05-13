@@ -2,7 +2,7 @@ sub EVENT_ENTERZONE {
 
     my $target_level = 53;
     my $target_boss_level = 55;
-    my $target_boss_name = 'Lord_Nagafen'
+    my $target_boss_name = 'Lord_Nagafen';
     
 
     if ($instanceid > 0 and $instanceversion == 1 and not quest::get_data($instanceid . "-scaled")) {
