@@ -49,9 +49,9 @@ sub EVENT_TASK_STAGE_COMPLETE {
 
       my $key = $client->CharacterID() . "-CharMaxLevel";
 
-      quest::set_data($key,60);
-      $client->Message(15, "Your level cap has been set to 60.");
-      quest::worldwidemessage(335, "$name has completed 'A Song of Dragons and Fish' and unlocked level 60.");
+      #quest::set_data($key,60);
+      #$client->Message(15, "Your level cap has been set to 60.");
+      #quest::worldwidemessage(335, "$name has completed 'A Song of Dragons and Fish' and unlocked level 60.");
     }
   }
 } 
