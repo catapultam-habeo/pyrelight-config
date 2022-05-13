@@ -59,3 +59,21 @@ sub EVENT_SAY {
         }
     }    
 }
+
+sub EVENT_TASK_STAGE_COMPLETE {
+    if ($task_id = 9001 and $activity_id = 3) {
+        $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
+    }
+
+    if ($task_id = 9001 and $activity_id = 4) {
+        $client->plugin::NPCTell($npc,"This is exactly what I need. I'll begin working on the alchemical infusion immediately.");
+    }
+
+    if ($task_id = 9001 and $activity_id = 5) {
+        $client->plugin::NPCTell($npc,"You thought I was serious about this? Thanks, but you need a sense of humor.");
+    }
+
+    $client->IsTaskActivityActive(9001, 6) {
+        $client->plugin::NPCTell($npc,"You've collected everything we need for the next step. While I continue to work on the framework for the new anchor, I need you to take your existing equipment and harvest several dimension-phased undead essences. My apprentices await you outside of Karnor's Keep and Old Sebilis.");
+    }
+}
