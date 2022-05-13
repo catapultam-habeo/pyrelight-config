@@ -3,11 +3,12 @@
 sub EVENT_SAY {
     
     my @Data = ("permafrost", 73, -19, -226, 3.75, 47.25 );
-
-    my $instance_zone = quest::get_data($client->CharacterID() . "-active-instance-zone");
-    my $instance_id = quest::get_data($client->CharacterID() . "-active-instance-id");
-
-    my $instance_cooldown = quest::get_data($client->CharacterID() . "-" . $Data[0] . "-cooldown");
+    my $instance_zone_key = $client->CharacterID() . "-active-instance-zone";
+    my $instance_id_key = $client->CharacterID() . "-active-instance-id";
+    my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
+    my $instance_zone = quest::get_data($instance_zone_key);
+    my $instance_id = quest::get_data($instance_id_key);
+    my $instance_cooldown = quest::get_data($instance_cooldown_key);
     
     my $instance_duration = 72000;
 
@@ -22,7 +23,7 @@ sub EVENT_SAY {
             } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
                 if ($instance_cooldown) {
                     $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a.");
-                    $client->Message(15,"Lockout Remaining:" . quest::secondstotime(quest::get_data_remaining($client->CharacterID() . "-" . $Data[0] . "-cooldown")));
+                    $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown_key));
                 } else {
                     $client->plugin::NPCTell($npc,"You must be Master Eithan's new test subject - He told me to expect someone to explore this phase rift. You may find the Dragon who lairs here to be more powerful than you might otherwise expect, be prepared. Would you like for me to [". quest::saylink("gaeLN1",1,"open the rift") ."] for you?");
                 }
@@ -31,16 +32,16 @@ sub EVENT_SAY {
             }
         } elsif ($text=~/collapse/i and $instance_zone) {
             $client->plugin::NPCTell($npc,"No problem, research assistant. I've dispelled the residue.");            
-            quest::delete_data($client->CharacterID() . "-active-instance-zone");           
-            quest::delete_data($client->CharacterID() . "-active-instance-id");
+            quest::delete_data($instance_zone_key);           
+            quest::delete_data($instance_id_key);
             quest::DestroyInstance($instance_id);
             quest::delete_data($instance_id . '-deathCount');
             quest::delete_data($instance_id . '-scaled');  
         } elsif ($text=~/gaeLN1/i) {
             my $instance_id = quest::CreateInstance($Data[0], 1, $instance_duration);            
-            quest::set_data($client->CharacterID() . "-" . $Data[0] . "-cooldown", 1, $instance_duration);
-            quest::set_data($client->CharacterID() . "-active-instance-zone", $Data[0], $instance_duration);
-            quest::set_data($client->CharacterID() . "-active-instance-id", $instance_id, $instance_duration);
+            quest::set_data($instance_cooldown_key, 1, $instance_duration);
+            quest::set_data($instance_zone_key, $Data[0], $instance_duration);
+            quest::set_data($instance_id_key, $instance_id, $instance_duration);
             quest::delete_data($instance_id . '-deathCount');
             quest::delete_data($instance_id . '-scaled');  
             $client->plugin::NPCTell($npc,"I've opened the rift, $name. Tell me when you are ready to [". quest::saylink("enter",1) ."]");
