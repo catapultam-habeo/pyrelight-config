@@ -17,7 +17,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
 	quest::debug("task_id " . $task_id);
 	quest::debug("activity_id " . $activity_id);
 
-  my $npc = $entity_list->GetMobByNpcTypeID(394192);
+  my $npc = $entity_list->GetNPCByNPCTypeID(394192);  
 
   if ($task_id = 9001 and $activity_id = 3) {
     $client->plugin::NPCTell($npc,"Perfect. This orb will form the basis of the new essence anchor. Please, hurry and obtain the remaining components.");
