@@ -9,13 +9,13 @@ sub EVENT_SAY {
 	my $tier = 0;
 
 	if ($levelCap == 52) {
-		$tier = 1;
+		$tier = 0;
 	} elsif ($levelCap == 60) {
-		$tier = 2;
+		$tier = 1;
 	} elsif ($levelCap == 65) {
-		$tier = 3;
+		$tier = 2;
 	} elsif ($levelCap == 70) {
-		$tier = 4;
+		$tier = 3;
 	}
 
 	
