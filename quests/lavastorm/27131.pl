@@ -45,7 +45,7 @@ sub EVENT_SAY {
             quest::delete_data($instance_id . '-scaled');  
             $client->plugin::NPCTell($npc,"I've opened the rift, $name. Tell me when you are ready to [". quest::saylink("enter",1) ."]");
         } elsif ($text=~/enter/i and $instance_id) {
-            $client->plugin::NPCTell($npc,"$instance_id");
+            quest::AssignToInstance($instance_id);
             $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
         }
     }
