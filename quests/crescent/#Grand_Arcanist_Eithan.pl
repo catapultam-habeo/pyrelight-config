@@ -107,16 +107,15 @@ sub EVENT_SAY {
         my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
         my $instance_cooldown = quest::get_data($instance_cooldown_key);
 
-        if ($instance_cooldown) {
-            $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
-            $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
-        } elsif ($instance_zone) {
+        if ($instance_zone) {
             if ($instance_zone eq $Data[0]) {
                 $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
             } else {
                 $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
             }
-
+        } elsif ($instance_cooldown) {
+            $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
+            $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
         } else {
             $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("09123",1,"open the way") ."] for you.");
         }
@@ -137,5 +136,43 @@ sub EVENT_SAY {
         quest::AssignToInstance($instance_id);
 
         $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
-    }         
+    } elsif ($text=~/gaeHate/i and ($client->IsTaskActivityActive(9001,10))) {
+
+        my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
+        my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
+        my $instance_cooldown = quest::get_data($instance_cooldown_key);
+    
+         if ($instance_zone) {
+            if ($instance_zone eq $Data[0]) {
+                $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
+            } else {
+                $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
+            }
+        } elsif ($instance_cooldown) {
+            $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
+            $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));        
+        } else {
+            $client->plugin::NPCTell($npc,"Are you ready to challenge Innoruuk? I will [". quest::saylink("1019123",1,"open the way") ."] for you.");
+        }
+    } elsif ($text=~/1019123/i and ($client->IsTaskActivityActive(9001,10))) {
+        my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
+        my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
+        my $instance_cooldown = quest::get_data($instance_cooldown_key);
+        my $instance_id = quest::CreateInstance($Data[0], 1, $instance_duration); 
+
+        quest::set_data($instance_cooldown_key, 1, $instance_duration);
+        quest::set_data($instance_zone_key, $Data[0], $instance_duration);
+        quest::set_data($instance_id_key, $instance_id, $instance_duration);
+
+        quest::delete_data($instance_id . '-deathCount');
+        quest::delete_data($instance_id . '-scaled');
+
+        quest::AssignToInstance($instance_id);
+
+        $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
+    } elsif ($text=~/I'm not getting your fucking seaweed/i and ($client->IsTaskActivityActive(9001,5))) {
+        $client->plugin::NPCTell($npc,"Good answer, kid.");
+        $client->UpdateTaskActivity(9001, 2, 1);
+        $client->UpdateTaskActivity(9001, 5, 1);
+    }        
 }
