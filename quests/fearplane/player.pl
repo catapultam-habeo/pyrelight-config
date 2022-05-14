@@ -6,7 +6,7 @@ sub EVENT_ENTERZONE {
         foreach $npc (@npcs) {
             my $levelTarget = 55;
 
-            my $levelScalar = $levelTarget/$npc->GetLevel() * (1+(($hack_count-3)/10));
+            my $levelScalar = $levelTarget/$npc->GetLevel() * (1+(($hack_count-3)/10)) + 1;
 
             $npc->ModifyNPCStat("max_hp", $npc->GetNPCStat("max_hp") * $levelScalar);
             $npc->ModifyNPCStat("ac", $npc->GetNPCStat("max_ac") * $levelScalar);
