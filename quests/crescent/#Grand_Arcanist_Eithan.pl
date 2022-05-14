@@ -10,6 +10,8 @@ sub EVENT_SAY {
     
     my $level_cap = quest::get_data($client->CharacterID() . "-CharMaxLevel");
     my $nostos_init = length(quest::get_data($client->CharacterID() . "-TL"));
+
+    $npc->CastToMob()->Emote("WTF!");
     
     if ($text=~/hail/i) {
         # Check to make sure that you've talked to Nostos already by seeing if your TL flag is populated.
@@ -142,7 +144,6 @@ sub EVENT_SAY {
         my @Data = ("hateplaneb", 186, -393, 656, 4, 383);
         my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
         my $instance_cooldown = quest::get_data($instance_cooldown_key);
-
     
         elsif ($instance_cooldown) {
             $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
