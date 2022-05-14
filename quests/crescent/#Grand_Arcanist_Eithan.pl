@@ -161,7 +161,7 @@ sub EVENT_SAY {
             quest::AssignToInstance($instance_id);
 
             $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
-        } elsif ($text=~/I'm not getting your fucking seaweed/i and ($client->IsTaskActivityActive(9001,5)) {
+        } elsif ($text=~/I'm not getting your fucking seaweed/i and ($client->IsTaskActivityActive(9001,5))) {
             $client->plugin::NPCTell($npc,"Good answer, kid.");
             $client->UpdateTaskActivity(9001, 2, 1);
             $client->UpdateTaskActivity(9001, 5, 1);
