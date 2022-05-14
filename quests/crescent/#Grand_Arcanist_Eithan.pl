@@ -1,6 +1,4 @@
 sub EVENT_SAY {
-    if (true) {
-
         my $instance_duration = 72000;
 
         my $instance_zone_key = $client->CharacterID() . "-active-instance-zone";
@@ -14,7 +12,6 @@ sub EVENT_SAY {
         my $nostos_init = length(quest::get_data($client->CharacterID() . "-TL"));
         
         if ($text=~/hail/i) {
-            client->plugin::NPCTell($npc,"Debug");
             # Check to make sure that you've talked to Nostos already by seeing if your TL flag is populated.
             if ($nostos_init >= 2) {        
                 # Check to see if you are sitting, because I'm a dick
@@ -165,9 +162,8 @@ sub EVENT_SAY {
 
             $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
         } elsif ($text=~/I'm not getting your fucking seaweed/i and ($client->IsTaskActivityActive(9001,5)) {
-            $client->plugin::NPCTell($npc,"Good answer, kid."
+            $client->plugin::NPCTell($npc,"Good answer, kid.");
             $client->UpdateTaskActivity(9001, 2, 1);
             $client->UpdateTaskActivity(9001, 5, 1);
         }
-    }    
 }
