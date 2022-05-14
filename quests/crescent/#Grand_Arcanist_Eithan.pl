@@ -1,5 +1,5 @@
 sub EVENT_SAY {
-    if ($client->GetGM() || $client->GetName() eq 'Sihtric' || $client->GetName() eq 'Fore' || $client->GetName() eq 'Sshantrel') {
+    if (true) {
 
         my $instance_duration = 72000;
 
@@ -14,6 +14,7 @@ sub EVENT_SAY {
         my $nostos_init = length(quest::get_data($client->CharacterID() . "-TL"));
         
         if ($text=~/hail/i) {
+            client->plugin::NPCTell($npc,"Debug");
             # Check to make sure that you've talked to Nostos already by seeing if your TL flag is populated.
             if ($nostos_init >= 2) {        
                 # Check to see if you are sitting, because I'm a dick
