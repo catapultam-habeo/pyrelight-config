@@ -111,14 +111,16 @@ sub EVENT_SAY {
                 $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
                 $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
             } elsif ($instance_zone) {
-                if ($instance_zone eq $Data[0]) {}
+                if ($instance_zone eq $Data[0]) {
                     $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
                 } else {
                     $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
                 }
+
             } else {
                 $client->plugin::NPCTell($npc,"Are you ready to challenge Cazic-Thule? I will [". quest::saylink("09123",1,"open the way") ."] for you.");
-            }        
+            }
+        
         } elsif ($text=~/09123/i and ($client->IsTaskActivityActive(9001,9))) {
             my @Data = ("fearplane", 72, 1329, -1201, 14, 412);
             my $instance_cooldown_key = $client->CharacterID() . "-" . $Data[0] . "-cooldown";
@@ -146,7 +148,7 @@ sub EVENT_SAY {
                 $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
                 $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
             } elsif ($instance_zone) {
-                if ($instance_zone eq $Data[0]) {}
+                if ($instance_zone eq $Data[0]) {
                     $client->MovePCInstance($Data[1], $instance_id, $Data[2], $Data[3], $Data[4], $Data[5]);
                 } else {
                     $client->plugin::NPCTell($npc,"$name, you are still attuned to another phase rift. Would you like me to [". quest::saylink("collapse",1) ."] it for you?");
@@ -175,4 +177,5 @@ sub EVENT_SAY {
             $client->UpdateTaskActivity(9001, 2, 1);
             $client->UpdateTaskActivity(9001, 5, 1);
         }
+        
 }
