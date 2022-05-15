@@ -106,7 +106,7 @@ sub CheckForEssenceAnchor {
 	
 	foreach (@items) {
 		quest::debug("Checking:" . $_ . ":" . plugin::check_hasitem($client,$_));
-		if (plugin::check_hasitem($client,$_)) {
+		if (plugin::check_hasitem($client,$_) > 0) {
 			return 1;
 		}		
 	}
