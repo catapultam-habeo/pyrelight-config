@@ -21,7 +21,7 @@ sub EVENT_SAY {
 	
 	my $menuColor = 300;
 	
-	my @items = (split(/:/,quest::get_data("TLItems")));
+	my @items = (450001,450002);
 	my @cats = ("Faydwer","Antonica","Odus","Kunark","Velious","Luclin","The Planes","Taelosia","The Realm of Discord", "Wayfarer's Camps");
 	
 	# index databucket string format
