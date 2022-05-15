@@ -40,7 +40,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		my $prevCat = -1;
 		if (length($charTargets) >= 2) {			
-			if (CheckForEssenceAnchor(@items)) {
+			if (CheckForEssenceAnchor(\@items)) {
 				if (length($charTargets) > 2) {
 					$client->plugin::NPCTell($npc,"Welcome back, $name. Where would you like to go?");
 					my @keys = sort { $teleport_zones{$a}[1] <=> $teleport_zones{$b}[1] } keys(%teleport_zones);					
