@@ -5,7 +5,8 @@ UPDATE npc_types, ref_npcs
        npc_types.hp = 100000,
        npc_types.mindmg = 250,
        npc_types.maxdmg = 750, 
-       npc_types.hp_regen_rate = 250
+       npc_types.hp_regen_rate = 250,
+       npc_types.ac = ref_npc/2;
  WHERE npc_types.id = ref_npcs.id
    AND  ( npc_types.id = 186158 OR npc_types.id = 72003 );
 
