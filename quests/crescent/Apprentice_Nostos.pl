@@ -102,9 +102,9 @@ sub EVENT_SAY {
 }
 
 sub CheckForEssenceAnchor {		
-	my @items = shift;
+	my $items = $_[0];
 	
-	foreach $a (@items) {
+	foreach $a (@$items) {
 		quest::debug("Checking:" . $a . ":" . plugin::check_hasitem($client,$a));
 		if (plugin::check_hasitem($client,$a) > 0) {
 			return 1;
