@@ -1,4 +1,4 @@
-sub EVENT_KILLED_MERIT {
+sub EVENT_KILLED {
     if ($instanceid > 0 and $instanceversion == 1) {
         my @clients = $entity_list->GetClientList();
         foreach my $client (@clients) {

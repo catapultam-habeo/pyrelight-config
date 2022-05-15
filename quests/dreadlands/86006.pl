@@ -20,10 +20,10 @@ sub EVENT_SAY {
             } else {
                 $client->plugin::NPCTell($npc,"Hail, $name. I sense the residue of a phase rift on you. Before I can transport you though this one, I must [". quest::saylink("collapse",1,"dispel") ."] that residue from your aura. Would you like me to proceed?");
             }
-        } elsif (quest::istaskactive(9001) or quest::istaskcompleted(9001)) {
+        } elsif (quest::istaskactive(9001)) {
             if ($instance_cooldown) {
                 $client->plugin::NPCTell($npc,"I'm sorry, $name. You will need to allow your aura to clear further before I can attune you to this phase rift. It should take no longer than a day.");
-                $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown_key));
+                $client->Message(15,"Lockout Remaining:" . quest::secondstotime($instance_cooldown));
             } else {
                 $client->plugin::NPCTell($npc,"You must be Master Eithan's new test subject - He told me to expect someone to explore this phase rift. Would you like for me to [". quest::saylink("gaeLN1",1,"open the rift") ."] for you?");
             }
