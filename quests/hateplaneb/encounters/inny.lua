@@ -177,19 +177,22 @@ end
 function Fake_Death(e)
     eq.unique_spawn(186198,25,0,-460,-1455,65,255); -- #Evangelist_of_Hate (186198)
 
+    eq.debug("Fake Innoruuk Dead");
     -- Flag for 'A Song of Dragons and Fish'
     if (eq.get_zone_instance_id() > 0 and eq.get_zone_instance_version() == 1) then
+        eq.debug("And died in an instance");
         local clients = eq.get_entity_list():GetClientList();
 		for client in clients.entries do
             if (client:IsTaskActivityActive(9001,10)) then
-                e.self:Message(15, "Your [" .. eq.item_link(450001) .. "] absorbs power from the fallen divine avatar.");
+                client:Message(15, "Your [" .. eq.item_link(450001) .. "] absorbs power from the fallen divine avatar.");
                 client:UpdateTaskActivity(9001, 10, 1);
             end
 
-            eq.delete_data(e.self:CharacterID() .. "-active-instance-zone");
-            eq.delete_data(e.self:CharacterID() .. "-active-instance-id");
-        end
-    end     
+            eq.debug("And we looked at client id:" .. client:CharacterID());
+            eq.delete_data(client:CharacterID() .. "-active-instance-zone");
+            eq.delete_data(client:CharacterID() .. "-active-instance-id");
+        end        
+    end 
 end
 
 function event_encounter_load(e)
