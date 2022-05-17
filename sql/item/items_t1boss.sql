@@ -94,15 +94,15 @@ UPDATE items SET reclevel=52, healamt=25, spelldmg=25, hp=150, mana=250, manareg
 
 ---- Nightshade Scented Staff
 -- NEC this is a 2h weapon, roughly doubled stats. (click is scent of darkness -resists)
-UPDATE items SET reclevel=52, healamt=25, spelldmg=25, hp=150, mana=250, hpregen=4, manaregen=4, clicktype=5, casttime=1, recasttype=-1 WHERE id=6675;
+UPDATE items SET reclevel=52, healamt=25, spelldmg=25, hp=150, mana=250, regen=4, manaregen=4, clicktype=5, casttime=1, recasttype=-1 WHERE id=6675;
 
 ---- Shissar Nullifier Staff
 -- ENC 2h. click is tashania
-UPDATE items SET reclevel=52, asta=10, healamt=25, spelldmg=25, hp=150, mana=250, manaregen=8, casttime=1, clicktype=5, recastype=-1 WHERE id=6676;
+UPDATE items SET reclevel=52, asta=10, healamt=25, spelldmg=25, hp=150, mana=250, manaregen=8, casttime=1, clicktype=5, recasttype=-1 WHERE id=6676;
 
 ---- Shissar Guardian Staff
 -- MAG 2h. click is phantom plate
-UPDATE items SET reclevel=52, asta=10, aint=15, healamt=25, spelldmg=25, hp=150, mana=250, hpregen=2, manaregen=6, clicktype=5, casttime=0, recasttype=-1 WHERE id=6677;
+UPDATE items SET reclevel=52, asta=10, aint=15, healamt=25, spelldmg=25, hp=150, mana=250, regen=2, manaregen=6, clicktype=5, casttime=0, recasttype=-1 WHERE id=6677;
 
 ---- 	Waters of Impenetrable Aura
 -- CLR 2h. click resist magic changed to gift of insight +100 mana and 1 mana regen
@@ -170,7 +170,7 @@ UPDATE items SET reclevel=52, clickeffect=1825, hp=120, mana=120, healamt=30, sp
 
 ---- Jaundiced Bone Breastplate
 -- Bramblecoat -> Bond of Death (Experimental AF - i think it'll be cool though)
-UPDATE items SET reclevel=52 clickeffect=456, casttime=3, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4530;
+UPDATE items SET reclevel=52, clickeffect=456, casttime=3, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4530;
 
 ---- Tolan's
 -- Ring of Faydark -> Invigorate
@@ -206,4 +206,4 @@ UPDATE items SET reclevel=52, hp=200, healamt=30, spelldmg=30 WHERE id=55495;
 
 ---- Mana Robe
 -- Mana Conversion -> Mind Flay ??? 8522 5 sec cast, 10 minute cooldown
-UPDATE items SET reclevel=52, hp=100, mana=150, healamt=30, spelldmg=30, spellid=8522, casttime=5, recastdelay=600, clicktype=4 WHERE id=1606;
+UPDATE items SET reclevel=52, hp=100, mana=150, healamt=30, spelldmg=30, clickid=8522, casttime=5, recastdelay=600, clicktype=4 WHERE id=1606;
