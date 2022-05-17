@@ -206,4 +206,4 @@ UPDATE items SET reclevel=52, hp=200, healamt=30, spelldmg=30 WHERE id=55495;
 
 ---- Mana Robe
 -- Mana Conversion -> Mind Flay ??? 8522 5 sec cast, 10 minute cooldown
-UPDATE items SET reclevel=52, hp=100, mana=150, healamt=30, spelldmg=30, clickid=8522, casttime=5, recastdelay=600, clicktype=4 WHERE id=1606;
+UPDATE items SET reclevel=52, hp=100, mana=150, healamt=30, spelldmg=30, clickeffect=8522, casttime=5, recastdelay=600, clicktype=4 WHERE id=1606;
