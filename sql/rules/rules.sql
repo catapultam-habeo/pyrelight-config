@@ -103,7 +103,7 @@ UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Spells:DSUseSpell
 UPDATE rule_values SET rule_value = 1       WHERE rule_name = "Combat:FleeHPRatio";
 UPDATE rule_values SET rule_value = 1       WHERE rule_name = "Combat:FleeGrayHPRatio";
 UPDATE rule_values SET rule_value = 'false' WHERE rule_name = "Combat:MeleePush";
-UPDATE rule_values SET rule_value = 'false' WHERE rule_name = "Combat:OneProcPerWeapon"
-UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Pets:TauntTogglesPetTanking"
-UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Spells:UseSpellImpliedTargeting"
-UPDATE rule_values SET rule_value = '-1'  WHERE rule_name = "Aggro:MaxScalingProcAggro"		 
+UPDATE rule_values SET rule_value = 'false' WHERE rule_name = "Combat:OneProcPerWeapon";
+UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Pets:TauntTogglesPetTanking";
+UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Spells:UseSpellImpliedTargeting";
+UPDATE rule_values SET rule_value = '-1'  WHERE rule_name = "Aggro:MaxScalingProcAggro";
