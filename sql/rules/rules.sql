@@ -33,7 +33,7 @@ UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Inventory:AllowOnl
 
 ---- Item Stat Caps
 UPDATE rule_values SET rule_value = 750    WHERE rule_name = "Character:AvoidanceCap";
-UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Character:EnableAvoidanceCap"
+UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Character:EnableAvoidanceCap";
 UPDATE rule_values SET rule_value = 1000   WHERE rule_name = "Character:ItemAccuracyCap";
 UPDATE rule_values SET rule_value = 2000   WHERE rule_name = "Character:ItemATKCap";
 UPDATE rule_values SET rule_value = 750    WHERE rule_name = "Character:ItemAvoidanceCap";
