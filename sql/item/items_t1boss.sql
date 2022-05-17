@@ -82,3 +82,128 @@ UPDATE items SET itemtype = 54, clicktype= 4, maxcharges = -1 WHERE id = 13401;
 
 ------ Fix stupid mistakes
 UPDATE items SET focustype = 6 WHERE focuseffect > 0 AND focustype != 6;
+
+
+-- Venril Sathir
+---- Ancient Shissar Gauntlet
+UPDATE items SET reclevel=52, healamt=10, spelldmg=10, hp=100, mana=100, manaregen=10 WHERE id=4582;
+
+---- Diamond Encrusted Staff
+-- WIZ this is a 2h weapon, roughly doubled stats (click is garbage, elemental armor, - probably needs changed) changed to spiritual light 3hp 3mana regen group buff
+UPDATE items SET reclevel=52, healamt=25, spelldmg=25, hp=150, mana=250, manaregen=8, clickeffect=2176, casttime=2, clicktype=4, recasttype=-1 WHERE id=6674;
+
+---- Nightshade Scented Staff
+-- NEC this is a 2h weapon, roughly doubled stats. (click is scent of darkness -resists)
+UPDATE items SET reclevel=52, healamt=25, spelldmg=25, hp=150, mana=250, hpregen=4, manaregen=4, clicktype=5, casttime=1, recasttype=-1 WHERE id=6675;
+
+---- Shissar Nullifier Staff
+-- ENC 2h. click is tashania
+UPDATE items SET reclevel=52, asta=10, healamt=25, spelldmg=25, hp=150, mana=250, manaregen=8, casttime=1, clicktype=5, recastype=-1 WHERE id=6676;
+
+---- Shissar Guardian Staff
+-- MAG 2h. click is phantom plate
+UPDATE items SET reclevel=52, asta=10, aint=15, healamt=25, spelldmg=25, hp=150, mana=250, hpregen=2, manaregen=6, clicktype=5, casttime=0, recasttype=-1 WHERE id=6677;
+
+---- 	Waters of Impenetrable Aura
+-- CLR 2h. click resist magic changed to gift of insight +100 mana and 1 mana regen
+UPDATE items SET reclevel=52, astr=10, asta=10, awis=10, ac=30, healamt=25, spelldmg=25, hp=200, mana=200, manaregen=8, clickeffect=1409, casttime=2, recasttype=-1 WHERE id=6678;
+
+---- Lycanthropic Staff
+-- DRU 2h. click form of the great wolf changed to form of the howler, same thing just adds some mana regen. self only
+UPDATE items SET reclevel=52, astr=10, asta=10, awis=10, ac=20, healamt=25, spelldmg=25, hp=200, mana=200, manaregen=8, clickeffect=1562, casttime=2, recasttype=-1 WHERE id=6679;
+
+	-- the pants
+---- Cobalt Greaves
+-- warrior invis item, can click from inventory with race/level/class req. less dependence on bots
+UPDATE items SET reclevel=52, aagi=5, hp=200, healamt=15, spelldmg=15, casttime=2, clicktype=5, recasttype=-1 WHERE id=4520;
+
+---- Blood Ember Greaves
+-- SK feign click. can click from inventory with race/level/class req
+UPDATE items SET reclevel=52, asta=8, hp=100, mana=100, healamt=15, spelldmg=15, casttime=1, clicktype=5, recasttype=-1 WHERE id=4527;
+
+---- Jaundiced Bone Greaves
+-- Shaman Health click originally STA buff.. changed to malosi with 2 second cast
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=112, casttime=2, recasttype=-1 WHERE id=4534;
+
+---- Tolan's Darkwood Greaves
+-- Ranger click originally cancel magic 10 sec, upgraded to annul magic (mid 50s version of same spell line) with 2 sec cast
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=1526, casttime=2, recasttype=-1 WHERE id=4541;
+
+---- Deepwater Greaves
+-- Paladin click original spirit strength, 20str. changed to spike coat, 35ac + 4ds. it was either that or just plain ds imo, or something from yaulp line, but nothing good until yaulp 4 and that's still not great. thought ac + small ds would be more sensible than a large ds
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=518, casttime=2, recasttype=-1 WHERE id=4548;
+
+---- Mrylokar's Greaves
+-- Rogue .. original serpent sight click. change to strength of nature, 25atk 75hp buff
+UPDATE items SET reclevel=52, hp=175, healamt=15, spelldmg=15, clickeffect=1397, casttime=2, recasttype=-1 WHERE id=4555;
+
+---- Singing Steel Greaves
+-- Bard , original click is bard fear changed to arch shielding 250hp 35ac 20mr
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=67, casttime=2, recasttype=-1 WHERE id=4562;
+
+---- Donal's Leggings of Mourning
+-- Cleric original click Naltron 912 hp but level 41 spell, changed to barrier of combustion 20ds 22fr
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=680, casttime=2, recasttype=-1 WHERE id=4569;
+
+---- Elder Spiritist's Greaves
+-- Druid original click skin like diamond shitty level 36 spell 21ac 300hp, change to augmentation 28% haste (29enc spell)
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=10, casttime=2, recasttype=-1 WHERE id=4576;
+
+---- Wild Lord's Trousers
+-- BST original click health 31sta, garbage, change to clarity 7manaregen
+UPDATE items SET reclevel=52, hp=100, mana=100, healamt=15, spelldmg=15, clickeffect=174, casttime=2, recasttype=-1 WHERE id=5465;
+
+---- Leggings of Wrath
+-- BER has worn effect, left it alone
+UPDATE items SET reclevel=52, hp=175, healamt=15, spelldmg=15 WHERE id=55497;
+
+
+-- Trakanon
+
+---- Cobalt Breastplate
+-- Invigorate
+UPDATE items SET reclevel=52, hp=250, healamt=30, spelldmg=30 WHERE id=4516;
+
+---- Blood Ember Breastplate
+-- Major Shielding -> Invigorate
+UPDATE items SET reclevel=52, clickeffect=1825, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4523;
+
+---- Jaundiced Bone Breastplate
+-- Bramblecoat -> Bond of Death (Experimental AF - i think it'll be cool though)
+UPDATE items SET reclevel=52 clickeffect=456, casttime=3, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4530;
+
+---- Tolan's
+-- Ring of Faydark -> Invigorate
+UPDATE items SET reclevel=52, clickeffect=1825, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4537;
+
+---- Deepwater
+-- Symbol of Pinzarn -> Invigorate
+UPDATE items SET reclevel=52, clickeffect=1825, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4544;
+
+---- Mrylokar's
+-- Invigorate
+UPDATE items SET reclevel=52, awis=0, aint=0, hp=200, healamt=30, spelldmg=30 WHERE id=4551;
+
+---- Singing Steel
+-- Invigorate
+UPDATE items SET reclevel=52, hp=120, mana=120, healamt=30, spelldmg=30 WHERE id=4558;
+
+---- Donal's
+-- Complete Heal with 30s cast -> Elixir of Spiritualism IX 6hp regen / 6 mana regen (self only as is i think)
+UPDATE items SET reclevel=52, hp=120, mana=120, healamt=30, spelldmg=30, clickeffect=13303, casttime=2 WHERE id=4565;
+
+---- Elder Spiritist's
+-- Chloroplast -> Steelskin 6s cast
+UPDATE items SET reclevel=52, hp=120, mana=120, healamt=30, spelldmg=30, clickeffect=393, casttime=6 WHERE id=4572;
+
+---- Wild Lord's
+-- Bramblecoat -> Invigorate
+UPDATE items SET reclevel=52, hp=120, mana=120, healamt=30, spelldmg=30, clickeffect=1825 WHERE id=5461;
+
+---- Tunic of Wrath
+-- Invigorate
+UPDATE items SET reclevel=52, hp=200, healamt=30, spelldmg=30 WHERE id=55495;
+
+---- Mana Robe
+-- Mana Conversion -> Mind Flay ??? 8522 5 sec cast, 10 minute cooldown
+UPDATE items SET reclevel=52, hp=100, mana=150, healamt=30, spelldmg=30, spellid=8522, casttime=5, recastdelay=600, clicktype=4 WHERE id=1606;
