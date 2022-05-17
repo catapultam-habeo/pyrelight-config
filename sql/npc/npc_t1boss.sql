@@ -8,7 +8,7 @@ UPDATE npc_types, ref_npcs
        npc_types.hp_regen_rate = 250,
        npc_types.ac = ref_npcs.ac/2,
  WHERE npc_types.id = ref_npcs.id
-   AND  ( npc_types.id = 186158 OR npc_types.id = 72003 );
+   AND  ( npc_types.id == 186158 OR npc_types.id == 72003 );
 
 -- Adjust PoHateB misc mobs
 UPDATE npc_types, ref_npcs
