@@ -81,7 +81,6 @@ UPDATE rule_values SET rule_value = 2      WHERE rule_name = "Bots:ManaRegen";
 UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Bots:AllowApplyPoisonCommand";
 UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Bots:AllowApplyPotionCommand";
 UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Bots:FinishBuffing";
-UPDATE rule_values SET rule_value = 'true' WHERE rule_name = "Bots:GroupBuffing";
 
 ---- Spells
 UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Spells:ItemExtraSpellAmtCalcAsPercent";
@@ -106,4 +105,4 @@ UPDATE rule_values SET rule_value = 'false' WHERE rule_name = "Combat:MeleePush"
 UPDATE rule_values SET rule_value = 'false' WHERE rule_name = "Combat:OneProcPerWeapon";
 UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Pets:TauntTogglesPetTanking";
 UPDATE rule_values SET rule_value = 'true'  WHERE rule_name = "Spells:UseSpellImpliedTargeting";
-UPDATE rule_values SET rule_value = '-1'  WHERE rule_name = "Aggro:MaxScalingProcAggro";
+UPDATE rule_values SET rule_value = '-1'    WHERE rule_name = "Aggro:MaxScalingProcAggro";
