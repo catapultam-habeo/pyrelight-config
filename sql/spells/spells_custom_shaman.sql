@@ -6,7 +6,7 @@ UPDATE spells_new
 	     buffduration = 10,
        short_buff_box = 1,
        classes10 = 255
- WHERE id = 6906 OR id = 6735 OR id = 6667;
+ WHERE id = 6906 OR id = 6735 OR id = 6667 OR id = 6907;
 
  UPDATE spells_new, ref_spells
     SET spells_new.ResistDiff = -50
@@ -14,7 +14,7 @@ UPDATE spells_new
     AND ref_spells.ResistDiff = -300
     AND ref_spells.name LIKE "%maw";
 
-DELETE FROM character_memmed_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667;
-DELETE FROM character_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667;
+DELETE FROM character_memmed_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667 OR spell_id = 6907;
+DELETE FROM character_spells WHERE spell_id = 6906 OR spell_id= 6735 OR spell_id = 6667 OR spell_id = 6907;
 
 
